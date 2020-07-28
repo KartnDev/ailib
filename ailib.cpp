@@ -10,46 +10,54 @@
 
 namespace ktstd
 {
-	typedef std::tuple<std::vector<double>, double, double> tupleResult;
-	typedef std::vector <tupleResult> vectorOfTuples;
+	typedef std::tuple<std::vector<double>, double, double> TupleResult;
+	typedef std::vector <TupleResult> VectorOfTuples;
+
+	typedef std::vector<double> Point;
+	typedef std::vector<Point> VectorOfPoints;
+
 
 	namespace models 
 	{
 		class KNearestNeighbors 
 		{
-			
-
 		public:
-			KNearestNeighbors(std::vector<std::vector<double>> trainData, std::vector<double> trainLabel, int kCores) : kCores(kCores)
+			KNearestNeighbors(VectorOfPoints trainData, std::vector<double> trainLabel, int kCores) : kCores(kCores)
 			{
 				this->trainData = trainData;
 				this->trainLabel = trainLabel;
 			}
 
-			std::tuple<std::vector<double>, double, int> GetNearestK(std::vector<double> testData)
+			VectorOfTuples *GetNearestK(Point &testData)
 			{
-				vectorOfTuples neighborsResult;
+				VectorOfTuples neighborsResult;
 
 				for (size_t i = 0; i < this->trainData.size(); i++)
 				{
 					double dist = Math::StdEuclideanDist(testData, this->trainData[i]);
 
-					tupleResult tuple(this->trainData[i], dist, trainLabel);
+					TupleResult tuple(this->trainData[i], dist, trainLabel[i]);
 
 					neighborsResult.push_back(tuple);
 				} 
 				std::sort(neighborsResult.begin(), neighborsResult.end(), 
-					[](tupleResult t1, tupleResult t2) -> size_t 
+					[](TupleResult t1, TupleResult t2) -> size_t 
 				{
 					return std::get<1>(t1) > std::get<1>(t2);
 				});
-				neighborsResult
+
+				for (size_t i = 0; i < neighborsResult.size() - this->kCores; i++)
+				{
+					neighborsResult.pop_back();
+				}
+
+				return &neighborsResult;
 
 			}
 
 		private:
 			const int kCores;
-			std::vector<std::vector<double>> trainData;
+			VectorOfPoints trainData;
 			std::vector<double> trainLabel;
 		};
 	}
