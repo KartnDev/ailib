@@ -21,6 +21,9 @@
     <ClInclude Include="mathutils.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="file_utilities.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ailib.cpp">
@@ -29,8 +32,17 @@
     <ClCompile Include="mathutils.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="file_utilities.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
+    <None Include="mnist_test.csv">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
+    <None Include="mnist_train.csv">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
   </ItemGroup>
 </Project>

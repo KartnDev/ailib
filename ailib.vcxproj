@@ -180,13 +180,17 @@
   <ItemGroup>
     <ClInclude Include="ailib.h" />
     <ClInclude Include="mathutils.h" />
+    <ClInclude Include="file_utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ailib.cpp" />
     <ClCompile Include="mathutils.cpp" />
+    <ClCompile Include="file_utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
+    <None Include="mnist_test.csv" />
+    <None Include="mnist_train.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
