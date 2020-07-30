@@ -1,3 +1,6 @@
+#define _SILENCE_STDEXT_ALLOCATORS_DEPRECATION_WARNING
+
+
 #include <string>
 #include <iostream>
 #include <map>
@@ -9,5 +12,7 @@
 #include <tuple>
 #include <any>
 #include <exception>
+
+
 
 using namespace std;

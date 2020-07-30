@@ -9,9 +9,8 @@ namespace ktstd
 	{
 	public:
 		static double StdEuclideanDist(double point1[DIMENTIONS], double point2[DIMENTIONS]) noexcept;
-		
-		static double StdEuclideanDist(std::vector<double> point1, std::vector<double> point2);
-		
+		static double StdEuclideanDist(vector<double> point1, vector<double> point2);
+		static double StdEuclideanDist(vector<string> point1, vector<string> point2);
 	};
 
 

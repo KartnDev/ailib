@@ -1,3 +1,4 @@
+#define _SILENCE_STDEXT_ALLOCATORS_DEPRECATION_WARNING
 #include <vector>
 #include <unordered_map>
 #include <tuple>

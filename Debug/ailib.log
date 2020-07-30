@@ -1,50 +1,30 @@
-﻿  file_utilities.cpp
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(54): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(71): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(106): warning C4244: инициализация: преобразование "std::streamoff" в "size_t", возможна потеря данных
-  ailib.vcxproj -> C:\Users\Dmitry\source\repos\ailib\Debug\ailib.lib
-c:\users\dmitry\source\repos\ailib\ailib\ailib.cpp(32): warning C26440: Function '<lambda_f8f77e05ff693e21b14e5afcba62da35>::operator()' can be declared 'noexcept' (f.6).
-c:\users\dmitry\source\repos\ailib\ailib\ailib.cpp(20): warning C26489: Don't dereference a pointer that may be invalid: '&this->trainData'. 'this.ktstd::models::KNearestNeighbors::trainData' may have been invalidated at line 24 (lifetime.1).
-c:\users\dmitry\source\repos\ailib\ailib\ailib.cpp(24): warning C26489: Don't dereference a pointer that may be invalid: '&this->trainData'. 'this.ktstd::models::KNearestNeighbors::trainData' may have been invalidated at line 24 (lifetime.1).
-c:\users\dmitry\source\repos\ailib\ailib\ailib.cpp(24): warning C26489: Don't dereference a pointer that may be invalid: '*result.[]'. 'return of '[]'' may have been invalidated at line 24 (lifetime.1).
-c:\users\dmitry\source\repos\ailib\ailib\ailib.cpp(24): warning C26486: Don't pass a pointer that may be invalid to a function. Parameter 1 '{InvalidLoc}' in call to 'std::tuple<std::vector<double,std::allocator<double> >,double,double>::tuple<std::vector<double,std::allocator<double> >,double,double><std::vector<double,std::allocator<double> > const &,double &,double const &,0>' may be invalid (lifetime.1).
-c:\users\dmitry\source\repos\ailib\ailib\ailib.cpp(41): warning C26489: Don't dereference a pointer that may be invalid: 'result.GetNearestK'. 'return of 'GetNearestK'' may have been invalidated at line 39 (lifetime.1).
-c:\users\dmitry\source\repos\ailib\ailib\ailib.cpp(39): warning C26487: Don't return a pointer that may be invalid (lifetime.1).
-c:\users\dmitry\source\repos\ailib\ailib\ailib.cpp(22): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-c:\users\dmitry\source\repos\ailib\ailib\ailib.cpp(24): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-c:\users\dmitry\source\repos\ailib\ailib\ailib.cpp(24): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-c:\users\dmitry\source\repos\ailib\ailib\ailib.cpp(16): warning C26460: The reference argument 'testData' for function 'ktstd::models::KNearestNeighbors::GetNearestK' can be marked as const (con.3).
-c:\users\dmitry\source\repos\ailib\ailib\mathutils.cpp(5): warning C26461: The pointer argument 'point1' for function 'ktstd::Math::StdEuclideanDist' can be marked as a pointer to const (con.3).
-c:\users\dmitry\source\repos\ailib\ailib\mathutils.cpp(5): warning C26485: Expression 'point1': No array to pointer decay (bounds.3).
-c:\users\dmitry\source\repos\ailib\ailib\mathutils.cpp(10): warning C26481: Don't use pointer arithmetic. Use span instead (bounds.1).
-c:\users\dmitry\source\repos\ailib\ailib\mathutils.cpp(5): warning C26429: Symbol 'point1' is never tested for nullness, it can be marked as not_null (f.23).
-c:\users\dmitry\source\repos\ailib\ailib\mathutils.cpp(30): warning C26409: Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11).
-c:\users\dmitry\source\repos\ailib\ailib\mathutils.cpp(23): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-c:\users\dmitry\source\repos\ailib\ailib\mathutils.cpp(23): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-c:\users\dmitry\source\repos\ailib\ailib\mathutils.cpp(23): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-c:\users\dmitry\source\repos\ailib\ailib\mathutils.cpp(23): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(9): warning C26495: Variable 'ktstd::FileUtilities::CSV::lenght' is uninitialized. Always initialize a member variable (type.6).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(14): warning C26440: Function 'ktstd::FileUtilities::CSV::Size' can be declared 'noexcept' (f.6).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(54): warning C26489: Don't dereference a pointer that may be invalid: '&this->linesOfData'. 'this.ktstd::FileUtilities::CSV::linesOfData' may have been invalidated at line 56 (lifetime.1).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(56): warning C26489: Don't dereference a pointer that may be invalid: '&this->linesOfData'. 'this.ktstd::FileUtilities::CSV::linesOfData' may have been invalidated at line 56 (lifetime.1).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(59): warning C26489: Don't dereference a pointer that may be invalid: '&this->linesOfData'. 'this.ktstd::FileUtilities::CSV::linesOfData' may have been invalidated at line 56 (lifetime.1).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(56): warning C26489: Don't dereference a pointer that may be invalid: 'result.[]'. 'return of '[]'' may have been invalidated at line 56 (lifetime.1).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(59): warning C26489: Don't dereference a pointer that may be invalid: 'result.[]'. 'return of '[]'' may have been invalidated at line 59 (lifetime.1).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(56): warning C26489: Don't dereference a pointer that may be invalid: '*result.[]'. 'return of '[]'' may have been invalidated at line 56 (lifetime.1).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(56): warning C26486: Don't pass a pointer that may be invalid to a function. Parameter 1 '{InvalidLoc}' in call to 'std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::push_back' may be invalid (lifetime.1).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(59): warning C26486: Don't pass a pointer that may be invalid to a function. Parameter 1 '{InvalidLoc}' in call to 'std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >' may be invalid (lifetime.1).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(50): warning C26489: Don't dereference a pointer that may be invalid: '&this->linesOfData'. 'this.ktstd::FileUtilities::CSV::linesOfData' may have been invalidated at line 56 (lifetime.1).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(50): warning C26489: Don't dereference a pointer that may be invalid: 'result.[]'. 'return of '[]'' may have been invalidated at line 50 (lifetime.1).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(38): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(42): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(50): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(56): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(56): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(59): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(59): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(73): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(80): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(106): warning C26496: The variable 'length' is assigned only once, mark it as const (con.4).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(127): warning C26409: Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(110): warning C26409: Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11).
-c:\users\dmitry\source\repos\ailib\ailib\file_utilities.cpp(110): warning C26400: Do not assign the result of an allocation or a function call with an owner<T> return value to a raw pointer, use owner<T> instead (i.11).
+﻿  KNeighborsBase.cpp
+c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.h(51): error C2365: KNeighborsBase::p: переопределение; предыдущим определением было "перечислитель"
+  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.h(26): note:  см. объявление "KNeighborsBase::p"
+c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.h(54): error C2365: KNeighborsBase::callback: переопределение; предыдущим определением было "перечислитель"
+  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.h(22): note:  см. объявление "KNeighborsBase::callback"
+c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(10): error C2440: =: невозможно преобразовать "int" в "KNeighborsBase::MetricsType"
+  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(10): note: Для преобразования в перечисляемый тип требуется явное приведение (static_cast, приведение в стиле С или приведение в стиле функции)
+c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(13): error C2440: =: невозможно преобразовать "std::any *" в "KNeighborsBase::MetricsType"
+  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(13): note: Не существует контекста, в котором такое преобразование возможно
+c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(28): error C2678: бинарный "!=": не найден оператор, принимающий левый операнд типа "KNeighborsBase::MetricsType" (или приемлемое преобразование отсутствует)
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\thread(213): note: может быть "bool std::operator !=(std::thread::id,std::thread::id) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(306): note: или       "bool std::operator !=(const std::error_condition &,const std::error_condition &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(301): note: или       "bool std::operator !=(const std::error_condition &,const std::error_code &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(296): note: или       "bool std::operator !=(const std::error_code &,const std::error_condition &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(291): note: или       "bool std::operator !=(const std::error_code &,const std::error_code &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(346): note: или       "bool std::operator !=(const std::exception_ptr &,std::nullptr_t) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(341): note: или       "bool std::operator !=(std::nullptr_t,const std::exception_ptr &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(336): note: или       "bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &) noexcept"
+  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(28): note: при попытке сопоставить список аргументов "(KNeighborsBase::MetricsType, nullptr)"
+c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(41): error C2678: бинарный "!=": не найден оператор, принимающий левый операнд типа "KNeighborsBase::MetricsType" (или приемлемое преобразование отсутствует)
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\thread(213): note: может быть "bool std::operator !=(std::thread::id,std::thread::id) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(306): note: или       "bool std::operator !=(const std::error_condition &,const std::error_condition &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(301): note: или       "bool std::operator !=(const std::error_condition &,const std::error_code &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(296): note: или       "bool std::operator !=(const std::error_code &,const std::error_condition &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(291): note: или       "bool std::operator !=(const std::error_code &,const std::error_code &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(346): note: или       "bool std::operator !=(const std::exception_ptr &,std::nullptr_t) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(341): note: или       "bool std::operator !=(std::nullptr_t,const std::exception_ptr &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(336): note: или       "bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &) noexcept"
+  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(41): note: при попытке сопоставить список аргументов "(KNeighborsBase::MetricsType, nullptr)"
+  Parameter p is found in metric_params. The corresponding parameter from constructor is ignored.
