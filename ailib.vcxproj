@@ -179,13 +179,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ailib.h" />
+    <ClInclude Include="BaseEstimator.h" />
+    <ClInclude Include="KNeighborsBase.h" />
     <ClInclude Include="mathutils.h" />
     <ClInclude Include="file_utilities.h" />
+    <ClInclude Include="MultioutputMixin.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="ValueException.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ailib.cpp" />
+    <ClCompile Include="BaseEstimator.cpp" />
+    <ClCompile Include="KNeighborsBase.cpp" />
     <ClCompile Include="mathutils.cpp" />
     <ClCompile Include="file_utilities.cpp" />
+    <ClCompile Include="MultioutputMixin.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
