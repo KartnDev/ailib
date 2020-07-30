@@ -1,0 +1,33 @@
+﻿  test.cpp
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\internal\gtest-port.h(996): error C2039: tr1: не является членом "std"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\sstream(14): note:  см. объявление "std"
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\internal\gtest-port.h(996): error C3083: tr1: символ слева от "::" должен представлять тип
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\internal\gtest-port.h(997): error C2039: tr1: не является членом "std"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\sstream(14): note:  см. объявление "std"
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\internal\gtest-port.h(997): error C3083: tr1: символ слева от "::" должен представлять тип
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\internal\gtest-port.h(998): error C2039: tr1: не является членом "std"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\sstream(14): note:  см. объявление "std"
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\internal\gtest-port.h(998): error C3083: tr1: символ слева от "::" должен представлять тип
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\internal\gtest-port.h(999): error C2039: tr1: не является членом "std"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\sstream(14): note:  см. объявление "std"
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\internal\gtest-port.h(999): error C3083: tr1: символ слева от "::" должен представлять тип
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\internal\gtest-port.h(1000): error C2039: tr1: не является членом "std"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\sstream(14): note:  см. объявление "std"
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\internal\gtest-port.h(1000): error C3083: tr1: символ слева от "::" должен представлять тип
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(600): error C2039: tr1: не является членом "std"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\iterator(16): note:  см. объявление "std"
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(600): error C3083: tr1: символ слева от "::" должен представлять тип
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(605): error C3083: tr1: символ слева от "::" должен представлять тип
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(610): error C3083: tr1: символ слева от "::" должен представлять тип
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(615): error C3083: tr1: символ слева от "::" должен представлять тип
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(620): error C3083: tr1: символ слева от "::" должен представлять тип
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(625): error C3083: tr1: символ слева от "::" должен представлять тип
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(632): error C3083: tr1: символ слева от "::" должен представлять тип
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(639): error C3083: tr1: символ слева от "::" должен представлять тип
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(646): error C3083: tr1: символ слева от "::" должен представлять тип
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(653): error C3083: tr1: символ слева от "::" должен представлять тип
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(661): error C3083: tr1: символ слева от "::" должен представлять тип
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(878): error C3083: tr1: символ слева от "::" должен представлять тип
+  c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(878): note: выполняется компиляция ссылки на экземпляр шаблон класс "testing::internal::TuplePolicy<TupleT>::tuple_element<I>"
+  c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(886): note: выполняется компиляция ссылки на экземпляр шаблон класс "testing::internal::TuplePolicy<TupleT>"
+c:\users\dmitry\source\repos\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(882): error C3083: tr1: символ слева от "::" должен представлять тип

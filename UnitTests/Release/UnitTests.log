@@ -1,0 +1,39 @@
+﻿  test.cpp
+c:\users\dmitry\source\repos\ailib\unittests\test.cpp(91): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\dmitry\source\repos\ailib\unittests\test.cpp(108): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\dmitry\source\repos\ailib\unittests\test.cpp(138): warning C4244: инициализация: преобразование "std::streamoff" в "size_t", возможна потеря данных
+c:\users\dmitry\source\repos\ailib\unittests\test.cpp(185): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\dmitry\source\repos\ailib\unittests\test.cpp(233): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\dmitry\source\repos\ailib\unittests\test.cpp(244): warning C4018: <: несоответствие типов со знаком и без знака
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\utility(208): warning C4244: инициализация: преобразование "const _Ty2" в "_Ty2", возможна потеря данных
+          with
+          [
+              _Ty2=double
+          ]
+          and
+          [
+              _Ty2=int
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(3906): note: выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<int,int>::pair<int,double,0>(const std::pair<int,double> &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(3905): note: выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<int,int>::pair<int,double,0>(const std::pair<int,double> &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(4000): note: выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<_RanIt,_RanIt> std::_Partition_by_median_guess_unchecked<_RanIt,_Pr>(_RanIt,_RanIt,_Pr)"
+          with
+          [
+              _RanIt=std::pair<int,double> *,
+              _Pr=main::<lambda_23e0d730b42de04006126a35b46d13f6>
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(4034): note: выполняется компиляция ссылки на экземпляр шаблон функции "void std::_Sort_unchecked<std::pair<int,double>*,_Fn>(_RanIt,_RanIt,int,_Pr)"
+          with
+          [
+              _Fn=main::<lambda_23e0d730b42de04006126a35b46d13f6>,
+              _RanIt=std::pair<int,double> *,
+              _Pr=main::<lambda_23e0d730b42de04006126a35b46d13f6>
+          ]
+  c:\users\dmitry\source\repos\ailib\unittests\test.cpp(259): note: выполняется компиляция ссылки на экземпляр шаблон функции "void std::sort<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,main::<lambda_23e0d730b42de04006126a35b46d13f6>>(const _RanIt,const _RanIt,_Pr)"
+          with
+          [
+              _Ty=std::pair<int,double>,
+              _RanIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::pair<int,double>>>>,
+              _Pr=main::<lambda_23e0d730b42de04006126a35b46d13f6>
+          ]
+  UnitTests.vcxproj -> C:\Users\Dmitry\source\repos\ailib\Release\UnitTests.exe

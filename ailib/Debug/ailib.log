@@ -1,0 +1,30 @@
+﻿  KNeighborsBase.cpp
+c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.h(51): error C2365: KNeighborsBase::p: переопределение; предыдущим определением было "перечислитель"
+  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.h(26): note:  см. объявление "KNeighborsBase::p"
+c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.h(54): error C2365: KNeighborsBase::callback: переопределение; предыдущим определением было "перечислитель"
+  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.h(22): note:  см. объявление "KNeighborsBase::callback"
+c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(10): error C2440: =: невозможно преобразовать "int" в "KNeighborsBase::MetricsType"
+  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(10): note: Для преобразования в перечисляемый тип требуется явное приведение (static_cast, приведение в стиле С или приведение в стиле функции)
+c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(13): error C2440: =: невозможно преобразовать "std::any *" в "KNeighborsBase::MetricsType"
+  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(13): note: Не существует контекста, в котором такое преобразование возможно
+c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(28): error C2678: бинарный "!=": не найден оператор, принимающий левый операнд типа "KNeighborsBase::MetricsType" (или приемлемое преобразование отсутствует)
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\thread(213): note: может быть "bool std::operator !=(std::thread::id,std::thread::id) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(306): note: или       "bool std::operator !=(const std::error_condition &,const std::error_condition &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(301): note: или       "bool std::operator !=(const std::error_condition &,const std::error_code &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(296): note: или       "bool std::operator !=(const std::error_code &,const std::error_condition &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(291): note: или       "bool std::operator !=(const std::error_code &,const std::error_code &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(346): note: или       "bool std::operator !=(const std::exception_ptr &,std::nullptr_t) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(341): note: или       "bool std::operator !=(std::nullptr_t,const std::exception_ptr &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(336): note: или       "bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &) noexcept"
+  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(28): note: при попытке сопоставить список аргументов "(KNeighborsBase::MetricsType, nullptr)"
+c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(41): error C2678: бинарный "!=": не найден оператор, принимающий левый операнд типа "KNeighborsBase::MetricsType" (или приемлемое преобразование отсутствует)
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\thread(213): note: может быть "bool std::operator !=(std::thread::id,std::thread::id) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(306): note: или       "bool std::operator !=(const std::error_condition &,const std::error_condition &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(301): note: или       "bool std::operator !=(const std::error_condition &,const std::error_code &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(296): note: или       "bool std::operator !=(const std::error_code &,const std::error_condition &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(291): note: или       "bool std::operator !=(const std::error_code &,const std::error_code &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(346): note: или       "bool std::operator !=(const std::exception_ptr &,std::nullptr_t) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(341): note: или       "bool std::operator !=(std::nullptr_t,const std::exception_ptr &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(336): note: или       "bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &) noexcept"
+  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(41): note: при попытке сопоставить список аргументов "(KNeighborsBase::MetricsType, nullptr)"
+  Parameter p is found in metric_params. The corresponding parameter from constructor is ignored.
