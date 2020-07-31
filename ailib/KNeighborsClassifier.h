@@ -25,15 +25,11 @@ class KNeighborsClassifier
 {
 public:
 	KNeighborsClassifier();
-
 	KNeighborsClassifier(int nNeighbors);
 	
 	void Fit(vector<vector<_TVal>> trainData, vector<int> trainLabels);
-	
-	int Predict(vector<int> testSingle);
-	
+	int Predict(vector<_TVal> testSingle);
 	vector<int> Predict(vector<vector<_TVal>> testData);
-	
 
 	static double AssetAccuracy(vector<int> predicted, vector<int> actual);
 	double AssetAccuracy(vector<int> actual);
@@ -52,6 +48,7 @@ private:
 	vector<int> trainFetchLabel;
 
 	vector<int> predictResult;
+	bool wasPredictionInvoked;
 
 	// methods 
 	int FindMostCommon(vector<int> value);

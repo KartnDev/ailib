@@ -2,7 +2,7 @@
 #include "mathutils.h"
 #include "pch.h"
 
-
+#define LOGGING_CONSOLE
 
 using namespace ktstd;
 
@@ -28,12 +28,14 @@ template<typename _TVal>
 KNeighborsClassifier<_TVal>::KNeighborsClassifier()
 {
 	this->nNeighbors = 5;
+	this->wasPredictionInvoked = false;
 }
 
 template<class _TVal>
 KNeighborsClassifier<_TVal>::KNeighborsClassifier(int nNeighbors)
 {
 	this->nNeighbors = nNeighbors;
+	this->wasPredictionInvoked = false;
 }
 
 template<class _TVal>
@@ -48,20 +50,21 @@ void KNeighborsClassifier<_TVal>::Fit(vector<vector<_TVal>> trainData, vector<in
 }
 
 template<class _TVal>
-int KNeighborsClassifier<_TVal>::Predict(vector<int> testSingle)
+int KNeighborsClassifier<_TVal>::Predict(vector<_TVal> testSingle)
 {
-
 	vector<pair<int, double>> result;
 
-
+#pragma omp parallel for
 	for (int i = 0; i < this->trainPointsSize; i++)
 	{
 		// TODO rewrite current algorithm
 
-		double  dist = ktstd::KtMath::GetMinkowskiDistance(testSingle, this->trainFetchData[i], 20);
+		double  dist = ktstd::KtMath<_TVal>::GetMinkowskiDistance(testSingle, this->trainFetchData[i], 20);
 		pair<int, double> current_p(i, dist);
-
-		result.push_back(current_p);
+#pragma omp critical
+		{
+			result.push_back(current_p);
+		}
 	}
 
 	std::sort(result.begin(), result.end(), [](const std::pair<int, int> &left, const std::pair<int, int> &right) {
@@ -86,16 +89,17 @@ int KNeighborsClassifier<_TVal>::Predict(vector<int> testSingle)
 template<class _TVal>
 vector<int> KNeighborsClassifier<_TVal>::Predict(vector<vector<_TVal>> testData)
 {
-	vector<int> predicts;
+	this->wasPredictionInvoked = true;
+	vector<pair<int, int>> predicts;
 
 #pragma omp parallel for
 	for (int j = 0; j < testData.size(); j++)
 	{
 		vector<pair<int, double>> result;
 
-		// memory optimize
 		double dist;
-		vector<int> current;
+		vector<_TVal>current;
+
 
 		for (int i = 0; i < this->trainPointsSize; i++)
 		{
@@ -103,10 +107,11 @@ vector<int> KNeighborsClassifier<_TVal>::Predict(vector<vector<_TVal>> testData)
 
 			// TODO rewrite current algorithm
 
-			dist = ktstd::KtMath::GetMinkowskiDistance(testData[j], current, 20);
+			dist = ktstd::KtMath<_TVal>::GetMinkowskiDistance(testData[j], current, 20);
 			pair<int, double> currentPair(i, dist);
 
 			result.push_back(currentPair);
+			
 		}
 
 		std::sort(result.begin(), result.end(), [](const std::pair<int, int> &left, const std::pair<int, int> &right) {
@@ -122,22 +127,80 @@ vector<int> KNeighborsClassifier<_TVal>::Predict(vector<vector<_TVal>> testData)
 
 		int mostCommonNearestModel = this->FindMostCommon(NearestModels);
 
-		predicts.push_back(mostCommonNearestModel);
-
+		pair<int, int> p1(mostCommonNearestModel, j);
+#pragma omp critical
+		{
+			predicts.push_back(p1);
+		}
 	}
-	return predicts;
+
+	std::sort(predicts.begin(), predicts.end(), [](const std::pair<int, int> &left, const std::pair<int, int> &right) {
+		return left.second < right.second;
+	});
+
+	for (size_t i = 0; i < predicts.size(); i++)
+	{
+		predictResult.push_back(predicts.at(i).first);
+	}
+
+	return predictResult;
 }
 
 template<class _TVal>
 double KNeighborsClassifier<_TVal>::AssetAccuracy(vector<int> predicted, vector<int> actual)
 {
-	return 0.0;
+	int finitRightAnswerCount = 0;
+	for (size_t i = 0; i < predicted.size(); i++)
+	{
+		bool status = predicted[i] == actual[i];
+#ifdef LOGGING_CONSOLE
+		string msg = status == 1 ? "True" : "False";
+		cout << "KNNClassifier\t\tpredict: " << predicted[i] << " || Actual: " << actual[i] << "\t\tPredict is " << msg << endl;
+#endif // LOGGING_CONSOLE
+		if (status) finitRightAnswerCount++;
+	}
+#ifdef LOGGING_CONSOLE
+	
+	
+	cout << "===================================================================\n";
+
+
+	cout << "Total objects: " << predicted.size() << "\t\tTotal truely answers: " << finitRightAnswerCount << endl;
+
+	cout << "Final accuracy: " << (double)finitRightAnswerCount / predicted.size() * 100 << endl;
+#endif // LOGGING_CONSOLE
+	return (double)finitRightAnswerCount / predicted.size();
 }
 
 template<class _TVal>
 double KNeighborsClassifier<_TVal>::AssetAccuracy(vector<int> actual)
 {
-	return 0.0;
+	if (wasPredictionInvoked)
+	{
+		int finitRightAnswerCount = 0;
+		for (size_t i = 0; i < predictResult.size(); i++)
+		{
+			bool status = predictResult[i] == actual[i];
+#ifdef LOGGING_CONSOLE
+			string msg = status == 1 ? "True" : "False";
+			cout << "KNNClassifier\t\tpredict: " << predictResult[i] << " || Actual: " << actual[i] << "\t\tPredict is " << msg << endl;
+#endif // LOGGING_CONSOLE
+			if (status) finitRightAnswerCount++;
+		}
+#ifdef LOGGING_CONSOLE
+		cout << "===================================================================\n";
+		cout << "Dataset training size: " << trainFetchData.size() << endl;
+
+		cout << "Total objects: " << predictResult.size() << "\tTotal truely answers: " << finitRightAnswerCount << endl;
+
+		cout << "Final accuracy: " << (double)finitRightAnswerCount / predictResult.size() * 100 << endl;
+#endif // LOGGING_CONSOLE
+		return (double)finitRightAnswerCount / predictResult.size();
+	}
+	else 
+	{
+		return -1;
+	}
 }
 
 template<class _TVal>

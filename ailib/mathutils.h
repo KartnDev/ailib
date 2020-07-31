@@ -5,11 +5,11 @@ namespace ktstd
 #define DIMENTIONS 2
 #ifndef  KtMath_HEADER
 #define  KtMath_HEADER
-
+	template<typename _TVal>
 	class KtMath
 	{
 	public:
-		static double StdEuclideanDist(int point1[], int point2[], int dim) noexcept
+		static double StdEuclideanDist(_TVal point1[], _TVal point2[], _TVal dim) noexcept
 		{
 			double sum = 0;
 			for (size_t i = 0; i < dim; i++)
@@ -19,7 +19,7 @@ namespace ktstd
 
 			return sqrt(sum);
 		}
-		static double StdEuclideanDist(std::vector<int> point1, std::vector<int> point2)
+		static double StdEuclideanDist(std::vector<_TVal> point1, std::vector<_TVal> point2)
 		{
 			if (point1.size() == point2.size())
 			{
@@ -36,7 +36,7 @@ namespace ktstd
 				throw new std::exception("pointsof the distanse in different dimentions!");
 			}
 		}
-		static double GetMinkowskiDistance(std::vector<int> point1, std::vector<int> point2, double r) noexcept
+		static double GetMinkowskiDistance(std::vector<_TVal> point1, std::vector<_TVal> point2, double r) noexcept
 		{
 			double sum = 0.0;
 

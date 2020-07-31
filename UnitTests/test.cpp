@@ -13,23 +13,23 @@
 using namespace std;
 using namespace ktstd;
 
-
-tuple<vector<vector<int>>, vector<int>, vector<vector<int>>, vector<int>> CSVReadAndSplit(string trainFile, string testFile)
+template<typename _TVal>
+tuple<vector<vector<_TVal>>, vector<int>, vector<vector<_TVal>>, vector<int>> CSVReadAndSplit(string trainFile, string testFile)
 {
 	FileUtilities::CSV csvTest(testFile);
 
 	FileUtilities::CSV csvTrain(trainFile);
 
-	vector<vector<int>> trainData;
+	vector<vector<_TVal>> trainData;
 	vector<int> trainLabel;
 
 	for (int i = 1; i < csvTrain.linesOfData.size() - 10; i++)
 	{
-		vector<int> currentLine;
+		vector<_TVal> currentLine;
 
 		for (int j = 1; j < csvTrain.linesOfData[i].size(); j++)
 		{
-			currentLine.push_back(stoi(csvTrain.linesOfData[i][j]));
+			currentLine.push_back((_TVal)stoi(csvTrain.linesOfData[i][j]));
 		}
 
 		trainData.push_back(currentLine);
@@ -41,16 +41,16 @@ tuple<vector<vector<int>>, vector<int>, vector<vector<int>>, vector<int>> CSVRea
 
 	}
 
-	vector<vector<int>> testData;
+	vector<vector<_TVal>> testData;
 	vector<int> testLabel;
 
 	for (int i = 1; i < csvTest.linesOfData.size() - 10; i++)
 	{
-		vector<int> currentLine;
+		vector<_TVal> currentLine;
 
 		for (int j = 1; j < csvTest.linesOfData[i].size(); j++)
 		{
-			currentLine.push_back(stoi(csvTest.linesOfData[i][j]));
+			currentLine.push_back((_TVal)stoi(csvTest.linesOfData[i][j]));
 		}
 
 		testData.push_back(currentLine);
@@ -62,13 +62,10 @@ tuple<vector<vector<int>>, vector<int>, vector<vector<int>>, vector<int>> CSVRea
 
 	}
 
-	tuple<vector<vector<int>>, vector<int>, vector<vector<int>>, vector<int>> result(trainData, trainLabel, testData, testLabel);
+	tuple<vector<vector<_TVal>>, vector<int>, vector<vector<_TVal>>, vector<int>> result(trainData, trainLabel, testData, testLabel);
 
 	return result;
 }
-
-
-
 
 
 
@@ -77,50 +74,23 @@ int main(int argc, char **argv) {
 	string testFileName = "C:\\Users\\Dmitry\\Documents\\GitHub\\ailib\\ailib\\mnist_test.csv";
 	string trainFileName = "C:\\Users\\Dmitry\\Documents\\GitHub\\ailib\\ailib\\mnist_train.csv";
 
-	auto splittedData = CSVReadAndSplit(trainFileName, testFileName);
+	auto splittedData = CSVReadAndSplit<unsigned char>(trainFileName, testFileName);
 
 
 
-	KNeighborsClassifier<int>* classifier = new KNeighborsClassifier<int>(5);
+	KNeighborsClassifier<unsigned char> classifier;
 
-	classifier->Fit(std::get<0>(splittedData), std::get<1>(splittedData));
+	classifier.Fit(std::get<0>(splittedData), std::get<1>(splittedData));
 
 
 	int right = 0;
 
 
-	//vector<int> predictions = classifier.Predict(std::get<2>(splittedData));
+	vector<int> predictions = classifier.Predict(std::get<2>(splittedData));
 
-	//vector<int> real = std::get<3>(splittedData);
+	vector<int> real = std::get<3>(splittedData);
 
-	//for (size_t i = 0; i < real.size(); i++)
-	//{
-	//	cout << "predicted: " << predictions[i] << " || actual: " << real[i] << endl;
-	//	if (predictions == real)
-	//	{
-	//		right++;
-	//	}
-	//}
-
-	//double acc = right / real.size();
-
-	//cout << "accuracy: " << acc << "right answers: " << right << endl;
-#pragma omp parallel for
-	for (int i = 0; i < std::get<2>(splittedData).size(); i++)
-	{
-		int  prediction = classifier->Predict(std::get<2>(splittedData)[i]);
-		cout << "predicted: " << prediction << " || actual: " << std::get<3>(splittedData)[i] << endl;
-		if (prediction == std::get<3>(splittedData)[i])
-		{
-			right++;
-		}
-	}
-
-	double acc = (double)right / std::get<2>(splittedData).size();
-
-	cout << "accuracy: " << acc*100 << "% Right answers: " << right << endl;
-	
-
+	classifier.AssetAccuracy(real);
 
 	system("pause");
 
