@@ -8,6 +8,7 @@
 #include <omp.h>
 #include "../ailib/FileUtilities.h"
 #include "../ailib/KNeighborsClassifier.h"
+#include "../ailib/KNeighborsClassifier.cpp"
 
 using namespace std;
 using namespace ktstd;
@@ -80,9 +81,9 @@ int main(int argc, char **argv) {
 
 
 
-	KNeighborsClassifier classifier;
+	KNeighborsClassifier<int>* classifier = new KNeighborsClassifier<int>(5);
 
-	classifier.Fit(std::get<0>(splittedData), std::get<1>(splittedData));
+	classifier->Fit(std::get<0>(splittedData), std::get<1>(splittedData));
 
 
 	int right = 0;
@@ -107,7 +108,7 @@ int main(int argc, char **argv) {
 #pragma omp parallel for
 	for (int i = 0; i < std::get<2>(splittedData).size(); i++)
 	{
-		int  prediction = classifier.Predict(std::get<2>(splittedData)[i]);
+		int  prediction = classifier->Predict(std::get<2>(splittedData)[i]);
 		cout << "predicted: " << prediction << " || actual: " << std::get<3>(splittedData)[i] << endl;
 		if (prediction == std::get<3>(splittedData)[i])
 		{

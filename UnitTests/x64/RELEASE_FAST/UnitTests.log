@@ -1,6 +1,48 @@
 ﻿  test.cpp
-c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\xlocale(319): warning C4530: Использован обработчик исключений C++, но семантика уничтожения объектов не включена. Задайте параметр /EHsc
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\xlocale(319): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
   class any is only available with C++17 or later.
-  Создание кода
-  Создание кода завершено
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\utility(208): warning C4244: 'initializing': conversion from 'const _Ty2' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty2=double
+          ]
+          and
+          [
+              _Ty2=int
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(3906): note: see reference to function template instantiation 'std::pair<int,int>::pair<int,double,0>(const std::pair<int,double> &) noexcept' being compiled
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(3905): note: see reference to function template instantiation 'std::pair<int,int>::pair<int,double,0>(const std::pair<int,double> &) noexcept' being compiled
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(4000): note: see reference to function template instantiation 'std::pair<_RanIt,_RanIt> std::_Partition_by_median_guess_unchecked<_RanIt,_Pr>(_RanIt,_RanIt,_Pr)' being compiled
+          with
+          [
+              _RanIt=std::pair<int,double> *,
+              _Pr=KNeighborsClassifier<int>::Predict::<lambda_898683c39b6ecbc10ebb8b1b8569b3e5>
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(4034): note: see reference to function template instantiation 'void std::_Sort_unchecked<std::pair<int,double>*,_Fn>(_RanIt,_RanIt,__int64,_Pr)' being compiled
+          with
+          [
+              _Fn=KNeighborsClassifier<int>::Predict::<lambda_898683c39b6ecbc10ebb8b1b8569b3e5>,
+              _RanIt=std::pair<int,double> *,
+              _Pr=KNeighborsClassifier<int>::Predict::<lambda_898683c39b6ecbc10ebb8b1b8569b3e5>
+          ]
+  c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(69): note: see reference to function template instantiation 'void std::sort<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,KNeighborsClassifier<int>::Predict::<lambda_898683c39b6ecbc10ebb8b1b8569b3e5>>(const _RanIt,const _RanIt,_Pr)' being compiled
+          with
+          [
+              _Ty=std::pair<int,double>,
+              _RanIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::pair<int,double>>>>,
+              _Pr=KNeighborsClassifier<int>::Predict::<lambda_898683c39b6ecbc10ebb8b1b8569b3e5>
+          ]
+  c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(52): note: while compiling class template member function 'int KNeighborsClassifier<int>::Predict(std::vector<int,std::allocator<_Ty>>)'
+          with
+          [
+              _Ty=int
+          ]
+  c:\users\dmitry\documents\github\ailib\unittests\test.cpp(111): note: see reference to function template instantiation 'int KNeighborsClassifier<int>::Predict(std::vector<int,std::allocator<_Ty>>)' being compiled
+          with
+          [
+              _Ty=int
+          ]
+  c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(13): note: see reference to class template instantiation 'KNeighborsClassifier<int>' being compiled
+  Generating code
+  Finished generating code
   UnitTests.vcxproj -> C:\Users\Dmitry\Documents\GitHub\ailib\x64\RELEASE_FAST\UnitTests.exe

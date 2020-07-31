@@ -1,5 +1,5 @@
 #pragma once
-
+#include "mathutils.h"
 #include "Classifier.h"
 #define singleThread 
 #define optionalThread 
@@ -20,15 +20,25 @@ enum Algorithm
 	chebyshev
 };
 
-
+template <class _TVal>
 class KNeighborsClassifier 
 {
 public:
 	KNeighborsClassifier();
+
 	KNeighborsClassifier(int nNeighbors);
-	void Fit(vector<vector<int>> trainData, vector<int> trainLabels);
+	
+	void Fit(vector<vector<_TVal>> trainData, vector<int> trainLabels);
+	
 	int Predict(vector<int> testSingle);
-	vector<int> Predict(vector<vector<int>> testData);
+	
+	vector<int> Predict(vector<vector<_TVal>> testData);
+	
+
+	static double AssetAccuracy(vector<int> predicted, vector<int> actual);
+	double AssetAccuracy(vector<int> actual);
+	void SaveModel(string fileLocation);
+
 
 private:
 	// constructor params
@@ -38,11 +48,15 @@ private:
 	// algorithm koef
 	int trainPointsSize;
 	int trainPointDim;
-	vector<vector<int>> trainFetchData;
+	vector<vector<_TVal>> trainFetchData;
 	vector<int> trainFetchLabel;
+
+	vector<int> predictResult;
 
 	// methods 
 	int FindMostCommon(vector<int> value);
+
+	
 };
 
 
