@@ -1,30 +1,92 @@
-﻿  KNeighborsBase.cpp
-c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.h(51): error C2365: KNeighborsBase::p: переопределение; предыдущим определением было "перечислитель"
-  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.h(26): note:  см. объявление "KNeighborsBase::p"
-c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.h(54): error C2365: KNeighborsBase::callback: переопределение; предыдущим определением было "перечислитель"
-  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.h(22): note:  см. объявление "KNeighborsBase::callback"
-c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(10): error C2440: =: невозможно преобразовать "int" в "KNeighborsBase::MetricsType"
-  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(10): note: Для преобразования в перечисляемый тип требуется явное приведение (static_cast, приведение в стиле С или приведение в стиле функции)
-c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(13): error C2440: =: невозможно преобразовать "std::any *" в "KNeighborsBase::MetricsType"
-  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(13): note: Не существует контекста, в котором такое преобразование возможно
-c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(28): error C2678: бинарный "!=": не найден оператор, принимающий левый операнд типа "KNeighborsBase::MetricsType" (или приемлемое преобразование отсутствует)
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\thread(213): note: может быть "bool std::operator !=(std::thread::id,std::thread::id) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(306): note: или       "bool std::operator !=(const std::error_condition &,const std::error_condition &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(301): note: или       "bool std::operator !=(const std::error_condition &,const std::error_code &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(296): note: или       "bool std::operator !=(const std::error_code &,const std::error_condition &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(291): note: или       "bool std::operator !=(const std::error_code &,const std::error_code &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(346): note: или       "bool std::operator !=(const std::exception_ptr &,std::nullptr_t) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(341): note: или       "bool std::operator !=(std::nullptr_t,const std::exception_ptr &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(336): note: или       "bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &) noexcept"
-  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(28): note: при попытке сопоставить список аргументов "(KNeighborsBase::MetricsType, nullptr)"
-c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(41): error C2678: бинарный "!=": не найден оператор, принимающий левый операнд типа "KNeighborsBase::MetricsType" (или приемлемое преобразование отсутствует)
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\thread(213): note: может быть "bool std::operator !=(std::thread::id,std::thread::id) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(306): note: или       "bool std::operator !=(const std::error_condition &,const std::error_condition &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(301): note: или       "bool std::operator !=(const std::error_condition &,const std::error_code &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(296): note: или       "bool std::operator !=(const std::error_code &,const std::error_condition &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\system_error(291): note: или       "bool std::operator !=(const std::error_code &,const std::error_code &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(346): note: или       "bool std::operator !=(const std::exception_ptr &,std::nullptr_t) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(341): note: или       "bool std::operator !=(std::nullptr_t,const std::exception_ptr &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\exception(336): note: или       "bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &) noexcept"
-  c:\users\dmitry\source\repos\ailib\ailib\kneighborsbase.cpp(41): note: при попытке сопоставить список аргументов "(KNeighborsBase::MetricsType, nullptr)"
-  Parameter p is found in metric_params. The corresponding parameter from constructor is ignored.
+﻿  KNeighborsClassifier.cpp
+c1xx : warning C4199: двухэтапный поиск имен не поддерживается для C++/CLI, C++/CX или OpenMP. Используйте /Zc:twoPhase-
+  class any is only available with C++17 or later.
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(53): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(101): warning C4018: <: несоответствие типов со знаком и без знака
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\utility(208): warning C4244: инициализация: преобразование "const _Ty2" в "_Ty2", возможна потеря данных
+          with
+          [
+              _Ty2=double
+          ]
+          and
+          [
+              _Ty2=int
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(3907): note: выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<int,int>::pair<int,double,0>(const std::pair<int,double> &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(3905): note: выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<int,int>::pair<int,double,0>(const std::pair<int,double> &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(4000): note: выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<_RanIt,_RanIt> std::_Partition_by_median_guess_unchecked<_RanIt,_Pr>(_RanIt,_RanIt,_Pr)"
+          with
+          [
+              _RanIt=std::pair<int,double> *,
+              _Pr=KNeighborsClassifier::Predict::<lambda_c61adbac58c2f1a47fc2621bbb62cae2>
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(4034): note: выполняется компиляция ссылки на экземпляр шаблон функции "void std::_Sort_unchecked<std::pair<int,double>*,_Fn>(_RanIt,_RanIt,int,_Pr)"
+          with
+          [
+              _Fn=KNeighborsClassifier::Predict::<lambda_c61adbac58c2f1a47fc2621bbb62cae2>,
+              _RanIt=std::pair<int,double> *,
+              _Pr=KNeighborsClassifier::Predict::<lambda_c61adbac58c2f1a47fc2621bbb62cae2>
+          ]
+  c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(49): note: выполняется компиляция ссылки на экземпляр шаблон функции "void std::sort<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,KNeighborsClassifier::Predict::<lambda_c61adbac58c2f1a47fc2621bbb62cae2>>(const _RanIt,const _RanIt,_Pr)"
+          with
+          [
+              _Ty=std::pair<int,double>,
+              _RanIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::pair<int,double>>>>,
+              _Pr=KNeighborsClassifier::Predict::<lambda_c61adbac58c2f1a47fc2621bbb62cae2>
+          ]
+  ailib.vcxproj -> C:\Users\Dmitry\Documents\GitHub\ailib\Debug\ailib.lib
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(4): warning C26495: Variable 'KNeighborsClassifier::trainPointDim' is uninitialized. Always initialize a member variable (type.6).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(4): warning C26455: Default constructor may not throw. Declare it 'noexcept' (f.6).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(9): warning C26495: Variable 'KNeighborsClassifier::trainPointDim' is uninitialized. Always initialize a member variable (type.6).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(9): warning C26440: Function 'KNeighborsClassifier::KNeighborsClassifier' can be declared 'noexcept' (f.6).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(19): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(49): warning C26440: Function '<lambda_c61adbac58c2f1a47fc2621bbb62cae2>::operator()' can be declared 'noexcept' (f.6).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(42): warning C26496: The variable 'current_p' is assigned only once, mark it as const (con.4).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(58): warning C26496: The variable 'mostCommonNearestModel' is assigned only once, mark it as const (con.4).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(32): warning C26494: Variable 'dist' is uninitialized. Always initialize an object (type.5).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(37): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(55): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(55): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(97): warning C26440: Function '<lambda_277c54c2eef3ed7597236683ce3ca3f5>::operator()' can be declared 'noexcept' (f.6).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(101): warning C6246: Локальное объявление "i" скрывает объявление того же имени во внешней области. Дополнительные сведения см. в предыдущем объявлении в строке "72" файла "c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp".
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(90): warning C26496: The variable 'current_p' is assigned only once, mark it as const (con.4).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(106): warning C26496: The variable 'mostCommonNearestModel' is assigned only once, mark it as const (con.4).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(80): warning C26489: Don't dereference a pointer that may be invalid: '&current'. 'current' may have been invalidated at line 80 (lifetime.1).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(99): warning C26489: Don't dereference a pointer that may be invalid: '&NearestModels'. 'NearestModels' may have been invalidated at line 99 (lifetime.1).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(79): warning C26494: Variable 'dist' is uninitialized. Always initialize an object (type.5).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(85): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(88): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(103): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(122): warning C26496: The variable 'Position' is assigned only once, mark it as const (con.4).
+c:\users\dmitry\documents\github\ailib\ailib\mathutils.cpp(5): warning C26461: The pointer argument 'point1' for function 'ktstd::Math::StdEuclideanDist' can be marked as a pointer to const (con.3).
+c:\users\dmitry\documents\github\ailib\ailib\mathutils.cpp(5): warning C26429: Symbol 'point1' is never tested for nullness, it can be marked as not_null (f.23).
+c:\users\dmitry\documents\github\ailib\ailib\mathutils.cpp(5): warning C26485: Expression 'point1': No array to pointer decay (bounds.3).
+c:\users\dmitry\documents\github\ailib\ailib\mathutils.cpp(10): warning C26481: Don't use pointer arithmetic. Use span instead (bounds.1).
+c:\users\dmitry\documents\github\ailib\ailib\mathutils.cpp(10): warning C26451: Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).
+c:\users\dmitry\documents\github\ailib\ailib\mathutils.cpp(10): warning C26451: Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).
+c:\users\dmitry\documents\github\ailib\ailib\mathutils.cpp(31): warning C26409: Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11).
+c:\users\dmitry\documents\github\ailib\ailib\mathutils.cpp(24): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\mathutils.cpp(24): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\mathutils.cpp(24): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\mathutils.cpp(24): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\mathutils.cpp(24): warning C26451: Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).
+c:\users\dmitry\documents\github\ailib\ailib\mathutils.cpp(24): warning C26451: Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).
+c:\users\dmitry\documents\github\ailib\ailib\mathutils.cpp(42): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\mathutils.cpp(42): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(9): warning C26495: Variable 'ktstd::FileUtilities::CSV::lenght' is uninitialized. Always initialize a member variable (type.6).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(14): warning C26440: Function 'ktstd::FileUtilities::CSV::Size' can be declared 'noexcept' (f.6).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(59): warning C26489: Don't dereference a pointer that may be invalid: '&a'. 'a' may have been invalidated at line 59 (lifetime.1).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(38): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(42): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(50): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(56): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(56): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(59): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(59): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(73): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(80): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(88): warning C26440: Function 'ktstd::FileUtilities::FileExists' can be declared 'noexcept' (f.6).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(106): warning C26496: The variable 'length' is assigned only once, mark it as const (con.4).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(127): warning C26409: Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(110): warning C26409: Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11).
+c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(110): warning C26400: Do not assign the result of an allocation or a function call with an owner<T> return value to a raw pointer, use owner<T> instead (i.11).

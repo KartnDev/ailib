@@ -1,1 +1,41 @@
-﻿
+﻿  Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.16.27042 для x64
+  (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
+  
+  cl /c /Zi /W2 /WX- /diagnostics:classic /MP /O2 /Ob2 /Oi /Ot /GT /GL /Gm- /MD /GS /Qpar /arch:AVX2 /fp:fast /Zc:wchar_t /Zc:forScope /Zc:inline /openmp /std:c++14 /Fo"x64\RELEASE_FAST\\" /Fd"x64\RELEASE_FAST\ailib.pdb" /Gd /TP /FC /errorReport:prompt KNeighborsClassifier.cpp
+  
+  KNeighborsClassifier.cpp
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\xlocale(319): warning C4530: Использован обработчик исключений C++, но семантика уничтожения объектов не включена. Задайте параметр /EHsc
+  class any is only available with C++17 or later.
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\utility(208): warning C4244: инициализация: преобразование "const _Ty2" в "_Ty2", возможна потеря данных
+          with
+          [
+              _Ty2=double
+          ]
+          and
+          [
+              _Ty2=int
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(3906): note: выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<int,int>::pair<int,double,0>(const std::pair<int,double> &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(3905): note: выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<int,int>::pair<int,double,0>(const std::pair<int,double> &) noexcept"
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(4000): note: выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<_RanIt,_RanIt> std::_Partition_by_median_guess_unchecked<_RanIt,_Pr>(_RanIt,_RanIt,_Pr)"
+          with
+          [
+              _RanIt=std::pair<int,double> *,
+              _Pr=KNeighborsClassifier::Predict::<lambda_c5a1f4cc0a6304713260803c5c923bef>
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(4034): note: выполняется компиляция ссылки на экземпляр шаблон функции "void std::_Sort_unchecked<std::pair<int,double>*,_Fn>(_RanIt,_RanIt,__int64,_Pr)"
+          with
+          [
+              _Fn=KNeighborsClassifier::Predict::<lambda_c5a1f4cc0a6304713260803c5c923bef>,
+              _RanIt=std::pair<int,double> *,
+              _Pr=KNeighborsClassifier::Predict::<lambda_c5a1f4cc0a6304713260803c5c923bef>
+          ]
+  c:\users\dmitry\documents\github\ailib\ailib\kneighborsclassifier.cpp(45): note: выполняется компиляция ссылки на экземпляр шаблон функции "void std::sort<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,KNeighborsClassifier::Predict::<lambda_c5a1f4cc0a6304713260803c5c923bef>>(const _RanIt,const _RanIt,_Pr)"
+          with
+          [
+              _Ty=std::pair<int,double>,
+              _RanIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::pair<int,double>>>>,
+              _Pr=KNeighborsClassifier::Predict::<lambda_c5a1f4cc0a6304713260803c5c923bef>
+          ]
+  LINK : эрщфхэ .netmodule MSIL шыш ьюфєы№, юЄъюьяшышЁютрээ√щ ё ярЁрьхЄЁюь /GL; яхЁхчряєёърхЄё  ъюьяюэютър ё ярЁрьхЄЁюь /LTCG; фюсрт№Єх /LTCG т ъюьрэфэє■ ёЄЁюъє ъюьяюэютъш фы  яют√°хэш  яЁюшчтюфшЄхы№эюёЄш ъюьяюэют∙шър
+  ailib.vcxproj -> C:\Users\Dmitry\Documents\GitHub\ailib\x64\RELEASE_FAST\ailib.lib

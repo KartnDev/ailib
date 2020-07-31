@@ -1,1 +1,6 @@
-﻿
+﻿  test.cpp
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\xlocale(319): warning C4530: Использован обработчик исключений C++, но семантика уничтожения объектов не включена. Задайте параметр /EHsc
+  class any is only available with C++17 or later.
+  Создание кода
+  Создание кода завершено
+  UnitTests.vcxproj -> C:\Users\Dmitry\Documents\GitHub\ailib\x64\RELEASE_FAST\UnitTests.exe

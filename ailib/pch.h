@@ -12,7 +12,10 @@
 #include <tuple>
 #include <any>
 #include <exception>
-
-
+#include <filesystem>
+#include <cstdio>
+#include <cstdlib>
+#include <array>
+#include <omp.h>
 
 using namespace std;

@@ -65,6 +65,7 @@
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='RELEASE_FAST|x64'">
     <PlatformToolset>v141</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -115,9 +116,10 @@
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <EnablePREfast>true</EnablePREfast>
-      <OpenMPSupport>false</OpenMPSupport>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <OpenMPSupport>true</OpenMPSupport>
+      <LanguageStandard>stdcpp14</LanguageStandard>
       <PrecompiledHeaderOutputFile />
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -191,28 +193,47 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RELEASE_FAST|x64'">
+    <ClCompile>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RELEASE_FAST|x64'">
+    <ClCompile>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <CompileAsManaged>false</CompileAsManaged>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
+      <WarningLevel>Level2</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <ExceptionHandling>false</ExceptionHandling>
+      <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ailib.h" />
-    <ClInclude Include="BaseEstimator.h" />
-    <ClInclude Include="KNeighborsBase.h" />
+    <ClInclude Include="Classifier.h" />
+    <ClInclude Include="FileUtilities.h" />
+    <ClInclude Include="KNeighborsClassifier.h" />
     <ClInclude Include="mathutils.h" />
-    <ClInclude Include="file_utilities.h" />
-    <ClInclude Include="MultioutputMixin.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="ValueException.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ailib.cpp" />
-    <ClCompile Include="BaseEstimator.cpp" />
-    <ClCompile Include="KNeighborsBase.cpp" />
+    <ClCompile Include="KNeighborsClassifier.cpp" />
     <ClCompile Include="mathutils.cpp" />
-    <ClCompile Include="file_utilities.cpp" />
-    <ClCompile Include="MultioutputMixin.cpp" />
+    <ClCompile Include="FileUtilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
     <None Include="mnist_test.csv" />
     <None Include="mnist_train.csv" />
+    <None Include="mnist_train_light.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

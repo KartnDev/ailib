@@ -1,39 +1,64 @@
-﻿  test.cpp
-c:\users\dmitry\source\repos\ailib\unittests\test.cpp(91): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\dmitry\source\repos\ailib\unittests\test.cpp(108): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\dmitry\source\repos\ailib\unittests\test.cpp(138): warning C4244: инициализация: преобразование "std::streamoff" в "size_t", возможна потеря данных
-c:\users\dmitry\source\repos\ailib\unittests\test.cpp(185): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\dmitry\source\repos\ailib\unittests\test.cpp(233): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\dmitry\source\repos\ailib\unittests\test.cpp(244): warning C4018: <: несоответствие типов со знаком и без знака
-c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\utility(208): warning C4244: инициализация: преобразование "const _Ty2" в "_Ty2", возможна потеря данных
+﻿  pch.cpp
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\internal\gtest-port.h(996): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\internal\gtest-port.h(997): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\internal\gtest-port.h(998): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\internal\gtest-port.h(999): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\internal\gtest-port.h(1000): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(600): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(605): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(610): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(615): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(620): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(625): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(632): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(639): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(646): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(653): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(661): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(878): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+  c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(878): note: выполняется компиляция ссылки на экземпляр шаблон класс "testing::internal::TuplePolicy<TupleT>::tuple_element<I>"
+  c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(886): note: выполняется компиляция ссылки на экземпляр шаблон класс "testing::internal::TuplePolicy<TupleT>"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(882): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(875): warning C4996: 'std::tr1': warning STL4002: The non-Standard std::tr1 namespace and TR1-only machinery are deprecated and will be REMOVED. You can define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING to acknowledge that you have received this warning.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\tuple(1333): note:  см. объявление "std::tr1"
+  c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(961): note: выполняется компиляция ссылки на экземпляр шаблон класс "testing::internal::TuplePolicy<Tuple>"
           with
           [
-              _Ty2=double
+              Tuple=std::tuple<>
           ]
-          and
-          [
-              _Ty2=int
-          ]
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(3906): note: выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<int,int>::pair<int,double,0>(const std::pair<int,double> &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(3905): note: выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<int,int>::pair<int,double,0>(const std::pair<int,double> &) noexcept"
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(4000): note: выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<_RanIt,_RanIt> std::_Partition_by_median_guess_unchecked<_RanIt,_Pr>(_RanIt,_RanIt,_Pr)"
+  c:\users\dmitry\documents\github\ailib\packages\microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.0\build\native\include\gtest\gtest-printers.h(601): note: выполняется компиляция ссылки на экземпляр шаблон функции "void testing::internal::PrintTupleTo<std::tuple<>>(const T &,std::ostream *)"
           with
           [
-              _RanIt=std::pair<int,double> *,
-              _Pr=main::<lambda_23e0d730b42de04006126a35b46d13f6>
+              T=std::tuple<>
           ]
-  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\algorithm(4034): note: выполняется компиляция ссылки на экземпляр шаблон функции "void std::_Sort_unchecked<std::pair<int,double>*,_Fn>(_RanIt,_RanIt,int,_Pr)"
-          with
-          [
-              _Fn=main::<lambda_23e0d730b42de04006126a35b46d13f6>,
-              _RanIt=std::pair<int,double> *,
-              _Pr=main::<lambda_23e0d730b42de04006126a35b46d13f6>
-          ]
-  c:\users\dmitry\source\repos\ailib\unittests\test.cpp(259): note: выполняется компиляция ссылки на экземпляр шаблон функции "void std::sort<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,main::<lambda_23e0d730b42de04006126a35b46d13f6>>(const _RanIt,const _RanIt,_Pr)"
-          with
-          [
-              _Ty=std::pair<int,double>,
-              _RanIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::pair<int,double>>>>,
-              _Pr=main::<lambda_23e0d730b42de04006126a35b46d13f6>
-          ]
-  UnitTests.vcxproj -> C:\Users\Dmitry\source\repos\ailib\Release\UnitTests.exe
+  test.cpp
+  class any is only available with C++17 or later.
+c:\users\dmitry\documents\github\ailib\unittests\test.cpp(25): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\dmitry\documents\github\ailib\unittests\test.cpp(29): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\dmitry\documents\github\ailib\unittests\test.cpp(37): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\dmitry\documents\github\ailib\unittests\test.cpp(46): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\dmitry\documents\github\ailib\unittests\test.cpp(50): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\dmitry\documents\github\ailib\unittests\test.cpp(58): warning C4018: <: несоответствие типов со знаком и без знака
+  ailib.lib(FileUtilities.obj) : найден .netmodule MSIL или модуль, откомпилированный с параметром /GL; перезапускается компоновка с параметром /LTCG; добавьте /LTCG в командную строку компоновки для повышения производительности компоновщика
+test.obj : error LNK2001: эхЁрчЁх°хээ√щ тэх°эшщ ёшьтюы ""public: __thiscall KNeighborsClassifier<int>::KNeighborsClassifier<int>(int,enum Algorithm,void *)" (??0?$KNeighborsClassifier@H@@QAE@HW4Algorithm@@PAX@Z)"
+test.obj : error LNK2001: эхЁрчЁх°хээ√щ тэх°эшщ ёшьтюы ""public: void __thiscall KNeighborsClassifier<int>::Fit(class std::vector<class std::vector<int,class std::allocator<int> >,class std::allocator<class std::vector<int,class std::allocator<int> > > >,class std::vector<int,class std::allocator<int> >)" (?Fit@?$KNeighborsClassifier@H@@QAEXV?$vector@V?$vector@HV?$allocator@H@std@@@std@@V?$allocator@V?$vector@HV?$allocator@H@std@@@std@@@2@@std@@V?$vector@HV?$allocator@H@std@@@3@@Z)"
+test.obj : error LNK2001: эхЁрчЁх°хээ√щ тэх°эшщ ёшьтюы ""public: class std::vector<int,class std::allocator<int> > __thiscall KNeighborsClassifier<int>::Predict(class std::vector<class std::vector<int,class std::allocator<int> >,class std::allocator<class std::vector<int,class std::allocator<int> > > >)" (?Predict@?$KNeighborsClassifier@H@@QAE?AV?$vector@HV?$allocator@H@std@@@std@@V?$vector@V?$vector@HV?$allocator@H@std@@@std@@V?$allocator@V?$vector@HV?$allocator@H@std@@@std@@@2@@3@@Z)"
+C:\Users\Dmitry\Documents\GitHub\ailib\Release\UnitTests.exe : fatal error LNK1120: эхЁрчЁх°хээ√ї тэх°эшї ¤ыхьхэЄют: 3
