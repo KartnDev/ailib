@@ -155,7 +155,7 @@ double KNeighborsClassifier<_TVal>::AssetAccuracy(vector<int> predicted, vector<
 		bool status = predicted[i] == actual[i];
 #ifdef LOGGING_CONSOLE
 		string msg = status == 1 ? "True" : "False";
-		cout << "KNNClassifier\t\tpredict: " << predicted[i] << " || Actual: " << actual[i] << "\t\tPredict is " << msg << endl;
+		cout << "KNNClassifier\t\tPredict: " << predicted[i] << " || Actual: " << actual[i] << "\t\tPredict is " << msg << endl;
 #endif // LOGGING_CONSOLE
 		if (status) finitRightAnswerCount++;
 	}
@@ -183,7 +183,7 @@ double KNeighborsClassifier<_TVal>::AssetAccuracy(vector<int> actual)
 			bool status = predictResult[i] == actual[i];
 #ifdef LOGGING_CONSOLE
 			string msg = status == 1 ? "True" : "False";
-			cout << "KNNClassifier\t\tpredict: " << predictResult[i] << " || Actual: " << actual[i] << "\t\tPredict is " << msg << endl;
+			cout << "KNNClassifier\t\tPredict: " << predictResult[i] << " || Actual: " << actual[i] << "\t\tPredict is " << msg << endl;
 #endif // LOGGING_CONSOLE
 			if (status) finitRightAnswerCount++;
 		}
@@ -205,6 +205,11 @@ double KNeighborsClassifier<_TVal>::AssetAccuracy(vector<int> actual)
 
 template<class _TVal>
 void KNeighborsClassifier< _TVal>::SaveModel(string fileLocation)
+{
+}
+
+template<class _TVal>
+void KNeighborsClassifier<_TVal>::LoadModel(string fileLocation)
 {
 }
 

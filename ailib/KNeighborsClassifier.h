@@ -33,8 +33,9 @@ public:
 
 	static double AssetAccuracy(vector<int> predicted, vector<int> actual);
 	double AssetAccuracy(vector<int> actual);
-	void SaveModel(string fileLocation);
 
+	void SaveModel(string fileLocation);
+	void LoadModel(string fileLocation);
 
 private:
 	// constructor params
