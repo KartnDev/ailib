@@ -222,11 +222,13 @@
     <ClInclude Include="KNeighborsClassifier.h" />
     <ClInclude Include="mathutils.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="SVMClassifier.h" />
     <ClInclude Include="ValueException.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KNeighborsClassifier.cpp" />
     <ClCompile Include="FileUtilities.cpp" />
+    <ClCompile Include="SVMClassifier.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

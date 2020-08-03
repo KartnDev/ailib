@@ -33,12 +33,18 @@
     <ClInclude Include="KNeighborsClassifier.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="SVMClassifier.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FileUtilities.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="KNeighborsClassifier.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="SVMClassifier.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
