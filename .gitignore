@@ -3,3 +3,4 @@
 *.obj
 *.tlog
 **/packages
+**/ailib/packages
