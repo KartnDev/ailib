@@ -2,4 +2,4 @@
 *.ipch
 *.obj
 *.tlog
-**/ailib/packages
+**/packages
