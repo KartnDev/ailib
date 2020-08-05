@@ -13,10 +13,12 @@
   FileUtilities.cpp
   SVMClassifier.cpp
 c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\xlocale(319): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc (compiling source file FileUtilities.cpp)
-c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\xlocale(319): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc (compiling source file SVMClassifier.cpp)
 c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\xlocale(319): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc (compiling source file KNeighborsClassifier.cpp)
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\xlocale(319): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc (compiling source file SVMClassifier.cpp)
   class any is only available with C++17 or later.
   class any is only available with C++17 or later.
   class any is only available with C++17 or later.
+c:\users\dmitry\documents\github\ailib\ailib\svmclassifier.cpp(176): warning C4042: 'vect': has bad storage class
+c:\users\dmitry\documents\github\ailib\ailib\svmclassifier.cpp(207): warning C4042: 'vect': has bad storage class
   LINK : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
   ailib.vcxproj -> C:\Users\Dmitry\Documents\GitHub\ailib\x64\RELEASE_FAST\ailib.lib

@@ -59,6 +59,5 @@
     <None Include="mnist_train_light.csv">
       <Filter>Файлы ресурсов</Filter>
     </None>
-    <None Include="packages.config" />
   </ItemGroup>
 </Project>
