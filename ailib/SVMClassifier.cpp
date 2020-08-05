@@ -181,7 +181,59 @@ void complonentalDecriseByUnitMutable(mutable vector<double>& vect, double unit)
 	}
 }
 
+std::vector<double> sign(const vector<double>& vect)
+{
+	vector<double> result;
 
+
+	for (size_t i = 0; i < vect.size(); i++)
+	{
+		int current = 0;
+		if (vect[i] > 0)
+		{
+			current = 1;
+		}
+		else if (vect[i] < 0)
+		{
+			current = -1;
+		}
+
+		result.push_back(current);
+	}
+
+	return result;
+}
+
+void sign(mutable vector<double>& vect)
+{
+	for (size_t i = 0; i < vect.size(); i++)
+	{
+		int current = 0;
+		if (vect[i] > 0)
+		{
+			current = 1;
+		}
+		else if (vect[i] < 0)
+		{
+			current = -1;
+		}
+		vect[i] = current;
+	}
+}
+
+int sign(double val)
+{
+	int current = 0;
+	if (val > 0)
+	{
+		current = 1;
+	}
+	else if (val < 0)
+	{
+		current = -1;
+	}
+	return current;
+}
 
 
 template<class _TVal>
@@ -258,7 +310,8 @@ void SVMClassifier<_TVal>::Fit(vector<vector<_TVal>> trainData, vector<int> trai
 template<class _TVal>
 int SVMClassifier<_TVal>::Predict(vector<_TVal> testSingle)
 {
-	return 0;
+	dot_result = sign(dot(testSingle, omega) + bCoef)
+	return dot_result
 }
 
 template<class _TVal>
