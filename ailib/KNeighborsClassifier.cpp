@@ -205,7 +205,7 @@ double KNeighborsClassifier<_TVal>::AssetAccuracy(vector<int> actual)
 }
 
 template<class _TVal>
-void KNeighborsClassifier< _TVal>::SaveModel(string fileLocationData = "")
+void KNeighborsClassifier< _TVal>::SaveModel(string fileLocationData = "") // TODO rewrite its logic code
 {
 	string locationData = fileLocationData == "" ? "/serialized/KNNClassifierCache/trainFetchData.ser" : ;
 
@@ -254,9 +254,9 @@ int KNeighborsClassifier<_TVal>::FindMostCommon(vector<int> value)
 	{
 		int count = 1;
 		int Position = value.at(a);
-		for (unsigned int b = a + 1; b < value.size(); b++)
+		for (unsigned int bCoef = a + 1; bCoef < value.size(); bCoef++)
 		{
-			if (value.at(b) == Position)
+			if (value.at(bCoef) == Position)
 			{
 				count++;
 			}

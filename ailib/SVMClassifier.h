@@ -25,5 +25,11 @@ public:
 
 	void SaveModel(string fileLocation);
 	void LoadModel(string fileLocation);
+
+private:
+	double bCoef;
+	vector<double> omega;
+	int trainSize;
+	Kernal typeKernal;
 };
 
