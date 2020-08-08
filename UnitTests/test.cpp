@@ -13,23 +13,23 @@
 using namespace std;
 using namespace ktstd;
 
-template<typename _TVal>
-tuple<vector<vector<_TVal>>, vector<int>, vector<vector<_TVal>>, vector<int>> CSVReadAndSplit(string trainFile, string testFile)
+template<typename _DType>
+tuple<vector<vector<_DType>>, vector<int>, vector<vector<_DType>>, vector<int>> CSVReadAndSplit(string trainFile, string testFile)
 {
 	FileUtilities::CSV csvTest(testFile);
 
 	FileUtilities::CSV csvTrain(trainFile);
 
-	vector<vector<_TVal>> trainData;
+	vector<vector<_DType>> trainData;
 	vector<int> trainLabel;
 
 	for (int i = 1; i < csvTrain.linesOfData.size() - 10; i++)
 	{
-		vector<_TVal> currentLine;
+		vector<_DType> currentLine;
 
 		for (int j = 1; j < csvTrain.linesOfData[i].size(); j++)
 		{
-			currentLine.push_back((_TVal)stoi(csvTrain.linesOfData[i][j]));
+			currentLine.push_back((_DType)stoi(csvTrain.linesOfData[i][j]));
 		}
 
 		trainData.push_back(currentLine);
@@ -41,16 +41,16 @@ tuple<vector<vector<_TVal>>, vector<int>, vector<vector<_TVal>>, vector<int>> CS
 
 	}
 
-	vector<vector<_TVal>> testData;
+	vector<vector<_DType>> testData;
 	vector<int> testLabel;
 
 	for (int i = 1; i < csvTest.linesOfData.size() - 10; i++)
 	{
-		vector<_TVal> currentLine;
+		vector<_DType> currentLine;
 
 		for (int j = 1; j < csvTest.linesOfData[i].size(); j++)
 		{
-			currentLine.push_back((_TVal)stoi(csvTest.linesOfData[i][j]));
+			currentLine.push_back((_DType)stoi(csvTest.linesOfData[i][j]));
 		}
 
 		testData.push_back(currentLine);
@@ -62,7 +62,7 @@ tuple<vector<vector<_TVal>>, vector<int>, vector<vector<_TVal>>, vector<int>> CS
 
 	}
 
-	tuple<vector<vector<_TVal>>, vector<int>, vector<vector<_TVal>>, vector<int>> result(trainData, trainLabel, testData, testLabel);
+	tuple<vector<vector<_DType>>, vector<int>, vector<vector<_DType>>, vector<int>> result(trainData, trainLabel, testData, testLabel);
 
 	return result;
 }

@@ -10,15 +10,15 @@ enum Kernal
 
 
 
-template <class _TVal>
+template <class _DType>
 class SVMClassifier // Linear - kernal svm
 {
 public:
 	SVMClassifier();
 	SVMClassifier(Kernal kernalType);
-	void Fit(vector<vector<_TVal>> trainData, vector<int> trainLabels);
-	int Predict(vector<_TVal> testSingle);
-	vector<int> Predict(vector<vector<_TVal>> testData);
+	void Fit(vector<vector<_DType>> trainData, vector<int> trainLabels);
+	int Predict(vector<_DType> testSingle);
+	vector<int> Predict(vector<vector<_DType>> testData);
 
 	static double AssetAccuracy(vector<int> predicted, vector<int> actual);
 	double AssetAccuracy(vector<int> actual);

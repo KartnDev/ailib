@@ -1,14 +1,14 @@
 #include "SVMClassifier.h"
 
 
-template<typename _TVal>
-SVMClassifier<_TVal>::SVMClassifier()
+template<typename _DType>
+SVMClassifier<_DType>::SVMClassifier()
 {
 
 }
 
-template<class _TVal>
-SVMClassifier<_TVal>::SVMClassifier(Kernal kernalType)
+template<class _DType>
+SVMClassifier<_DType>::SVMClassifier(Kernal kernalType)
 {
 
 }
@@ -236,8 +236,8 @@ int sign(double val)
 }
 
 
-template<class _TVal>
-void SVMClassifier<_TVal>::Fit(vector<vector<_TVal>> trainData, vector<int> trainLabels)
+template<class _DType>
+void SVMClassifier<_DType>::Fit(vector<vector<_DType>> trainData, vector<int> trainLabels)
 {
 	this->trainSize = trainLabels.size();
 
@@ -307,31 +307,31 @@ void SVMClassifier<_TVal>::Fit(vector<vector<_TVal>> trainData, vector<int> trai
 	}
 }
 
-template<class _TVal>
-int SVMClassifier<_TVal>::Predict(vector<_TVal> testSingle)
+template<class _DType>
+int SVMClassifier<_DType>::Predict(vector<_DType> testSingle)
 {
 	dot_result = sign(dot(testSingle, omega) + bCoef)
 	return dot_result
 }
 
-template<class _TVal>
-double SVMClassifier<_TVal>::AssetAccuracy(vector<int> predicted, vector<int> actual)
+template<class _DType>
+double SVMClassifier<_DType>::AssetAccuracy(vector<int> predicted, vector<int> actual)
 {
 	return 0.0;
 }
 
-template<class _TVal>
-double SVMClassifier<_TVal>::AssetAccuracy(vector<int> actual)
+template<class _DType>
+double SVMClassifier<_DType>::AssetAccuracy(vector<int> actual)
 {
 	return 0.0;
 }
 
-template<class _TVal>
-void SVMClassifier<_TVal>::SaveModel(string fileLocation)
+template<class _DType>
+void SVMClassifier<_DType>::SaveModel(string fileLocation)
 {
 }
 
-template<class _TVal>
-void SVMClassifier<_TVal>::LoadModel(string fileLocation)
+template<class _DType>
+void SVMClassifier<_DType>::LoadModel(string fileLocation)
 {
 }

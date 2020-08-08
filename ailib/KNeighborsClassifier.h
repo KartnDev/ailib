@@ -20,16 +20,16 @@ enum Algorithm
 	chebyshev
 };
 
-template <class _TVal>
+template <class _DType>
 class KNeighborsClassifier 
 {
 public:
 	KNeighborsClassifier();
 	KNeighborsClassifier(int nNeighbors);
 	
-	void Fit(vector<vector<_TVal>> trainData, vector<int> trainLabels);
-	int Predict(vector<_TVal> testSingle);
-	vector<int> Predict(vector<vector<_TVal>> testData);
+	void Fit(vector<vector<_DType>> trainData, vector<int> trainLabels);
+	int Predict(vector<_DType> testSingle);
+	vector<int> Predict(vector<vector<_DType>> testData);
 
 	static double AssetAccuracy(vector<int> predicted, vector<int> actual);
 	double AssetAccuracy(vector<int> actual);
@@ -45,7 +45,7 @@ private:
 	// algorithm koef
 	int trainPointsSize;
 	int trainPointDim;
-	vector<vector<_TVal>> trainFetchData;
+	vector<vector<_DType>> trainFetchData;
 	vector<int> trainFetchLabel;
 
 	vector<int> predictResult;

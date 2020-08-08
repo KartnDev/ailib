@@ -25,22 +25,22 @@ void TemporaryFunction()
 
 
 
-template<typename _TVal>
-KNeighborsClassifier<_TVal>::KNeighborsClassifier()
+template<typename _DType>
+KNeighborsClassifier<_DType>::KNeighborsClassifier()
 {
 	this->nNeighbors = 5;
 	this->wasPredictionInvoked = false;
 }
 
-template<class _TVal>
-KNeighborsClassifier<_TVal>::KNeighborsClassifier(int nNeighbors)
+template<class _DType>
+KNeighborsClassifier<_DType>::KNeighborsClassifier(int nNeighbors)
 {
 	this->nNeighbors = nNeighbors;
 	this->wasPredictionInvoked = false;
 }
 
-template<class _TVal>
-void KNeighborsClassifier<_TVal>::Fit(vector<vector<_TVal>> trainData, vector<int> trainLabels)
+template<class _DType>
+void KNeighborsClassifier<_DType>::Fit(vector<vector<_DType>> trainData, vector<int> trainLabels)
 {
 	this->trainPointsSize = trainData.size();
 	this->trainPointDim = trainData[0].size();
@@ -50,8 +50,8 @@ void KNeighborsClassifier<_TVal>::Fit(vector<vector<_TVal>> trainData, vector<in
 	this->trainFetchLabel = trainLabels;
 }
 
-template<class _TVal>
-int KNeighborsClassifier<_TVal>::Predict(vector<_TVal> testSingle)
+template<class _DType>
+int KNeighborsClassifier<_DType>::Predict(vector<_DType> testSingle)
 {
 	vector<pair<int, double>> result;
 
@@ -60,7 +60,7 @@ int KNeighborsClassifier<_TVal>::Predict(vector<_TVal> testSingle)
 	{
 		// TODO rewrite current algorithm
 
-		double  dist = ktstd::KtMath<_TVal>::GetMinkowskiDistance(testSingle, this->trainFetchData[i], 20);
+		double  dist = ktstd::KtMath<_DType>::GetMinkowskiDistance(testSingle, this->trainFetchData[i], 20);
 		pair<int, double> current_p(i, dist);
 #pragma omp critical
 		{
@@ -87,8 +87,8 @@ int KNeighborsClassifier<_TVal>::Predict(vector<_TVal> testSingle)
 
 }
 
-template<class _TVal>
-vector<int> KNeighborsClassifier<_TVal>::Predict(vector<vector<_TVal>> testData)
+template<class _DType>
+vector<int> KNeighborsClassifier<_DType>::Predict(vector<vector<_DType>> testData)
 {
 	this->wasPredictionInvoked = true;
 	vector<pair<int, int>> predicts;
@@ -99,7 +99,7 @@ vector<int> KNeighborsClassifier<_TVal>::Predict(vector<vector<_TVal>> testData)
 		vector<pair<int, double>> result;
 
 		double dist;
-		vector<_TVal>current;
+		vector<_DType>current;
 
 
 		for (int i = 0; i < this->trainPointsSize; i++)
@@ -108,7 +108,7 @@ vector<int> KNeighborsClassifier<_TVal>::Predict(vector<vector<_TVal>> testData)
 
 			// TODO rewrite current algorithm
 
-			dist = ktstd::KtMath<_TVal>::GetMinkowskiDistance(testData[j], current, 20);
+			dist = ktstd::KtMath<_DType>::GetMinkowskiDistance(testData[j], current, 20);
 			pair<int, double> currentPair(i, dist);
 
 			result.push_back(currentPair);
@@ -147,8 +147,8 @@ vector<int> KNeighborsClassifier<_TVal>::Predict(vector<vector<_TVal>> testData)
 	return predictResult;
 }
 
-template<class _TVal>
-double KNeighborsClassifier<_TVal>::AssetAccuracy(vector<int> predicted, vector<int> actual)
+template<class _DType>
+double KNeighborsClassifier<_DType>::AssetAccuracy(vector<int> predicted, vector<int> actual)
 {
 	int finitRightAnswerCount = 0;
 	for (size_t i = 0; i < predicted.size(); i++)
@@ -173,8 +173,8 @@ double KNeighborsClassifier<_TVal>::AssetAccuracy(vector<int> predicted, vector<
 	return (double)finitRightAnswerCount / predicted.size();
 }
 
-template<class _TVal>
-double KNeighborsClassifier<_TVal>::AssetAccuracy(vector<int> actual)
+template<class _DType>
+double KNeighborsClassifier<_DType>::AssetAccuracy(vector<int> actual)
 {
 	if (wasPredictionInvoked)
 	{
@@ -204,8 +204,8 @@ double KNeighborsClassifier<_TVal>::AssetAccuracy(vector<int> actual)
 	}
 }
 
-template<class _TVal>
-void KNeighborsClassifier< _TVal>::SaveModel(string fileLocationData = "") // TODO rewrite its logic code
+template<class _DType>
+void KNeighborsClassifier< _DType>::SaveModel(string fileLocationData = "") // TODO rewrite its logic code
 {
 	string locationData = fileLocationData == "" ? "/serialized/KNNClassifierCache/trainFetchData.ser" : ;
 
@@ -224,8 +224,8 @@ void KNeighborsClassifier< _TVal>::SaveModel(string fileLocationData = "") // TO
 	ofs_lab.close();
 }
 
-template<class _TVal>
-void KNeighborsClassifier<_TVal>::LoadModel(string fileLocation)
+template<class _DType>
+void KNeighborsClassifier<_DType>::LoadModel(string fileLocation)
 {
 	std::vector<double> v2;
 
@@ -245,8 +245,8 @@ void KNeighborsClassifier<_TVal>::LoadModel(string fileLocation)
 
 }
 
-template<class _TVal>
-int KNeighborsClassifier<_TVal>::FindMostCommon(vector<int> value)
+template<class _DType>
+int KNeighborsClassifier<_DType>::FindMostCommon(vector<int> value)
 {
 	int index = 0;
 	int highest = 0;

@@ -218,9 +218,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Classifier.h" />
+    <ClInclude Include="Estimator.h" />
     <ClInclude Include="FileUtilities.h" />
     <ClInclude Include="KNeighborsClassifier.h" />
     <ClInclude Include="mathutils.h" />
+    <ClInclude Include="Mixin.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="SVMClassifier.h" />
     <ClInclude Include="ValueException.h" />
