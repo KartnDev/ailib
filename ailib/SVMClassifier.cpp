@@ -4,13 +4,91 @@
 template<typename _DType>
 SVMClassifier<_DType>::SVMClassifier()
 {
-
+	this->typeKernal = rbf;
 }
 
 template<class _DType>
 SVMClassifier<_DType>::SVMClassifier(Kernal kernalType)
 {
 
+}
+
+
+/*
+Custom implementation of SVM for binary classification with support for
+		Gaussian RBF kernel, Polynomial kernel and Linear kernel. Uses Fast Gradient
+		Descent algorithm to minimize smoothed hinge loss.
+
+	Parameters:
+	-----------
+	kernel: Specifies the kernel type to be used in the algorithm. It must be
+	one of 'rbf', 'polynomial, or 'linear'. Kernel hyperparameters are passed
+	via the kwagrs parameter. For more infomation of the hyperparameters, refer
+	to the kwargs section and the _get_kernel function. It is used to compute
+	the similarity between data points. Default is 'rbf'.
+
+	h: Specifies the smoothness coefficient of the smoothed hinged loss. Default
+	is 0.5.
+
+	lambda_: Specifies the L2 regularization coefficient. Default is 0.1.
+
+	eps: Specifies the tolerance value for the stopping criterion. Default is
+	0.001.
+
+	bt_alpha: Specifies the sufficient decrease factor for backtracking line
+	search. Default is 0.5.
+
+	bt_eta: Specifies the factor of decrease of step size at each step in the
+	backtracking line search. Default is 0.8.
+
+	max_iter: Specifies the maximum number of iterations the algorithm would run
+	for. The algorithm would be forced to terminate even if the convergence
+	criterion has not been reached yet. Default is 1000.
+
+	init_weights: Specifies the weight vector of shape (n, 1) with which the
+	model must start. Default is set to zero vector of the size (n, 1).
+
+	init_weights_fast: Specifies the initial additional weight vector of shape
+	(n, 1) which would be used by the Fast Gradient Descent algorithm. Default
+	is set to zero vector of the size (n, 1).
+
+	step_size_init: Specifies the initial step size used by the Fast Gradient
+	Descent algorithm. Default is calculated by the _get_init_step_size using
+	the smoothness constant.
+
+	kwargs: Specifies any additional parameters required by the kernel. The
+	Gaussian RBF kernel requires providing a parameter 'sigma' and Polynomial
+	kernel requires parameters 'power' and 'bias'.
+
+	Attributes:
+	-----------
+	params_: The final weight values of the model which minimize the smoothed
+	hinge loss.
+
+	objective_log_: List of objective values calculated at each iteration of
+	the Fast Gradient Descent algorithm.
+
+	param_log_: List of updated weights after each iteration of the Fast Gradient
+	Descent algorithm.
+
+	"""
+*/
+template<class _DType>
+SVMClassifier<_DType>::SVMClassifier(Kernal kernalType = rbf, double h = 0.5, double lambda = 0.1, double eps = 1e-3, double btAlpha = 0.5, double btEta = 0.8, int maxIter = 1000,
+	double * initWeights = nullptr, double * initWeightFast = nullptr, int stepSizeInit = NULL)
+{
+	this->kernalType = kernalType;
+	this->h = h;
+	this->lambda = lambda;
+	this->eps = eps;
+	this->btAlpha = btAlpha;
+	this->btEta = btEta;
+	this->maxIter = maxIter;
+	this->initWeights = initWeights;
+	this->initWeightFast = initWeightFast;
+	this->stepSizeInit = stepSizeInit;
+
+	this->KernalFunction = this->GetKernel(kernalType);
 }
 
 template <typename InputIterator, typename OutputIterator, typename UnaryOperation>
@@ -334,4 +412,69 @@ void SVMClassifier<_DType>::SaveModel(string fileLocation)
 template<class _DType>
 void SVMClassifier<_DType>::LoadModel(string fileLocation)
 {
+}
+
+template<class _DType>
+void * SVMClassifier<_DType>::GetKernel(Kernal kernel)
+{
+	switch (kernal)
+	{
+	case rbf:
+		return 
+		break;
+	default:
+		break;
+	}
+}
+
+template<class _DType>
+double SVMClassifier<_DType>::ComputeObjective(double ** K, int * y, double * beta)
+{
+	return 0.0;
+}
+
+template<class _DType>
+double * SVMClassifier<_DType>::ComputeGradient(double ** K, int * y, double * beta)
+{
+	return nullptr;
+}
+template<class _DType>
+double ** SVMClassifier<_DType>::ComputeGram(double * X, double * Z)
+{
+	return nullptr;
+}
+
+template<class _DType>
+int SVMClassifier<_DType>::GetInitStepSize(double ** X)
+{
+	return 0;
+}
+
+template<class _DType>
+int SVMClassifier<_DType>::Backtracking(double ** X, int * y, double * beta, int step_size_prev)
+{
+	return 0;
+}
+
+template<class _DType>
+int SVMClassifier<_DType>::Fast(double ** X, int * y, double * beta0, double * theta0, int step_size_init)
+{
+	return 0;
+}
+
+template<class _DType>
+void SVMClassifier<_DType>::Fit(double ** X, int * y)
+{
+}
+
+template<class _DType>
+int * SVMClassifier<_DType>::Predict(double ** X, double * weights)
+{
+	return nullptr;
+}
+
+template<class _DType>
+double SVMClassifier<_DType>::Score(double ** X, int * y, double * weights)
+{
+	return 0.0;
 }

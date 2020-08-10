@@ -1,7 +1,7 @@
 #include "KNeighborsClassifier.h"
 #include "mathutils.h"
 #include "pch.h"
-#include <boost/serialization/vector.hpp>
+
 
 #define LOGGING_CONSOLE
 
@@ -207,40 +207,12 @@ double KNeighborsClassifier<_DType>::AssetAccuracy(vector<int> actual)
 template<class _DType>
 void KNeighborsClassifier< _DType>::SaveModel(string fileLocationData = "") // TODO rewrite its logic code
 {
-	string locationData = fileLocationData == "" ? "/serialized/KNNClassifierCache/trainFetchData.ser" : ;
 
-
-
-	std::ofstream ofs("/serialized/KNNClassifierCache/trainFetchData.ser");
-	boost::archive::text_oarchive oa(ofs);
-	oa & this->trainFetchData;
-	
-	ofs.close();
-
-	std::ofstream ofs_lab("/serialized/KNNClassifierCache/trainFetchData.ser");
-	boost::archive::text_oarchive oa(ofs_lab);
-	oa & this->trainFetchLabel;
-
-	ofs_lab.close();
 }
 
 template<class _DType>
 void KNeighborsClassifier<_DType>::LoadModel(string fileLocation)
 {
-	std::vector<double> v2;
-
-	// load serialized vector into vector 2
-	{
-		std::ifstream ifs("/tmp/copy.ser");
-		boost::archive::text_iarchive ia(ifs);
-		ia & v2;
-	}
-
-	// printout v2 values
-	for (auto &d : v2) {
-		std::cout << d << endl;
-	}
-
 
 
 }
