@@ -1,5 +1,6 @@
 #include "SVMClassifier.h"
-
+#include "LinAlg.h"
+#include "LinAlg.cpp"
 
 template<typename _DType>
 SVMClassifier<_DType>::SVMClassifier()
@@ -413,9 +414,16 @@ void * SVMClassifier<_DType>::GetKernel(Kernal kernel)
 	switch (kernal)
 	{
 	case rbf: 
-		return [](double** X, double y, double sigma = 0.5) -> double**
+		return [](vector<vector<_DType>> X, vector<int> double y, double sigma = 0.5) -> double**
 		{
 			double gamma = -1 / (2 * sigma * sigma);
+
+			vector<vector<_DType>> res = LinAlg<_DType>::MatrixVectorDecrise(X, y);
+
+			res = LinAlg<_DType>::MatrixSquare(res);
+
+			res = LinAlg<_DType>::SumBy2thAxis(res);
+
 		 	return exp((gamma * np.square(X[:, np.newaxis] - y).sum(axis = 2)))
 		}
 		break;

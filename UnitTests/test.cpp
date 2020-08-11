@@ -95,9 +95,16 @@ int main(int argc, char **argv)
 								   {2., 3., 1.},
 								   {6., 2., 4.} };
 
+	vector<double> v{1, 2, 3};
 
-	vector<vector<double>> result = LinAlg<double>::matrixMultiply(first, second);
+	vector<vector<double>> result3 = LinAlg<double>::SumBy2thAxis(second);
 
+	for (size_t i = 0; i < 3; i++)
+	{
+		cout << result3[i][0] << endl;
+	}
+
+	system("pause");
 
 	return 0;
 }
