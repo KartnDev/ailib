@@ -221,6 +221,7 @@
     <ClInclude Include="Estimator.h" />
     <ClInclude Include="FileUtilities.h" />
     <ClInclude Include="KNeighborsClassifier.h" />
+    <ClInclude Include="LinAlg.h" />
     <ClInclude Include="mathutils.h" />
     <ClInclude Include="Mixin.h" />
     <ClInclude Include="pch.h" />
@@ -230,6 +231,7 @@
   <ItemGroup>
     <ClCompile Include="KNeighborsClassifier.cpp" />
     <ClCompile Include="FileUtilities.cpp" />
+    <ClCompile Include="LinAlg.cpp" />
     <ClCompile Include="SVMClassifier.cpp" />
   </ItemGroup>
   <ItemGroup>

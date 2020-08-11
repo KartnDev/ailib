@@ -9,6 +9,8 @@
 #include "../ailib/FileUtilities.h"
 #include "../ailib/KNeighborsClassifier.h"
 #include "../ailib/KNeighborsClassifier.cpp"
+#include "../ailib/LinAlg.h"
+#include "../ailib/LinAlg.cpp"
 
 using namespace std;
 using namespace ktstd;
@@ -67,32 +69,35 @@ tuple<vector<vector<_DType>>, vector<int>, vector<vector<_DType>>, vector<int>> 
 	return result;
 }
 
-
-
-int main(int argc, char **argv) {
-
+void testKNN()
+{
 	string testFileName = "C:\\Users\\Dmitry\\Documents\\GitHub\\ailib\\ailib\\mnist_test.csv";
 	string trainFileName = "C:\\Users\\Dmitry\\Documents\\GitHub\\ailib\\ailib\\mnist_train.csv";
-
 	auto splittedData = CSVReadAndSplit<unsigned char>(trainFileName, testFileName);
 
-
-
 	KNeighborsClassifier<unsigned char> classifier;
-
 	classifier.Fit(std::get<0>(splittedData), std::get<1>(splittedData));
 
-
-	int right = 0;
-
-
 	vector<int> predictions = classifier.Predict(std::get<2>(splittedData));
-
 	vector<int> real = std::get<3>(splittedData);
 
 	classifier.AssetAccuracy(real);
+}
 
-	system("pause");
+
+int main(int argc, char **argv)
+{
+	vector<vector<double>> first{ {1., 2., 3.},
+								  {4., 5., 6.},
+								  {7., 8. ,9. } };
+
+	vector<vector<double>> second{ {4., 2., 3.},
+								   {2., 3., 1.},
+								   {6., 2., 4.} };
+
+
+	vector<vector<double>> result = LinAlg<double>::matrixMultiply(first, second);
+
 
 	return 0;
 }

@@ -7,13 +7,6 @@ SVMClassifier<_DType>::SVMClassifier()
 	this->typeKernal = rbf;
 }
 
-template<class _DType>
-SVMClassifier<_DType>::SVMClassifier(Kernal kernalType)
-{
-
-}
-
-
 /*
 Custom implementation of SVM for binary classification with support for
 		Gaussian RBF kernel, Polynomial kernel and Linear kernel. Uses Fast Gradient
@@ -419,8 +412,12 @@ void * SVMClassifier<_DType>::GetKernel(Kernal kernel)
 {
 	switch (kernal)
 	{
-	case rbf:
-		return 
+	case rbf: 
+		return [](double** X, double y, double sigma = 0.5) -> double**
+		{
+			double gamma = -1 / (2 * sigma * sigma);
+		 	return exp((gamma * np.square(X[:, np.newaxis] - y).sum(axis = 2)))
+		}
 		break;
 	default:
 		break;
