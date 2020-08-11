@@ -8,13 +8,13 @@ vector<vector<_TVal>> LinAlg<_TVal>::MatrixMultiply(vector<vector<_TVal>> first,
 	for (size_t i = 0; i < first[0].size(); i++)
 	{
 		vector<_TVal> temp;
-		for (size_t j = 0; j < second.size(); j++)
+		for (size_t j = 0; j < second[0].size(); j++)
 		{
-			
+
 
 			_TVal sum = 0;
 
-			for (size_t k = 0; k < second[0].size(); k++)
+			for (size_t k = 0; k < second.size(); k++)
 			{
 				sum += first[i][k] * second[k][j];
 			}
@@ -85,7 +85,7 @@ vector<vector<_TVal>> LinAlg<_TVal>::SumBy2thAxis(vector<vector<_TVal>> matrix)
 }
 
 template<class _TVal>
-vector<vector<_TVal>> LinAlg<_TVal>::MultiplyMatrixBy2thAxis(vector<vector<_TVal>> matrix, _TVal scalar)
+vector<vector<_TVal>> LinAlg<_TVal>::MultiplyMatrixByScalar(vector<vector<_TVal>> matrix, _TVal scalar)
 {
 	vector<vector<_TVal>> res;
 
@@ -102,7 +102,7 @@ vector<vector<_TVal>> LinAlg<_TVal>::MultiplyMatrixBy2thAxis(vector<vector<_TVal
 }
 
 template<class _TVal>
-vector<vector<_TVal>> LinAlg<_TVal>::AddMatrixBy2thAxis(vector<vector<_TVal>> matrix, _TVal scalar)
+vector<vector<_TVal>> LinAlg<_TVal>::AddMatrixByScalar(vector<vector<_TVal>> matrix, _TVal scalar)
 {
 	vector<vector<_TVal>> res;
 
@@ -152,17 +152,34 @@ vector<vector<_TVal>> LinAlg<_TVal>::MatrixPow(vector<vector<_TVal>> matrix, int
 	return res;
 }
 
+
 template<class _TVal>
-vector<vector<_TVal>> LinAlg<_TVal>::Transponse(vector<vector<_TVal>> matrix)
+vector<vector<_TVal>> LinAlg<_TVal>::Transponse(const std::vector<std::vector<_TVal>> &matrix)
 {
-	vector<vector<_TVal>> res = matrix;
+	vector<vector<_TVal> > trans_vec(matrix[0].size(), vector<_TVal>());
+
+	for (int i = 0; i < matrix.size(); i++)
+	{
+		for (int j = 0; j < matrix[i].size(); j++)
+		{
+			trans_vec[j].push_back(matrix[i][j]);
+		}
+	}
+
+	return trans_vec;
+}
+
+template<class _TVal>
+vector<_TVal> LinAlg<_TVal>::Ravel(vector<vector<_TVal>> matrix)
+{
+	vector<_TVal> res;
 
 	for (int i = 0; i < matrix.size(); i++)
 	{
 		for (int j = 0; j < matrix[0].size(); j++)
 		{
-			res[j][i] = matrix[i][j];
+			res.push_back(matrix[i][j]);
 		}
 	}
-	
+	return res;
 }

@@ -84,25 +84,69 @@ void testKNN()
 	classifier.AssetAccuracy(real);
 }
 
+template <class T>
+std::vector <std::vector<T>> Multiply(std::vector <std::vector<T>> a, std::vector <std::vector<T>> &b)
+{
+	const int n = a.size();     // a rows
+	const int m = a[0].size();  // a cols
+	const int p = b[0].size();  // b cols
+
+	std::vector <std::vector<T>> c(n, std::vector<T>(p, 0));
+	for (auto j = 0; j < p; ++j)
+	{
+		for (auto k = 0; k < m; ++k)
+		{
+			for (auto i = 0; i < n; ++i)
+			{
+				c[i][j] += a[i][k] * b[k][j];
+			}
+		}
+	}
+	return c;
+}
+
 
 int main(int argc, char **argv)
 {
-	vector<vector<double>> first{ {1., 2., 3.},
-								  {4., 5., 6.},
-								  {7., 8. ,9. } };
+	vector<vector<double>> K{   {2,  9,  4,  4,  6,  5,  8,  5,  2, 10},
+								{5,  5,  9,  8,  6, 10,  1,  3,  9,  5},
+								{3,  9,  3,  5,  8,  8,  9,  9,  9, 10},
+								{3, 10,  7,  2,  8,  2,  5,  8,  6,  3},
+								{1,  8,  3,  1, 10,  3,  5,  1,  6,  1},
+								{4,  2,  1,  8,  6,  6,  2,  2, 10, 10},
+								{7,  4,  3,  2,  6,  6,  4,  8,  6,  4},
+								{6, 10,  4,  2,  7,  1,  7,  6,  9,  6},
+								{5,  3,  6, 10,  1,  1,  7,  6,  6,  3},
+								{4, 10,  4,  4,  1,  4,  1,  1,  8, 10} };
 
-	vector<vector<double>> second{ {4., 2., 3.},
-								   {2., 3., 1.},
-								   {6., 2., 4.} };
+	vector<vector<double>> y{ {-1},
+								{1},
+								{-1},
+								{1},
+								{-1},
+								{1},
+								{-1},
+								{1},
+								{-1},
+								{1} };
 
-	vector<double> v{1, 2, 3};
 
-	vector<vector<double>> result3 = LinAlg<double>::MultiplyMatrixBy2thAxis(first, 2);
+	vector<vector<double>> v{ {3},
+								{7},
+								{1},
+								{7},
+								{8},
+								{8},
+								{5},
+								{4},
+								{3},
+								{2} };
 
-	for (size_t i = 0; i < 3; i++)
-	{
-		cout << result3[i][0] << endl;
-	}
+	vector<vector<double>> KBeta = LinAlg<double>::MatrixMultiply(K, v);
+
+
+	vector<vector<double>> KBetaNext = LinAlg<double>::MatrixMultiply(LinAlg<double>::Transponse(v), KBeta);
+
 
 	system("pause");
 

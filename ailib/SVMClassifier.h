@@ -49,7 +49,7 @@ private:
 
 protected:
 	void* GetKernel(Kernal kernel = rbf);
-	double ComputeObjective(double** K, int* y, double* beta);
+	double ComputeObjective(vector<vector<_DType>> K, vector<int> y, vector<_DType> beta);
 	double* ComputeGradient(double** K, int* y, double* beta);
 	double** ComputeGram(double* X, double* Z);
 	int GetInitStepSize(double**  X);

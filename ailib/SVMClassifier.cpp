@@ -422,7 +422,7 @@ void * SVMClassifier<_DType>::GetKernel(Kernal kernel)
 
 			res = LinAlg<_DType>::MatrixSquare(res);
 			res = LinAlg<_DType>::SumBy2thAxis(res);
-			res = LinAlg<_DType>::MultiplyMatrixBy2thAxis(res, gamma);
+			res = LinAlg<_DType>::MultiplyMatrixByScalar(res, gamma);
 
 			return LinAlg<_DType>::MatrixExp(exp);
 		}
@@ -454,7 +454,7 @@ void * SVMClassifier<_DType>::GetKernel(Kernal kernel)
 			vector<vector<_DType>> y_transponced = LinAlg<_DType>::Transponse(y_matrix);
 
 			vector<vector<_DType>> res = LinAlg<_DType>::MatrixMultiply(x_matrix, y_transponced);
-			res = LinAlg<_DType>::AddMatrixBy2thAxis(res, bias);
+			res = LinAlg<_DType>::AddMatrixByScalar(res, bias);
 
 
 			return LinAlg<_DType>::MatrixPow(res, power);
@@ -467,9 +467,10 @@ void * SVMClassifier<_DType>::GetKernel(Kernal kernel)
 }
 
 template<class _DType>
-double SVMClassifier<_DType>::ComputeObjective(double ** K, int * y, double * beta)
+double SVMClassifier<_DType>::ComputeObjective(vector<vector<_DType>> K, vector<int> y, vector<_DType> beta)
 {
-	return 0.0;
+	
+
 }
 
 template<class _DType>
