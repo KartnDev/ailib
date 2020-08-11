@@ -5,7 +5,7 @@ vector<vector<_TVal>> LinAlg<_TVal>::MatrixMultiply(vector<vector<_TVal>> first,
 {
 	vector<vector<_TVal>> result;
 
-	for (size_t i = 0; i < first[0].size(); i++)
+	for (size_t i = 0; i < first.size(); i++)
 	{
 		vector<_TVal> temp;
 		for (size_t j = 0; j < second[0].size(); j++)

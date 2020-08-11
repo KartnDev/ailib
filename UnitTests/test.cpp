@@ -144,8 +144,9 @@ int main(int argc, char **argv)
 
 	vector<vector<double>> KBeta = LinAlg<double>::MatrixMultiply(K, v);
 
+	auto Transmont = LinAlg<double>::Transponse(v);
 
-	vector<vector<double>> KBetaNext = LinAlg<double>::MatrixMultiply(LinAlg<double>::Transponse(v), KBeta);
+	vector<vector<double>> KBetaNext = LinAlg<double>::MatrixMultiply(Transmont, KBeta);
 
 
 	system("pause");
