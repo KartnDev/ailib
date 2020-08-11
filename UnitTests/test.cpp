@@ -97,7 +97,7 @@ int main(int argc, char **argv)
 
 	vector<double> v{1, 2, 3};
 
-	vector<vector<double>> result3 = LinAlg<double>::SumBy2thAxis(second);
+	vector<vector<double>> result3 = LinAlg<double>::MultiplyMatrixBy2thAxis(first, 2);
 
 	for (size_t i = 0; i < 3; i++)
 	{

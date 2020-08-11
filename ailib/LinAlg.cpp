@@ -96,9 +96,73 @@ vector<vector<_TVal>> LinAlg<_TVal>::MultiplyMatrixBy2thAxis(vector<vector<_TVal
 		{
 			temp.push_back(matrix[i][j] * scalar);
 		}
-
-		temp.push_back(sum);
 		res.push_back(temp);
 	}
 	return res;
+}
+
+template<class _TVal>
+vector<vector<_TVal>> LinAlg<_TVal>::AddMatrixBy2thAxis(vector<vector<_TVal>> matrix, _TVal scalar)
+{
+	vector<vector<_TVal>> res;
+
+	for (size_t i = 0; i < matrix.size(); i++)
+	{
+		vector<double> temp;
+		for (size_t j = 0; j < matrix[0].size(); j++)
+		{
+			temp.push_back(matrix[i][j] + scalar);
+		}
+		res.push_back(temp);
+	}
+	return res;
+}
+
+template<class _TVal>
+vector<vector<_TVal>> LinAlg<_TVal>::MatrixExp(vector<vector<_TVal>> matrix)
+{
+	vector<vector<_TVal>> res;
+
+	for (size_t i = 0; i < matrix.size(); i++)
+	{
+		vector<double> temp;
+		for (size_t j = 0; j < matrix[0].size(); j++)
+		{
+			temp.push_back(exp(matrix[i][j]));
+		}
+		res.push_back(temp);
+	}
+	return res;
+}
+
+template<class _TVal>
+vector<vector<_TVal>> LinAlg<_TVal>::MatrixPow(vector<vector<_TVal>> matrix, int power = 2)
+{
+	vector<vector<_TVal>> res;
+
+	for (size_t i = 0; i < matrix.size(); i++)
+	{
+		vector<double> temp;
+		for (size_t j = 0; j < matrix[0].size(); j++)
+		{
+			temp.push_back(pow(matrix[i][j]), power);
+		}
+		res.push_back(temp);
+	}
+	return res;
+}
+
+template<class _TVal>
+vector<vector<_TVal>> LinAlg<_TVal>::Transponse(vector<vector<_TVal>> matrix)
+{
+	vector<vector<_TVal>> res = matrix;
+
+	for (int i = 0; i < matrix.size(); i++)
+	{
+		for (int j = 0; j < matrix[0].size(); j++)
+		{
+			res[j][i] = matrix[i][j];
+		}
+	}
+	
 }

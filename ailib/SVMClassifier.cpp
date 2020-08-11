@@ -414,19 +414,53 @@ void * SVMClassifier<_DType>::GetKernel(Kernal kernel)
 	switch (kernal)
 	{
 	case rbf: 
-		return [](vector<vector<_DType>> X, vector<int> double y, double sigma = 0.5) -> double**
+		return [](vector<vector<_DType>> x_matrix, vector<int> double y, double sigma = 0.5) -> vector<vector<_DType>>
 		{
 			double gamma = -1 / (2 * sigma * sigma);
 
-			vector<vector<_DType>> res = LinAlg<_DType>::MatrixVectorDecrise(X, y);
+			vector<vector<_DType>> res = LinAlg<_DType>::MatrixVectorDecrise(x_matrix, y);
 
 			res = LinAlg<_DType>::MatrixSquare(res);
-
 			res = LinAlg<_DType>::SumBy2thAxis(res);
+			res = LinAlg<_DType>::MultiplyMatrixBy2thAxis(res, gamma);
 
-		 	return exp((gamma * np.square(X[:, np.newaxis] - y).sum(axis = 2)))
+			return LinAlg<_DType>::MatrixExp(exp);
 		}
 		break;
+	case linear:
+		return [](vector<vector<_DType>> x_matrix, vector<int> double y) -> vector<vector<_DType>>
+		{
+			vector<vector<double>> y_matrix;
+			for (size_t i = 0; i < length; i++)
+			{
+				y_matrix.push_back(y);
+			}
+
+			vector<vector<_DType>> y_transponced = LinAlg<_DType>::Transponse(y_matrix);
+
+			return LinAlg<_DType>::MatrixMultiply(x_matrix, y_transponced);
+		}
+		break;
+
+	case polynomial:
+		return [](vector<vector<_DType>> x_matrix, vector<int> double y, int power = 2, double bias = 1) -> vector<vector<_DType>>
+		{
+			vector<vector<double>> y_matrix;
+			for (size_t i = 0; i < length; i++)
+			{
+				y_matrix.push_back(y);
+			}
+
+			vector<vector<_DType>> y_transponced = LinAlg<_DType>::Transponse(y_matrix);
+
+			vector<vector<_DType>> res = LinAlg<_DType>::MatrixMultiply(x_matrix, y_transponced);
+			res = LinAlg<_DType>::AddMatrixBy2thAxis(res, bias);
+
+
+			return LinAlg<_DType>::MatrixPow(res, power);
+		}
+		break;
+
 	default:
 		break;
 	}
