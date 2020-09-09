@@ -1,8 +1,0 @@
-﻿  KNeighborsClassifier.cpp
-  mathutils.cpp
-  FileUtilities.cpp
-c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(36): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(38): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-  Компиляция...
-  ailib.vcxproj -> C:\Users\Dmitry\Documents\GitHub\ailib\x64\Release\ailib.lib
-c:\users\dmitry\documents\github\ailib\ailib\fileutilities.cpp(9): warning C26495: Variable 'ktstd::FileUtilities::CSV::lenght' is uninitialized. Always initialize a member variable (type.6).
