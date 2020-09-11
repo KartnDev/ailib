@@ -1,11 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
-project(ailib CUDA)
+project(ailib)
 
-set(CMAKE_CUDA_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 
-add_executable(ailib main.cu)
-
-set_target_properties(
-        ailib
-        PROPERTIES
-        CUDA_SEPARABLE_COMPILATION ON)
+add_executable(ailib main.cpp)
