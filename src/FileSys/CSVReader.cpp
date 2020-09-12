@@ -84,6 +84,9 @@ CSV<DType>& CSVReader<DType>::ReadCSVFromFile(std::string path)
     SetDataSize(vectorOfLines);
     SetLength(vectorOfLines[0]);
     SetFeatureNames(vectorOfLines[0]);
+    SetDataMatrix(vectorOfLines);
+
+    return &finalProduct;
 }
 
 template<class DType>
