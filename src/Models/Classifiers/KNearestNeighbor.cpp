@@ -3,7 +3,7 @@
 //
 
 #include "KNearestNeighbor.h"
-#include "../../Math/DistanceMethods.h"
+#include "../../Math/Utils/DistanceMethods.h"
 #include <set>
 #include <vector>
 
