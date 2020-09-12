@@ -151,6 +151,60 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\ailib.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ailib.dir\main.cpp.s
 .PHONY : main.cpp.s
 
+src\Math\DistanceMethods.obj: src\Math\DistanceMethods.cpp.obj
+
+.PHONY : src\Math\DistanceMethods.obj
+
+# target to build an object file
+src\Math\DistanceMethods.cpp.obj:
+	$(MAKE) -f CMakeFiles\ailib.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ailib.dir\src\Math\DistanceMethods.cpp.obj
+.PHONY : src\Math\DistanceMethods.cpp.obj
+
+src\Math\DistanceMethods.i: src\Math\DistanceMethods.cpp.i
+
+.PHONY : src\Math\DistanceMethods.i
+
+# target to preprocess a source file
+src\Math\DistanceMethods.cpp.i:
+	$(MAKE) -f CMakeFiles\ailib.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ailib.dir\src\Math\DistanceMethods.cpp.i
+.PHONY : src\Math\DistanceMethods.cpp.i
+
+src\Math\DistanceMethods.s: src\Math\DistanceMethods.cpp.s
+
+.PHONY : src\Math\DistanceMethods.s
+
+# target to generate assembly for a file
+src\Math\DistanceMethods.cpp.s:
+	$(MAKE) -f CMakeFiles\ailib.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ailib.dir\src\Math\DistanceMethods.cpp.s
+.PHONY : src\Math\DistanceMethods.cpp.s
+
+src\Models\Classifiers\KNearestNeighbor.obj: src\Models\Classifiers\KNearestNeighbor.cpp.obj
+
+.PHONY : src\Models\Classifiers\KNearestNeighbor.obj
+
+# target to build an object file
+src\Models\Classifiers\KNearestNeighbor.cpp.obj:
+	$(MAKE) -f CMakeFiles\ailib.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ailib.dir\src\Models\Classifiers\KNearestNeighbor.cpp.obj
+.PHONY : src\Models\Classifiers\KNearestNeighbor.cpp.obj
+
+src\Models\Classifiers\KNearestNeighbor.i: src\Models\Classifiers\KNearestNeighbor.cpp.i
+
+.PHONY : src\Models\Classifiers\KNearestNeighbor.i
+
+# target to preprocess a source file
+src\Models\Classifiers\KNearestNeighbor.cpp.i:
+	$(MAKE) -f CMakeFiles\ailib.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ailib.dir\src\Models\Classifiers\KNearestNeighbor.cpp.i
+.PHONY : src\Models\Classifiers\KNearestNeighbor.cpp.i
+
+src\Models\Classifiers\KNearestNeighbor.s: src\Models\Classifiers\KNearestNeighbor.cpp.s
+
+.PHONY : src\Models\Classifiers\KNearestNeighbor.s
+
+# target to generate assembly for a file
+src\Models\Classifiers\KNearestNeighbor.cpp.s:
+	$(MAKE) -f CMakeFiles\ailib.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ailib.dir\src\Models\Classifiers\KNearestNeighbor.cpp.s
+.PHONY : src\Models\Classifiers\KNearestNeighbor.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -163,6 +217,12 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... src/Math/DistanceMethods.obj
+	@echo ... src/Math/DistanceMethods.i
+	@echo ... src/Math/DistanceMethods.s
+	@echo ... src/Models/Classifiers/KNearestNeighbor.obj
+	@echo ... src/Models/Classifiers/KNearestNeighbor.i
+	@echo ... src/Models/Classifiers/KNearestNeighbor.s
 .PHONY : help
 
 

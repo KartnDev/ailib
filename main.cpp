@@ -3,7 +3,7 @@
 
 int main()
 {
-    KNearestNeighbor k;
+    //KNearestNeighbor<short> k;
 
     std::cout << "Hello, World!" << std::endl;
     return 0;

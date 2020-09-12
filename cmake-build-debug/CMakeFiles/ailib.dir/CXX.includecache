@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Dmitry/Documents/GitHub/ailib/main.cpp
+iostream
+-
+src/Models/Classifiers/KNearestNeighbor.h
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/KNearestNeighbor.h
+
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/IClassifier.h
+map
+-
+string
+-
+
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/IMetrix.h
+map
+-
+string
+-
+
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/KNearestNeighbor.h
+IClassifier.h
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/IClassifier.h
+IMetrix.h
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/IMetrix.h
+

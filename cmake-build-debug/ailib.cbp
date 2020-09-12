@@ -23,7 +23,10 @@
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="clang"/>
-				<Compiler/>
+				<Compiler>
+					<Add directory="C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/KNearestNeighbor.h"/>
+					<Add directory="C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/KNearestNeighbor.cpp"/>
+				</Compiler>
 				<MakeCommands>
 					<Build command="nmake /NOLOGO /f C:\Users\Dmitry\Documents\GitHub\ailib\cmake-build-debug\Makefile VERBOSE=1 ailib"/>
 					<CompileFile command="nmake /NOLOGO /f C:\Users\Dmitry\Documents\GitHub\ailib\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
@@ -37,7 +40,10 @@
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="clang"/>
-				<Compiler/>
+				<Compiler>
+					<Add directory="C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/KNearestNeighbor.h"/>
+					<Add directory="C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/KNearestNeighbor.cpp"/>
+				</Compiler>
 				<MakeCommands>
 					<Build command="nmake /NOLOGO /f C:\Users\Dmitry\Documents\GitHub\ailib\cmake-build-debug\Makefile VERBOSE=1 ailib/fast"/>
 					<CompileFile command="nmake /NOLOGO /f C:\Users\Dmitry\Documents\GitHub\ailib\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
@@ -67,6 +73,24 @@
 			</Target>
 		</Build>
 		<Unit filename="C:/Users/Dmitry/Documents/GitHub/ailib/main.cpp">
+			<Option target="ailib"/>
+		</Unit>
+		<Unit filename="C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/DistanceMethods.cpp">
+			<Option target="ailib"/>
+		</Unit>
+		<Unit filename="C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/DistanceMethods.h">
+			<Option target="ailib"/>
+		</Unit>
+		<Unit filename="C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/IClassifier.h">
+			<Option target="ailib"/>
+		</Unit>
+		<Unit filename="C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/IMetrix.h">
+			<Option target="ailib"/>
+		</Unit>
+		<Unit filename="C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/KNearestNeighbor.cpp">
+			<Option target="ailib"/>
+		</Unit>
+		<Unit filename="C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/KNearestNeighbor.h">
 			<Option target="ailib"/>
 		</Unit>
 		<Unit filename="C:/Users/Dmitry/Documents/GitHub/ailib/CMakeLists.txt">

@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ailib.dir/main.cpp.obj"
+  "CMakeFiles/ailib.dir/src/Math/DistanceMethods.cpp.obj"
+  "CMakeFiles/ailib.dir/src/Models/Classifiers/KNearestNeighbor.cpp.obj"
   "ailib.exe"
   "ailib.exe.manifest"
   "ailib.lib"

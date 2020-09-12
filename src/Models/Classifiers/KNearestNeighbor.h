@@ -8,15 +8,32 @@
 
 #include "IClassifier.h"
 #include "IMetrix.h"
+#include <vector>
 
 template<typename DType>
 class KNearestNeighbor : public IClassifier<DType>, IMetrix
 {
-    void Fit(DType** xData, DType* yData, int dataSize, int featureCount) override;
-    DType* Predict(DType** predictFetchData, int dataSize, int featureCount) const override;
-    DType Predict(DType* predictVector, int dataSize, int featureCount) const override;
+public:
+    void Fit(DType** xData, int* yData, int dataSize, int featureCount) override;
+    int* Predict(DType** predictFetchData, int predictSize) const override;
+    int Predict(DType* predictVector) const override;
     void SaveModel(std::string path) override;
     void LoadModel(std::string path) override;
+
+private:
+    int FindMostCommon(std::vector<int> value);
+
+private:
+    int kNearestCount;
+
+    DType** fetchedData;
+    int* fetchedLabels;
+
+    int featureCount;
+    int dataSize;
+
+    double accuracy = -1.0;
+    double loss = -1.0;
 };
 
 

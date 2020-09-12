@@ -12,11 +12,12 @@ template<class DType>
 class IClassifier
 {
 public:
-   virtual void Fit(DType** xData, DType* yData, int dataSize, int featureCount) = 0;
-   virtual DType* Predict(DType** predictFetchData, int dataSize, int featureCount) const = 0;
-   virtual DType Predict(DType* predictVector, int dataSize, int featureCount) const = 0;
+   virtual void Fit(DType** xData, int* yData, int dataSize, int featureCount) = 0;
+   virtual int* Predict(DType** predictFetchData, int predictedSize) const = 0;
+   virtual int Predict(DType* predictVector) const = 0;
    virtual void SaveModel(std::string path) = 0;
    virtual void LoadModel(std::string path) = 0;
+
 };
 
 
