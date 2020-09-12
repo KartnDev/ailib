@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Dmitry/Documents/GitHub/ailib/main.cpp" "C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-debug/CMakeFiles/ailib.dir/main.cpp.obj"
-  "C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/DistanceMethods.cpp" "C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-debug/CMakeFiles/ailib.dir/src/Math/DistanceMethods.cpp.obj"
+  "C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/DistanceMethods.cpp" "C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-debug/CMakeFiles/ailib.dir/src/Models/Classifiers/DistanceMethods.cpp.obj"
   "C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/KNearestNeighbor.cpp" "C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-debug/CMakeFiles/ailib.dir/src/Models/Classifiers/KNearestNeighbor.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")

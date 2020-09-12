@@ -3,11 +3,11 @@
 //
 
 #include "KNearestNeighbor.h"
-#include "DistanceMethods.h"
+#include "../../Math/DistanceMethods.h"
 #include <set>
 #include <vector>
 
-template<typename DType>
+template<class DType>
 void KNearestNeighbor<DType>::Fit(DType **xData, int *yData, int dataSize, int featureCount)
 {
     this->FetchedData = xData;
@@ -17,7 +17,7 @@ void KNearestNeighbor<DType>::Fit(DType **xData, int *yData, int dataSize, int f
     this->dataSize = dataSize;
 }
 
-template<typename DType>
+template<class DType>
 int *KNearestNeighbor<DType>::Predict(DType **predictFetchData, int predictedSize) const
 {
     auto cmp = [](std::pair<int, double> a, std::pair<int, double> b) { return a.second > b.second };
@@ -50,7 +50,7 @@ int *KNearestNeighbor<DType>::Predict(DType **predictFetchData, int predictedSiz
     return &predicts;
 }
 
-template<typename DType>
+template<class DType>
 int KNearestNeighbor<DType>::Predict(DType *predictVector) const
 {
     auto cmp = [](std::pair<int, double> a, std::pair<int, double> b) { return a.second > b.second };
@@ -103,13 +103,13 @@ int KNearestNeighbor<DType>::FindMostCommon(std::vector<int> value)
 
 
 
-template<typename DType>
+template<class DType>
 void KNearestNeighbor<DType>::SaveModel(std::string path)
 {
 
 }
 
-template<typename DType>
+template<class DType>
 void KNearestNeighbor<DType>::LoadModel(std::string path)
 {
 

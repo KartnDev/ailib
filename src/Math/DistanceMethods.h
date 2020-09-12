@@ -5,7 +5,7 @@
 #ifndef AILIB_DISTANCEMETHODS_H
 #define AILIB_DISTANCEMETHODS_H
 
-template <typename DType>
+template <class DType>
 double GetMinkowskiDistance(DType* pointFirst, DType* pointSecond, int pointDim, double r);
 
 

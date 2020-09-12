@@ -4,7 +4,7 @@
 
 #include "DistanceMethods.h"
 
-template<typename DType>
+template<class DType>
 double GetMinkowskiDistance(DType *pointFirst, DType pointSecond, int pointDim, double r)
 {
     double sum = 0.0;

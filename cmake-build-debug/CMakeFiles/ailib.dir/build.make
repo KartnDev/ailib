@@ -96,37 +96,37 @@ CMakeFiles\ailib.dir\src\Models\Classifiers\KNearestNeighbor.cpp.s: cmake_force
  /nologo -TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\ailib.dir\src\Models\Classifiers\KNearestNeighbor.cpp.s /c C:\Users\Dmitry\Documents\GitHub\ailib\src\Models\Classifiers\KNearestNeighbor.cpp
 <<
 
-CMakeFiles\ailib.dir\src\Math\DistanceMethods.cpp.obj: CMakeFiles\ailib.dir\flags.make
-CMakeFiles\ailib.dir\src\Math\DistanceMethods.cpp.obj: ..\src\Math\DistanceMethods.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Dmitry\Documents\GitHub\ailib\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ailib.dir/src/Math/DistanceMethods.cpp.obj"
+CMakeFiles\ailib.dir\src\Models\Classifiers\DistanceMethods.cpp.obj: CMakeFiles\ailib.dir\flags.make
+CMakeFiles\ailib.dir\src\Models\Classifiers\DistanceMethods.cpp.obj: ..\src\Models\Classifiers\DistanceMethods.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Dmitry\Documents\GitHub\ailib\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ailib.dir/src/Models/Classifiers/DistanceMethods.cpp.obj"
 	C:\PROGRA~1\LLVM\bin\clang-cl.exe @<<
- /nologo -TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\ailib.dir\src\Math\DistanceMethods.cpp.obj /FdCMakeFiles\ailib.dir\ -c C:\Users\Dmitry\Documents\GitHub\ailib\src\Math\DistanceMethods.cpp
+ /nologo -TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\ailib.dir\src\Models\Classifiers\DistanceMethods.cpp.obj /FdCMakeFiles\ailib.dir\ -c C:\Users\Dmitry\Documents\GitHub\ailib\src\Models\Classifiers\DistanceMethods.cpp
 <<
 
-CMakeFiles\ailib.dir\src\Math\DistanceMethods.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ailib.dir/src/Math/DistanceMethods.cpp.i"
-	C:\PROGRA~1\LLVM\bin\clang-cl.exe > CMakeFiles\ailib.dir\src\Math\DistanceMethods.cpp.i @<<
- /nologo -TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Dmitry\Documents\GitHub\ailib\src\Math\DistanceMethods.cpp
+CMakeFiles\ailib.dir\src\Models\Classifiers\DistanceMethods.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ailib.dir/src/Models/Classifiers/DistanceMethods.cpp.i"
+	C:\PROGRA~1\LLVM\bin\clang-cl.exe > CMakeFiles\ailib.dir\src\Models\Classifiers\DistanceMethods.cpp.i @<<
+ /nologo -TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Dmitry\Documents\GitHub\ailib\src\Models\Classifiers\DistanceMethods.cpp
 <<
 
-CMakeFiles\ailib.dir\src\Math\DistanceMethods.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ailib.dir/src/Math/DistanceMethods.cpp.s"
+CMakeFiles\ailib.dir\src\Models\Classifiers\DistanceMethods.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ailib.dir/src/Models/Classifiers/DistanceMethods.cpp.s"
 	C:\PROGRA~1\LLVM\bin\clang-cl.exe @<<
- /nologo -TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\ailib.dir\src\Math\DistanceMethods.cpp.s /c C:\Users\Dmitry\Documents\GitHub\ailib\src\Math\DistanceMethods.cpp
+ /nologo -TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\ailib.dir\src\Models\Classifiers\DistanceMethods.cpp.s /c C:\Users\Dmitry\Documents\GitHub\ailib\src\Models\Classifiers\DistanceMethods.cpp
 <<
 
 # Object files for target ailib
 ailib_OBJECTS = \
 "CMakeFiles\ailib.dir\main.cpp.obj" \
 "CMakeFiles\ailib.dir\src\Models\Classifiers\KNearestNeighbor.cpp.obj" \
-"CMakeFiles\ailib.dir\src\Math\DistanceMethods.cpp.obj"
+"CMakeFiles\ailib.dir\src\Models\Classifiers\DistanceMethods.cpp.obj"
 
 # External object files for target ailib
 ailib_EXTERNAL_OBJECTS =
 
 ailib.exe: CMakeFiles\ailib.dir\main.cpp.obj
 ailib.exe: CMakeFiles\ailib.dir\src\Models\Classifiers\KNearestNeighbor.cpp.obj
-ailib.exe: CMakeFiles\ailib.dir\src\Math\DistanceMethods.cpp.obj
+ailib.exe: CMakeFiles\ailib.dir\src\Models\Classifiers\DistanceMethods.cpp.obj
 ailib.exe: CMakeFiles\ailib.dir\build.make
 ailib.exe: CMakeFiles\ailib.dir\objects1.rsp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Dmitry\Documents\GitHub\ailib\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ailib.exe"

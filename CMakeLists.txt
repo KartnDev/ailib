@@ -12,6 +12,6 @@ add_executable(ailib
         src/Models/Classifiers/KNearestNeighbor.cpp
         src/Models/Classifiers/IClassifier.h
         src/Models/Classifiers/IMetrix.h
-        src/Models/Classifiers/DistanceMethods.cpp
-        src/Models/Classifiers/DistanceMethods.h)
+        src/Math/DistanceMethods.cpp
+        src/Math/DistanceMethods.h)
 

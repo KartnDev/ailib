@@ -75,10 +75,10 @@
 		<Unit filename="C:/Users/Dmitry/Documents/GitHub/ailib/main.cpp">
 			<Option target="ailib"/>
 		</Unit>
-		<Unit filename="C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/DistanceMethods.cpp">
+		<Unit filename="C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/DistanceMethods.cpp">
 			<Option target="ailib"/>
 		</Unit>
-		<Unit filename="C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/DistanceMethods.h">
+		<Unit filename="C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/DistanceMethods.h">
 			<Option target="ailib"/>
 		</Unit>
 		<Unit filename="C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/IClassifier.h">

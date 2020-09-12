@@ -10,7 +10,7 @@
 #include "IMetrix.h"
 #include <vector>
 
-template<typename DType>
+template<class DType>
 class KNearestNeighbor : public IClassifier<DType>, IMetrix
 {
 public:
