@@ -2,6 +2,8 @@
 // Created by Dmitry on 12.09.2020.
 //
 
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 #ifndef AILIB_CSVREADER_H
 #define AILIB_CSVREADER_H
 
@@ -15,9 +17,9 @@
 template<class DType>
 class CSVReader
 {
-    CSVReader(int labelIndex = 0);
+public:
     CSV<DType>& ReadCSVFromFile(std::string path);
-
+    void SetLabelIndex(int labelIndex);
 private:
     void SetLength(std::string& firstLine);
     void SetDataSize(std::vector<std::string>& dataMatrix);
@@ -31,3 +33,5 @@ private:
 
 
 #endif //AILIB_CSVREADER_H
+
+#pragma clang diagnostic pop

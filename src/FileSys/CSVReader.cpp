@@ -3,7 +3,6 @@
 //
 #include "CSV.h"
 #include "CSVReader.h"
-#include <filesystem>
 #include <fstream>
 #include <vector>
 #include <exception>
@@ -32,19 +31,13 @@ std::vector<std::string> SplitString(std::string s, char separator)
     return result;
 }
 
-const char* ReadFileBinary(std::string filename)
-{
-    return ReadFileBinary(filename.c_str());
-}
 
-inline bool FileExists(const std::string & name)
-{
-    return std::filesystem::exists(name);;
-}
 
-const char* ReadFileBinary(const char * filename)
+
+
+const char* ReadFileBinaryStr(const char * filename)
 {
-    if (FileExists(filename))
+    if (true)
     {
         std::ifstream infile(filename);
 
@@ -68,38 +61,43 @@ const char* ReadFileBinary(const char * filename)
     else
     {
         std::string msg = "file not exists";
-        std::string unexisted_file = filename;
-        msg = msg + unexisted_file;
+        std::string unexistedFile = filename;
+        msg = msg + unexistedFile;
 
-        throw std::exception(msg.c_str());
+        throw std::runtime_error(msg);
     }
+}
+
+const char* ReadFileBinary(std::string filename)
+{
+    return ReadFileBinaryStr(filename.c_str());
 }
 
 template<class DType>
 CSV<DType>& CSVReader<DType>::ReadCSVFromFile(std::string path)
 {
-    std::string matrixString = SplitString(path);
-    vector<std::string> vectorOfLines = file.SplitString(queryBytes, '\n');
+    std::string matrixString = ReadFileBinary(path);
+    std::vector<std::string> vectorOfLines = SplitString(matrixString, '\n');
 
     SetDataSize(vectorOfLines);
     SetLength(vectorOfLines[0]);
     SetFeatureNames(vectorOfLines[0]);
     SetDataMatrix(vectorOfLines);
 
-    return &finalProduct;
+    return finalProduct;
 }
 
 template<class DType>
 void CSVReader<DType>::SetLength(std::string& firstLine)
 {
-    vector<std::string> vectorOfNames = SplitString(queryBytes, ' ');
+    std::vector<std::string> vectorOfNames = SplitString(firstLine, ' ');
     this->finalProduct.featureCount = vectorOfNames.size();
 }
 
 template<class DType>
 void CSVReader<DType>::SetFeatureNames(std::string& names)
 {
-    std::vector<std::string> vectorOfNames = SplitString(queryBytes, ' ');
+    std::vector<std::string> vectorOfNames = SplitString(names, ' ');
     std::string* featureNames = &vectorOfNames[0];
     this->finalProduct.featureNames = featureNames;
 }
@@ -113,34 +111,35 @@ void CSVReader<DType>::SetDataSize(std::vector<std::string>& dataMatrix)
 template<class DType>
 void CSVReader<DType>::SetDataMatrix(std::vector<std::string> &dataStingMatrix)
 {
-    DType dataMatrix[const_cast<int>(dataSize)][const_cast<int>(featureCount)];
+    DType dataMatrix[finalProduct.dataSize][finalProduct.featureCount];
+
+    int alloc[finalProduct.featureCount];
+
+    finalProduct.labelValues = &alloc[0];
 
     for (int i = 1; i < dataStingMatrix.size(); i++)
     {
-        std::vector<std::string> vectorOfCells = SplitString(queryBytes, ' ');
+        std::vector<std::string> vectorOfCells = SplitString(dataStingMatrix[i], ' ');
         for (int j = 0; j < vectorOfCells.size(); j++)
         {
             if(j != this->labelIndex)
             {
-                dataMatrix[i][j] = dynamic_cast<DType>(std::stold(vectorOfCells[j]));
+                dataMatrix[i][j] = (unsigned char)(std::stoi(vectorOfCells[j]));
             }
             else
             {
-                labelValues[i] = dynamic_cast<DType>(std::stold(vectorOfCells[j]));
+                finalProduct.labelValues[i] = (unsigned char)(std::stoi(vectorOfCells[j]));
             }
         }
     }
-    this->finalProduct.dataMatrix = &dataMatrix;
+    *this->finalProduct.dataMatrix = dataMatrix[0];
 }
 
 template<class DType>
-CSVReader<DType>::CSVReader(int labelIndex = 0)
+void CSVReader<DType>::SetLabelIndex(int labelIndex)
 {
     this->labelIndex = labelIndex;
 }
 
-template<class DType>
-CSVReader<DType>::CSVReader()
-{
-    // No impl, just def constructor Created
-}
+
+

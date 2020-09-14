@@ -3,11 +3,12 @@
 #include "src/Math/LinAlg/Matrix.h"
 #include "src/Math/LinAlg/Matrix.cpp"
 #include "src/FileSys/CSVReader.h"
-
+#include "src/FileSys/CSVReader.cpp"
 int main()
 {
 
-    CSVReader<unsigned char> reader("fdsfdsf");
+    CSVReader<unsigned char> reader;
+    reader.ReadCSVFromFile("C:\\Users\\Dmitry\\Documents\\GitHub\\ailib\\resources\\mnist_test.csv");
 
 
 
