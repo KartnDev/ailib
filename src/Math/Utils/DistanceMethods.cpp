@@ -3,6 +3,7 @@
 //
 
 #include "DistanceMethods.h"
+#include <cmath>
 
 template<class DType>
 double GetMinkowskiDistance(DType *pointFirst, DType pointSecond, int pointDim, double r)

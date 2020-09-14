@@ -20,7 +20,7 @@ void KNearestNeighbor<DType>::Fit(DType **xData, int *yData, int dataSize, int f
 template<class DType>
 int *KNearestNeighbor<DType>::Predict(DType **predictFetchData, int predictedSize) const
 {
-    auto cmp = [](std::pair<int, double> a, std::pair<int, double> b) { return a.second > b.second };
+    auto cmp = [](std::pair<int, double> a, std::pair<int, double> b) { return a.second > b.second; };
 
     int predicts[dataSize];
 
@@ -31,17 +31,17 @@ int *KNearestNeighbor<DType>::Predict(DType **predictFetchData, int predictedSiz
         for (int j = 0; j < dataSize; j++)
         {
             std::pair<int, double> current;
-            current.second = GetMinkowskiDistance<DType>(fetchedData[j], predictVector, featureCount);
+            current.second = GetMinkowskiDistance<DType>(fetchedData[j], predictFetchData[j], featureCount);
             current.first = j;
 
             distancesIndexes.insert(current);
         }
 
-        vector<int> nearestModels;
+        std::vector<int> nearestModels;
 
         for (int k = 0; k < kNearestCount; k++)
         {
-            nearestModels.push_back(this->trainFetchLabel[result[i].first]);
+            nearestModels.push_back(this->trainFetchLabel[distancesIndexes[k].first]);
         }
 
         predicts[i] = FindMostCommon(nearestModels);
@@ -53,7 +53,7 @@ int *KNearestNeighbor<DType>::Predict(DType **predictFetchData, int predictedSiz
 template<class DType>
 int KNearestNeighbor<DType>::Predict(DType *predictVector) const
 {
-    auto cmp = [](std::pair<int, double> a, std::pair<int, double> b) { return a.second > b.second };
+    auto cmp = [](std::pair<int, double> a, std::pair<int, double> b) { return a.second > b.second; };
 
     std::set<std::pair<int, double>, decltype(cmp)> distancesIndexes;
 
@@ -66,11 +66,11 @@ int KNearestNeighbor<DType>::Predict(DType *predictVector) const
         distancesIndexes.insert(current);
     }
 
-    vector<int> nearestModels;
+    std::vector<int> nearestModels;
 
     for (int k = 0; k < kNearestCount; k++)
     {
-        nearestModels.push_back(this->trainFetchLabel[result[i].first]);
+        nearestModels.push_back(this->trainFetchLabel[distancesIndexes[k].first]);
     }
 
     return this->FindMostCommon(nearestModels);
@@ -79,15 +79,16 @@ int KNearestNeighbor<DType>::Predict(DType *predictVector) const
 template<class DType>
 int KNearestNeighbor<DType>::FindMostCommon(std::vector<int> value)
 {
+
     int index = 0;
     int highest = 0;
     for (int a = 0; a < value.size(); a++)
     {
         int count = 1;
-        int Position = value.at(a);
-        for (int bCoef = a + 1; bCoef < value.size(); bCoef++)
+        int position = value.at(a);
+        for (int n = a + 1; n < value.size(); n++)
         {
-            if (value.at(bCoef) == Position)
+            if (value.at(n) == position)
             {
                 count++;
             }
@@ -95,7 +96,7 @@ int KNearestNeighbor<DType>::FindMostCommon(std::vector<int> value)
         if (count >= index)
         {
             index = count;
-            highest = Position;
+            highest = position;
         }
     }
     return highest;

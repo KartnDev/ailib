@@ -16,7 +16,6 @@ template<class DType>
 class CSVReader
 {
     CSVReader(int labelIndex = 0);
-    CSVReader();
     CSV<DType>& ReadCSVFromFile(std::string path);
 
 private:

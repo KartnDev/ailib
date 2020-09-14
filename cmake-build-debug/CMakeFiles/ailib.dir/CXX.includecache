@@ -11,6 +11,16 @@ iostream
 -
 src/Models/Classifiers/KNearestNeighbor.h
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/KNearestNeighbor.h
+src/Math/LinAlg/Matrix.h
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/LinAlg/Matrix.h
+src/Math/LinAlg/Matrix.cpp
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/LinAlg/Matrix.cpp
+
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/LinAlg/Matrix.cpp
+Matrix.h
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/LinAlg/Matrix.h
+
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/LinAlg/Matrix.h
 
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/IClassifier.h
 map
@@ -29,4 +39,6 @@ IClassifier.h
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/IClassifier.h
 IMetrix.h
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/IMetrix.h
+vector
+-
 

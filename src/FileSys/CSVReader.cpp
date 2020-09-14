@@ -6,7 +6,7 @@
 #include <filesystem>
 #include <fstream>
 #include <vector>
-
+#include <exception>
 
 
 std::vector<std::string> SplitString(std::string s, char separator)

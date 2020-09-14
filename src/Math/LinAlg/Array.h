@@ -6,7 +6,7 @@
 #define AILIB_ARRAY_H
 
 
-struct Array
+class Array
 {
 
 };
