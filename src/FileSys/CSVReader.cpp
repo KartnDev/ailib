@@ -60,11 +60,7 @@ const char* ReadFileBinaryStr(const char * filename)
     }
     else
     {
-        std::string msg = "file not exists";
-        std::string unexistedFile = filename;
-        msg = msg + unexistedFile;
 
-        throw std::runtime_error(msg);
     }
 }
 
@@ -74,65 +70,79 @@ const char* ReadFileBinary(std::string filename)
 }
 
 template<class DType>
-CSV<DType>& CSVReader<DType>::ReadCSVFromFile(std::string path)
+CSV<DType> CSVReader<DType>::ReadCSVFromFile(std::string path)
 {
+    CSV<DType> result;
+
     std::string matrixString = ReadFileBinary(path);
     std::vector<std::string> vectorOfLines = SplitString(matrixString, '\n');
 
-    SetDataSize(vectorOfLines);
-    SetLength(vectorOfLines[0]);
-    SetFeatureNames(vectorOfLines[0]);
-    SetDataMatrix(vectorOfLines);
+    SetDataSize(vectorOfLines, result);
+    SetLength(vectorOfLines[0], result);
+    SetFeatureNames(vectorOfLines[0], result);
+    SetDataMatrix(vectorOfLines, result);
 
-    return finalProduct;
+    return result;
 }
 
 template<class DType>
-void CSVReader<DType>::SetLength(std::string& firstLine)
+void CSVReader<DType>::SetLength(std::string &firstLine, CSV<DType> & csv)
 {
-    std::vector<std::string> vectorOfNames = SplitString(firstLine, ' ');
-    this->finalProduct.featureCount = vectorOfNames.size();
+    std::vector<std::string> vectorOfNames = SplitString(firstLine, ',');
+    csv.featureCount = vectorOfNames.size();
 }
 
 template<class DType>
-void CSVReader<DType>::SetFeatureNames(std::string& names)
+void CSVReader<DType>::SetFeatureNames(std::string &names, CSV<DType> & csv)
 {
-    std::vector<std::string> vectorOfNames = SplitString(names, ' ');
-    std::string* featureNames = &vectorOfNames[0];
-    this->finalProduct.featureNames = featureNames;
+    std::vector<std::string> vectorOfNames = SplitString(names, ',');
+    csv.featureNames = &vectorOfNames[0];
 }
 
 template<class DType>
-void CSVReader<DType>::SetDataSize(std::vector<std::string>& dataMatrix)
+void CSVReader<DType>::SetDataSize(std::vector<std::string> &dataMatrix, CSV<DType> & csv)
 {
-    this->finalProduct.dataSize = dataMatrix.size();
+    csv.dataSize = dataMatrix.size();
 }
 
 template<class DType>
-void CSVReader<DType>::SetDataMatrix(std::vector<std::string> &dataStingMatrix)
+void CSVReader<DType>::SetDataMatrix(std::vector<std::string> &dataStingMatrix, CSV<DType> & csv)
 {
-    DType dataMatrix[finalProduct.dataSize][finalProduct.featureCount];
+    DType* dataMatrix = (DType*)malloc(csv.dataSize * csv.featureCount * sizeof(DType));
 
-    int alloc[finalProduct.featureCount];
+    int labels[csv.featureCount];
 
-    finalProduct.labelValues = &alloc[0];
 
-    for (int i = 1; i < dataStingMatrix.size(); i++)
+    dataMatrix[792 * csv.featureCount + 1] = 1;
+
+    for (int i = 0; i < csv.dataSize; i++)
     {
-        std::vector<std::string> vectorOfCells = SplitString(dataStingMatrix[i], ' ');
-        for (int j = 0; j < vectorOfCells.size(); j++)
+        std::vector<std::string> vectorOfCells = SplitString(dataStingMatrix[i + 1], ',');
+        int size = vectorOfCells.size();
+        if (i == 794)
         {
-            if(j != this->labelIndex)
+            int a = 0;
+        }
+        for (int j = 0; j < size - 1; j++)
+        {
+            if(csv.featureCount ==  vectorOfCells.size())
             {
-                dataMatrix[i][j] = (unsigned char)(std::stoi(vectorOfCells[j]));
-            }
-            else
-            {
-                finalProduct.labelValues[i] = (unsigned char)(std::stoi(vectorOfCells[j]));
+                if (j != this->labelIndex)
+                {
+                    dataMatrix[i*csv.featureCount +j] = (DType) (std::stoi(dataMatrix[j]));;
+                }
+                else
+                {
+                    labels[i] = (int) (std::stoi(vectorOfCells[j]));
+                }
             }
         }
     }
-    *this->finalProduct.dataMatrix = dataMatrix[0];
+
+
+    csv.labelValues = labels;
+    csv.dataMatrix = dataMatrix;
+    return;
 }
 
 template<class DType>

@@ -18,17 +18,15 @@ template<class DType>
 class CSVReader
 {
 public:
-    CSV<DType>& ReadCSVFromFile(std::string path);
+    CSV<DType> ReadCSVFromFile(std::string path);
     void SetLabelIndex(int labelIndex);
 private:
-    void SetLength(std::string& firstLine);
-    void SetDataSize(std::vector<std::string>& dataMatrix);
-    void SetFeatureNames(std::string& names);
-    void SetDataMatrix(std::vector<std::string>& dataStingMatrix);
+    void SetLength(std::string &firstLine, CSV<DType> & csv);
+    void SetDataSize(std::vector<std::string> &dataMatrix, CSV<DType> & csv);
+    void SetFeatureNames(std::string &names, CSV<DType> &csv);
+    void SetDataMatrix(std::vector<std::string> &dataStingMatrix, CSV<DType> & csv);
 
     int labelIndex = 0;
-
-    CSV<DType> finalProduct;
 };
 
 

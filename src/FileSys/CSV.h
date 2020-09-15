@@ -11,7 +11,7 @@ template <class DType>
 struct CSV
 {
     std::string* featureNames;
-    DType** dataMatrix;
+    DType* dataMatrix;
     int* labelValues;
 
     int dataSize;
