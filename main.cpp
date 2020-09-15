@@ -7,8 +7,8 @@
 int main()
 {
 
-    CSVReader<int> reader;
-    CSV<int> csv = reader.ReadCSVFromFile("C:\\Users\\Dmitry\\Documents\\GitHub\\ailib\\resources\\mnist_test.csv");
+    CSVReader<long> reader;
+    CSV<long> csv = reader.ReadCSVFromFile("C:\\Users\\Dmitry\\Documents\\GitHub\\ailib\\resources\\mnist_train.csv");
 
 
 

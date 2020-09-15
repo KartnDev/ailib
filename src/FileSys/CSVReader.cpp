@@ -111,7 +111,7 @@ void CSVReader<DType>::SetDataMatrix(std::vector<std::string> &dataStingMatrix, 
 {
     DType* dataMatrix = (DType*)malloc(csv.dataSize * csv.featureCount * sizeof(DType));
 
-    int labels[csv.dataSize];
+    int* labels = (int*)malloc(csv.dataSize * sizeof(int));
 
     for (int i = 0; i < csv.dataSize; i++)
     {

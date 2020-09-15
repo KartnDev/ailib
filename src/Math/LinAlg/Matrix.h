@@ -15,7 +15,17 @@ struct Matrix
     Matrix(const DType* matrix, const int rows, const int cols);
     Matrix(const int rows, const int cols);
 
-    Matrix<DType>& MatMul(const Matrix<DType>* lhsMatrix);
+    Matrix<DType>& MatMul(const Matrix<DType>& lhsMatrix);
+
+    void Transpose();
+    const Matrix<DType>& Transpose() const;
+
+    void MatAdd(const Matrix<DType>& lhsMatrix);
+    void MatSub(const Matrix<DType>& lhsMatrix);
+    void ScalarMultiply(double scalar);
+    void ScalarDivide(double scalar);
+
+
 };
 
 
