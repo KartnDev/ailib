@@ -35,6 +35,10 @@ vector
 -
 exception
 -
+iostream
+-
+cstdio
+-
 
 C:/Users/Dmitry/Documents/GitHub/ailib/src/FileSys/CSVReader.h
 string

@@ -6,7 +6,8 @@
 #include <fstream>
 #include <vector>
 #include <exception>
-
+#include <iostream>
+#include <cstdio>
 
 std::vector<std::string> SplitString(std::string s, char separator)
 {
@@ -102,7 +103,7 @@ void CSVReader<DType>::SetFeatureNames(std::string &names, CSV<DType> & csv)
 template<class DType>
 void CSVReader<DType>::SetDataSize(std::vector<std::string> &dataMatrix, CSV<DType> & csv)
 {
-    csv.dataSize = dataMatrix.size();
+    csv.dataSize = dataMatrix.size() - 1;
 }
 
 template<class DType>
@@ -110,26 +111,23 @@ void CSVReader<DType>::SetDataMatrix(std::vector<std::string> &dataStingMatrix, 
 {
     DType* dataMatrix = (DType*)malloc(csv.dataSize * csv.featureCount * sizeof(DType));
 
-    int labels[csv.featureCount];
-
-
-    dataMatrix[792 * csv.featureCount + 1] = 1;
+    int labels[csv.dataSize];
 
     for (int i = 0; i < csv.dataSize; i++)
     {
         std::vector<std::string> vectorOfCells = SplitString(dataStingMatrix[i + 1], ',');
-        int size = vectorOfCells.size();
-        if (i == 794)
+
+        if (i == 795)
         {
             int a = 0;
         }
-        for (int j = 0; j < size - 1; j++)
+        for (int j = 0; j < csv.featureCount - 1; j++)
         {
             if(csv.featureCount ==  vectorOfCells.size())
             {
                 if (j != this->labelIndex)
                 {
-                    dataMatrix[i*csv.featureCount +j] = (DType) (std::stoi(dataMatrix[j]));;
+                    dataMatrix[i*csv.featureCount +j] = (DType) (std::stoi(vectorOfCells[j]));;
                 }
                 else
                 {
@@ -137,6 +135,7 @@ void CSVReader<DType>::SetDataMatrix(std::vector<std::string> &dataStingMatrix, 
                 }
             }
         }
+        std::cout << i << std::endl;
     }
 
 
