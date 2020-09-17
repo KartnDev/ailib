@@ -15,20 +15,19 @@ Matrix<DType>& MatrixMul(const Matrix<DType> &lhsMatrix, const Matrix<DType> &rh
         {
             for (int j = 0; j < rhsMatrix.cols; j++)
             {
+                mat.matrix[i * mat.cols + j] = 0;
                 for (int k = 0; k < lhsMatrix.cols; k++)
                 {
-                    DType d = lhsMatrix.At(i, k);
-                    DType v = rhsMatrix.At(k, j);
+                    const DType kLeft = lhsMatrix.matrix[i * lhsMatrix.cols + j];
+                    const DType kRight = rhsMatrix.matrix[i * rhsMatrix.cols + j];
 
-                    mat.At(i, j) += d * v;
-                    std::cout << lhsMatrix.At(i, k) * rhsMatrix.At(k, j) << " ";
+                    mat.matrix[i * mat.cols + j] += kLeft * kRight;
                 }
-
             }
-            std::cout << std::endl;
         }
         return mat;
     }
+    throw std::runtime_error("MatMul took non equality size of matrix s");
 }
 
 
@@ -45,14 +44,15 @@ Matrix<DType>::Matrix(const DType *matrix, const int rows, const int cols)
 template<class DType>
 Matrix<DType>::Matrix(int rows, int cols)
 {
-    DType *alloc = (DType*)malloc(rows * cols * sizeof(DType));
+    auto *alloc = (DType*)malloc(rows * cols * sizeof(DType));
+
     this->matrix = alloc;
     this->rows = rows;
     this->cols = cols;
 }
 
 template<class DType>
-Matrix<DType> &Matrix<DType>::MatMul(const Matrix<DType> &lhsMatrix) const
+Matrix<DType>& Matrix<DType>::MatMul(const Matrix<DType> &lhsMatrix) const
 {
     return MatrixMul<DType>(*this, lhsMatrix);
 }
@@ -172,7 +172,7 @@ const Matrix<DType> &Matrix<DType>::operator*(const Matrix<DType> &rhsMatrix)
 }
 
 template<class DType>
-DType &Matrix<DType>::At(int i, int j)
+DType &Matrix<DType>::At(int i, int j) const
 {
     return this->matrix[i * cols + j];
 }

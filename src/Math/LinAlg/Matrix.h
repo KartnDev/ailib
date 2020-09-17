@@ -42,7 +42,7 @@ struct Matrix
     void operator+=(const Matrix<DType>& rhsMatrix);
     void operator-=(const Matrix<DType>& rhsMatrix);
 
-    DType& At(int i, int j);
+    DType& At(int i, int j) const;
 
     const Matrix<DType>& operator+(const Matrix<DType>& rhsMatrix);
     const Matrix<DType>& operator-(const Matrix<DType>& rhsMatrix);

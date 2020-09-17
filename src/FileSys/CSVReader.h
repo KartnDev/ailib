@@ -2,7 +2,6 @@
 // Created by Dmitry on 12.09.2020.
 //
 
-#pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCInconsistentNamingInspection"
 #ifndef AILIB_CSVREADER_H
 #define AILIB_CSVREADER_H
@@ -32,4 +31,3 @@ private:
 
 #endif //AILIB_CSVREADER_H
 
-#pragma clang diagnostic pop

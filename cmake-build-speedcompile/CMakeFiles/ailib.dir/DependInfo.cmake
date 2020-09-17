@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/Utils/DistanceMethods.cpp" "C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-speedcompile/CMakeFiles/ailib.dir/src/Math/Utils/DistanceMethods.cpp.obj"
   "C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/KNearestNeighbor.cpp" "C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-speedcompile/CMakeFiles/ailib.dir/src/Models/Classifiers/KNearestNeighbor.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
