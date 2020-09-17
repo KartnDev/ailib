@@ -274,24 +274,24 @@ Matrix<DType>::~Matrix()
 template<class DType>
 void Matrix<DType>::operator*=(double scalar)
 {
-    this->Mat<DType>(scalar);
+    this->ScalarMultiply(scalar);
 }
 
 template<class DType>
 void Matrix<DType>::operator/=(double scalar)
 {
-    this->MatrixDivideScalar(scalar);
+    this->ScalarDivide(scalar);
 }
 
 template<class DType>
 const Matrix<DType> &Matrix<DType>::operator*(double scalar)
 {
-
+    return ScalarMultiplyRet(scalar);
 }
 
 template<class DType>
 const Matrix<DType> &Matrix<DType>::operator/(double scalar)
 {
-
+    return ScalarDivideRet(scalar);
 }
 
