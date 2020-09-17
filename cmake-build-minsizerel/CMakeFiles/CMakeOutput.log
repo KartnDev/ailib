@@ -50,48 +50,48 @@ The CXX compiler identification is MSVC, found in "C:/Users/Dmitry/Documents/Git
 Determining if the C compiler works passed with the following output:
 Change Dir: C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-minsizerel/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_f7f9a\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX64\x64\nmake.exe" -f CMakeFiles\cmTC_f7f9a.dir\build.make /nologo -L                  CMakeFiles\cmTC_f7f9a.dir\build
-Building C object CMakeFiles/cmTC_f7f9a.dir/testCCompiler.c.obj
-	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nm923F.tmp
+Run Build Command(s):nmake /nologo cmTC_e48a6\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX64\x64\nmake.exe" -f CMakeFiles\cmTC_e48a6.dir\build.make /nologo -L                  CMakeFiles\cmTC_e48a6.dir\build
+Building C object CMakeFiles/cmTC_e48a6.dir/testCCompiler.c.obj
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nmD1CE.tmp
 testCCompiler.c
-Linking C executable cmTC_f7f9a.exe
-	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_f7f9a.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_f7f9a.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nm92EC.tmp
+Linking C executable cmTC_e48a6.exe
+	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_e48a6.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_e48a6.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nmD20D.tmp
 
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-minsizerel/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_e8bea\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX64\x64\nmake.exe" -f CMakeFiles\cmTC_e8bea.dir\build.make /nologo -L                  CMakeFiles\cmTC_e8bea.dir\build
-Building C object CMakeFiles/cmTC_e8bea.dir/CMakeCCompilerABI.c.obj
-	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nm9924.tmp
+Run Build Command(s):nmake /nologo cmTC_cfbd4\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX64\x64\nmake.exe" -f CMakeFiles\cmTC_cfbd4.dir\build.make /nologo -L                  CMakeFiles\cmTC_cfbd4.dir\build
+Building C object CMakeFiles/cmTC_cfbd4.dir/CMakeCCompilerABI.c.obj
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nmD913.tmp
 CMakeCCompilerABI.c
-Linking C executable cmTC_e8bea.exe
-	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_e8bea.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_e8bea.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nm9954.tmp
+Linking C executable cmTC_cfbd4.exe
+	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_cfbd4.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_cfbd4.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nmD952.tmp
 
 
 
 Determining if the CXX compiler works passed with the following output:
 Change Dir: C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-minsizerel/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_e903f\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX64\x64\nmake.exe" -f CMakeFiles\cmTC_e903f.dir\build.make /nologo -L                  CMakeFiles\cmTC_e903f.dir\build
-Building CXX object CMakeFiles/cmTC_e903f.dir/testCXXCompiler.cxx.obj
-	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nmAABA.tmp
+Run Build Command(s):nmake /nologo cmTC_3ddaf\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX64\x64\nmake.exe" -f CMakeFiles\cmTC_3ddaf.dir\build.make /nologo -L                  CMakeFiles\cmTC_3ddaf.dir\build
+Building CXX object CMakeFiles/cmTC_3ddaf.dir/testCXXCompiler.cxx.obj
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nmE0F1.tmp
 testCXXCompiler.cxx
-Linking CXX executable cmTC_e903f.exe
-	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_e903f.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_e903f.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nmAB17.tmp
+Linking CXX executable cmTC_3ddaf.exe
+	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_3ddaf.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_3ddaf.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nmE130.tmp
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-minsizerel/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_73c97\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX64\x64\nmake.exe" -f CMakeFiles\cmTC_73c97.dir\build.make /nologo -L                  CMakeFiles\cmTC_73c97.dir\build
-Building CXX object CMakeFiles/cmTC_73c97.dir/CMakeCXXCompilerABI.cpp.obj
-	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nmB317.tmp
+Run Build Command(s):nmake /nologo cmTC_cd80b\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX64\x64\nmake.exe" -f CMakeFiles\cmTC_cd80b.dir\build.make /nologo -L                  CMakeFiles\cmTC_cd80b.dir\build
+Building CXX object CMakeFiles/cmTC_cd80b.dir/CMakeCXXCompilerABI.cpp.obj
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nmF39E.tmp
 CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_73c97.exe
-	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_73c97.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_73c97.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nmB355.tmp
+Linking CXX executable cmTC_cd80b.exe
+	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_cd80b.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_cd80b.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nmF3DE.tmp
 
 
 

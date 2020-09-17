@@ -60,13 +60,36 @@ Matrix<DType>& Matrix<DType>::MatMul(const Matrix<DType> &lhsMatrix) const
 template<class DType>
 void Matrix<DType>::Transpose()
 {
-
+    *this = TransposeRet();
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::Transpose() const
+const Matrix<DType> &Matrix<DType>::TransposeRet() const
 {
-
+    if(cols == rows) // TODO optimize this
+    {
+        Matrix<DType> mat(rows, cols);
+        for(int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                mat.At(i, j) = this->At(j, i);
+            }
+        }
+        return mat;
+    }
+    else
+    {
+        Matrix<DType> mat(cols, rows);
+        for(int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                mat.At(j, i) = this->At(i, j);
+            }
+        }
+        return mat;
+    }
 }
 
 template<class DType>

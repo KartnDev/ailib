@@ -20,7 +20,7 @@ struct Matrix
     Matrix<DType>& MatMul(const Matrix<DType>& rhsMatrix) const;
 
     void Transpose();
-    const Matrix<DType>& Transpose() const;
+    const Matrix<DType>& TransposeRet() const;
 
     void Inverse();
     const Matrix<DType>& Inverse() const;
