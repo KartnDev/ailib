@@ -38,6 +38,8 @@ struct Matrix
     double Determinant() const;
 
     void operator*=(const Matrix<DType>& rhsMatrix);
+    void operator*=(double scalar);
+    void operator/=(double scalar);
     void operator+=(const Matrix<DType>& rhsMatrix);
     void operator-=(const Matrix<DType>& rhsMatrix);
 
@@ -46,7 +48,8 @@ struct Matrix
     const Matrix<DType>& operator+(const Matrix<DType>& rhsMatrix);
     const Matrix<DType>& operator-(const Matrix<DType>& rhsMatrix);
     const Matrix<DType>& operator*(const Matrix<DType>& rhsMatrix);
-
+    const Matrix<DType>& operator*(double scalar);
+    const Matrix<DType>& operator/(double scalar);
 };
 
 
