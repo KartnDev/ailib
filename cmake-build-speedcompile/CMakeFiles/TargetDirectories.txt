@@ -1,0 +1,3 @@
+C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-speedcompile/CMakeFiles/ailib.dir
+C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-speedcompile/CMakeFiles/edit_cache.dir
+C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-speedcompile/CMakeFiles/rebuild_cache.dir

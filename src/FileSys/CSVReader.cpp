@@ -117,10 +117,6 @@ void CSVReader<DType>::SetDataMatrix(std::vector<std::string> &dataStingMatrix, 
     {
         std::vector<std::string> vectorOfCells = SplitString(dataStingMatrix[i + 1], ',');
 
-        if (i == 795)
-        {
-            int a = 0;
-        }
         for (int j = 0; j < csv.featureCount - 1; j++)
         {
             if(csv.featureCount ==  vectorOfCells.size())
@@ -135,13 +131,11 @@ void CSVReader<DType>::SetDataMatrix(std::vector<std::string> &dataStingMatrix, 
                 }
             }
         }
-        std::cout << i << std::endl;
     }
 
 
     csv.labelValues = labels;
     csv.dataMatrix = dataMatrix;
-    return;
 }
 
 template<class DType>
