@@ -30,8 +30,73 @@ Matrix<DType>& MatrixMul(const Matrix<DType> &lhsMatrix, const Matrix<DType> &rh
     throw std::runtime_error("MatMul took non equality size of matrix s");
 }
 
+template<class DType>
+Matrix<DType>& MatrixAdd(const Matrix<DType> &lhsMatrix, const Matrix<DType> &rhsMatrix)
+{
+    if(lhsMatrix.cols == rhsMatrix.cols && lhsMatrix.rows == rhsMatrix.rows)
+    {
+        Matrix<DType> mat(lhsMatrix.rows, rhsMatrix.cols);
 
+        for (int i = 0; i < lhsMatrix.rows; i++)
+        {
+            for (int j = 0; j < rhsMatrix.cols; j++)
+            {
+                mat.matrix[i * mat.cols + j] = lhsMatrix.At(i, j) + rhsMatrix.At(i, j);
+            }
+        }
+        return mat;
+    }
+    throw std::runtime_error("MatAdd took a different sizes of matrix");
+}
 
+template<class DType>
+Matrix<DType>& MatrixSub(const Matrix<DType> &lhsMatrix, const Matrix<DType> &rhsMatrix)
+{
+    if(lhsMatrix.cols == rhsMatrix.cols && lhsMatrix.rows == rhsMatrix.rows)
+    {
+        Matrix<DType> mat(lhsMatrix.rows, rhsMatrix.cols);
+
+        for (int i = 0; i < lhsMatrix.rows; i++)
+        {
+            for (int j = 0; j < rhsMatrix.cols; j++)
+            {
+                mat.matrix[i * mat.cols + j] = lhsMatrix.At(i, j) - rhsMatrix.At(i, j);
+            }
+        }
+        return mat;
+    }
+    throw std::runtime_error("MatAdd took a different sizes of matrix");
+}
+
+template<class DType>
+Matrix<DType>& MatrixMultiplyScalar(const Matrix<DType> &lhsMatrix, double scalar)
+{
+    Matrix<DType> mat(lhsMatrix.rows, lhsMatrix.cols);
+
+    for (int i = 0; i < lhsMatrix.rows; i++)
+    {
+        for (int j = 0; j < lhsMatrix.cols; j++)
+        {
+            mat.matrix[i * mat.cols + j] = lhsMatrix.At(i, j) * scalar;
+        }
+    }
+    return mat;
+}
+
+template<class DType>
+Matrix<DType>& MatrixDivideScalar(const Matrix<DType> &lhsMatrix, double scalar)
+{
+    Matrix<DType> mat(lhsMatrix.rows, lhsMatrix.cols);
+
+    for (int i = 0; i < lhsMatrix.rows; i++)
+    {
+        for (int j = 0; j < lhsMatrix.cols; j++)
+        {
+            mat.matrix[i * mat.cols + j] = lhsMatrix.At(i, j) / scalar;
+        }
+    }
+    return mat;
+}
 
 template<class DType>
 Matrix<DType>::Matrix(const DType *matrix, const int rows, const int cols)
@@ -95,25 +160,25 @@ const Matrix<DType> &Matrix<DType>::TransposeRet() const
 template<class DType>
 void Matrix<DType>::MatAdd(const Matrix<DType> &lhsMatrix)
 {
-
+     *this = MatrixAdd<DType>(*this, lhsMatrix);
 }
 
 template<class DType>
 void Matrix<DType>::MatSub(const Matrix<DType> &lhsMatrix)
 {
-
+    *this = MatrixSub<DType>(*this, lhsMatrix);
 }
 
 template<class DType>
 void Matrix<DType>::ScalarMultiply(double scalar)
 {
-
+    *this = MatrixMultiplyScalar<DType>(*this, scalar);
 }
 
 template<class DType>
 void Matrix<DType>::ScalarDivide(double scalar)
 {
-
+    *this = MatrixDivideScalar<DType>(*this, scalar);
 }
 
 template<class DType>
@@ -129,25 +194,25 @@ const Matrix<DType> &Matrix<DType>::Inverse() const
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::MatAdd(const Matrix<DType> &lhsMatrix) const
+const Matrix<DType> &Matrix<DType>::MatAddRet(const Matrix<DType> &lhsMatrix) const
 {
 
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::MatSub(const Matrix<DType> &lhsMatrix) const
+const Matrix<DType> &Matrix<DType>::MatSubRet(const Matrix<DType> &lhsMatrix) const
 {
 
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::ScalarMultiply(double scalar) const
+const Matrix<DType> &Matrix<DType>::ScalarMultiplyRet(double scalar) const
 {
 
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::ScalarDivide(double scalar) const
+const Matrix<DType> &Matrix<DType>::ScalarDivideRet(double scalar) const
 {
 
 }

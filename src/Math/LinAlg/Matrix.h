@@ -28,13 +28,12 @@ struct Matrix
     void MatAdd(const Matrix<DType>& rhsMatrix);
     void MatSub(const Matrix<DType>& rhsMatrix);
     void ScalarMultiply(double scalar);
-
     void ScalarDivide(double scalar);
 
-    const Matrix<DType>& MatAdd(const Matrix<DType>& rhsMatrix) const;
-    const Matrix<DType>& MatSub(const Matrix<DType>& rhsMatrix) const;
-    const Matrix<DType>& ScalarMultiply(double scalar) const;
-    const Matrix<DType>& ScalarDivide(double scalar) const;
+    const Matrix<DType>& MatAddRet(const Matrix<DType>& rhsMatrix) const;
+    const Matrix<DType>& MatSubRet(const Matrix<DType>& rhsMatrix) const;
+    const Matrix<DType>& ScalarMultiplyRet(double scalar) const;
+    const Matrix<DType>& ScalarDivideRet(double scalar) const;
 
     double Determinant() const;
 
