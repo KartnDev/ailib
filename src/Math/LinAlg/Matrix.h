@@ -17,7 +17,8 @@ struct Matrix
 
     ~Matrix();
 
-    Matrix<DType>& MatMul(const Matrix<DType>& rhsMatrix) const;
+    const Matrix<DType>& MatMul(const Matrix<DType>& rhsMatrix) const;
+
 
     void Transpose();
     const Matrix<DType>& TransposeRet() const;
@@ -30,10 +31,12 @@ struct Matrix
     void ScalarMultiply(DType scalar);
     void ScalarDivide(DType scalar);
 
+    const Matrix<DType>& ZeroOnePower() const;
     const Matrix<DType>& ExpRet() const;
-    const Matrix<DType> &PowerRet(int pow) const;
+    const Matrix<DType> &PowerRet(int powerNum) const;
     const Matrix<DType> &NegativeRet() const;
 
+    const Matrix<DType>& MatDivRet(const Matrix<DType>& rhsMatrix) const;
     const Matrix<DType>& MatAddRet(const Matrix<DType>& rhsMatrix) const;
     const Matrix<DType>& MatSubRet(const Matrix<DType>& rhsMatrix) const;
     const Matrix<DType>& ScalarMultiplyRet(DType scalar) const;
@@ -51,11 +54,15 @@ struct Matrix
 
     DType& At(int i, int j) const;
 
-    const Matrix<DType>& operator+(const Matrix<DType>& rhsMatrix);
-    const Matrix<DType>& operator-(const Matrix<DType>& rhsMatrix);
-    const Matrix<DType>& operator*(const Matrix<DType>& rhsMatrix);
-    const Matrix<DType>& operator*(DType scalar);
-    const Matrix<DType>& operator/(DType scalar);
+    const Matrix<DType>& operator+(const Matrix<DType>& rhsMatrix) const;
+    const Matrix<DType>& operator-(const Matrix<DType>& rhsMatrix) const;
+    const Matrix<DType>& operator*(const Matrix<DType>& rhsMatrix) const;
+    const Matrix<DType>& operator/(const Matrix<DType>& rhsMatrix) const;
+
+    const Matrix<DType>& operator*(DType scalar) const;
+    const Matrix<DType>& operator/(DType scalar) const;
+    const Matrix<DType>& operator+(DType scalar) const;
+    const Matrix<DType>& operator-(DType scalar) const;
 };
 
 
