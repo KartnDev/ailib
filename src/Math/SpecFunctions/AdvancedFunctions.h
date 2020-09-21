@@ -1,8 +1,0 @@
-//
-// Created by Dmitry on 17.09.2020.
-//
-
-#ifndef AILIB_ADVANCEDFUNCTIONS_H
-#define AILIB_ADVANCEDFUNCTIONS_H
-
-#endif //AILIB_ADVANCEDFUNCTIONS_H
