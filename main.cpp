@@ -1,4 +1,6 @@
 #include <iostream>
+#include <random>
+#include <ctime>
 #include "src/Models/Classifiers/KNearestNeighbor.h"
 #include "src/Math/LinAlg/Matrix.h"
 #include "src/Math/LinAlg/Matrix.cpp"
@@ -9,6 +11,7 @@
 
 int main()
 {
+    srand(time(NULL));
 
 //    CSVReader<long> reader;
 //    CSV<long> csv = reader.ReadCSVFromFile("C:\\Users\\Dmitry\\Documents\\GitHub\\ailib\\resources\\mnist_train.csv");
