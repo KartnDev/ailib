@@ -9,22 +9,22 @@
 #include <exception>
 
 template<class DType>
-Matrix<DType>& Sigmoid(const Matrix<DType>& x, bool derivative=false)
+const Matrix<DType>& Sigmoid(const Matrix<DType>& x, bool derivative=false)
 {
     if (derivative)
     {
         Matrix<DType> res = x.NegativeRet();
 
-        res = res.ExpRet() / (res.ExpRet() + 1);
+        res = res.ExpRet() / (res.ExpRet() + (DType)(1));
 
         return res.PowerRet(2);
     }
 
-    return 1 / (1 + x.NegativeRet().ExpRet());
+    return (x.NegativeRet().ExpRet() + 1).ZeroOnePower();
 }
 
 template<class DType>
-Matrix<DType>& SoftMax(const Matrix<DType>& x)
+const Matrix<DType>& SoftMax(const Matrix<DType>& x)
 {
     Matrix<DType> exps = (x - x.Max()).ExpRet();
     return exps / Sum(exps, 0);
