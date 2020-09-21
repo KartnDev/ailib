@@ -9,6 +9,7 @@
 #include <unordered_map>
 #include "IClassifier.h"
 #include "../../Math/LinAlg/Matrix.h"
+#include "../../Math/LinAlg/Vector.h"
 
 template<class DType>
 class NeuralNetwork : IClassifier<DType>
@@ -22,14 +23,14 @@ public:
     void LoadModel(std::string path) override;
 private:
     void Initialization();
-    void FeedForward(Matrix<DType>& xTrain);
-    void BackPropagation();
+    std::unordered_map<std::string, Matrix<DType>> FeedForward(Matrix<DType>& xTrain);
+    std::unordered_map<std::string, Matrix<DType>> BackPropagation(Vector<DType> yTrain, Vector<DType> output);
     void WeightsTraining();
 
     std::vector<int> topology;
     int epochs;
     double learnRate;
-    std::unordered_map<std::string, Matrix<DType>> params;
+
 };
 
 

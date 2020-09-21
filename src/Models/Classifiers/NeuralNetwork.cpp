@@ -5,6 +5,7 @@
 #include "NeuralNetwork.h"
 #include <cmath>
 #include "../../Math/Utils/MatrixExtentions.h"
+#include "../../Math/SpecFunctions/ActivationFunctions.h"
 
 template<class DType>
 NeuralNetwork<DType>::NeuralNetwork(const std::vector<int>& topology, int epochs, double learnRate)
@@ -38,24 +39,37 @@ void NeuralNetwork<DType>::Initialization()
 }
 
 template<class DType>
-void NeuralNetwork<DType>::FeedForward(Matrix<DType>& xTrain)
+std::unordered_map<std::string, Matrix<DType>> NeuralNetwork<DType>::FeedForward(Matrix<DType>& xTrain)
 {
+    std::unordered_map<std::string, Matrix<DType>> params;
+
     params["A0"] = xTrain;
 
     params["Z1"] = params["W1"] * params["A0"];
-    params["A1"] = this->sigmoid(params["Z1"]);
+    params["A1"] = Sigmoid(params["Z1"]);
 
     params["Z2"] = params["W2"] * params["A1"];
-    params["A2"] = sigmoid(params["Z2"]);
+    params["A2"] = Sigmoid(params["Z2"]);
 
     params["Z3"] = params["W3"] * params["A2"];
-    params["A3"] = softmax(params["Z3"]);
+    params["A3"] = Softmax(params["Z3"]);
 }
 
 template<class DType>
-void NeuralNetwork<DType>::BackPropagation()
+std::unordered_map<std::string, Matrix<DType>> NeuralNetwork<DType>::BackPropagation(Vector<DType> yTrain, Vector<DType> output)
 {
+    std::unordered_map<std::string, Matrix<DType>> params;
 
+    std::unordered_map<std::string, Matrix<DType>> changeW;
+
+    Matrix<DType> error = output - yTrain;
+    changeW['W3'] = error * params['A3'];
+
+    //error = np.multiply( np.dot(params['W3'].T, error), self.sigmoid(params['Z2'], derivative=True) );
+    //changeW['W2'] = np.dot(error, params['A2']);
+
+   // error = np.multiply( np.dot(params['W2'].T, error), self.sigmoid(params['Z1'], derivative=True) );
+   // changeW['W1'] = np.dot(error, params['A1']);
 }
 
 template<class DType>
