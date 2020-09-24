@@ -11,8 +11,7 @@
 template<class DType>
 Matrix<DType>* RandMatrix(int rows, int cols)
 {
-    void *allocated = malloc(sizeof(Matrix<DType>));
-    Matrix<DType>* result = new(allocated) Matrix<DType>(rows, cols);
+    Matrix<DType>* result = Matrix<DType>::Create(rows, cols);
 
     for (int i = 0; i < rows; i++)
     {

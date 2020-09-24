@@ -78,7 +78,7 @@ std::unordered_map<std::string, Matrix<DType>*> &NeuralNetwork<DType>::FeedForwa
     params["A0"] = xTrain;
 
 
-    params["A1"] = parameters["W1"]->MatMul(params["A0"]);
+    params["A1"] = params["A0"]->MatMul(parameters["W1"]);
 //    params["A1"] = Sigmoid<DType>(params["Z1"]);
 //
 //    params["Z2"] = params["W2"] * params["A1"];
