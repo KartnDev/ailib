@@ -1,4 +1,3 @@
-#include <iostream>
 #include <random>
 #include <ctime>
 #include "src/Models/Classifiers/NeuralNetwork.h"
@@ -20,9 +19,11 @@ int main()
     Matrix<int> xData(csv.dataSize, csv.featureCount);
     xData.matrix = csv.dataMatrix;
 
-    NeuralNetwork<int> network({784, 128, 64, 10});
+    std::vector<int> topology = {784, 128, 64, 10};
 
-    network.FeedForward(xData);
+    NeuralNetwork<int> network(topology, 10, 0.0001);
+
+    //network.FeedForward(xData);
 
     return 0;
 }

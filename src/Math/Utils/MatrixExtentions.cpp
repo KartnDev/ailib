@@ -6,8 +6,10 @@
 
 #include <random>
 
+#include <iostream>
+
 template<class DType>
-Matrix<DType> &RandMatrix(int rows, int cols)
+Matrix<DType>& RandMatrix(int rows, int cols)
 {
     Matrix<DType> result(rows, cols);
 
@@ -15,7 +17,10 @@ Matrix<DType> &RandMatrix(int rows, int cols)
     {
         for (int j = 0; j < cols; j++)
         {
-            result.At(i, j) = rand();
+            result.At(i, j) = rand() % 100;
         }
     }
+
+
+    return result;
 }

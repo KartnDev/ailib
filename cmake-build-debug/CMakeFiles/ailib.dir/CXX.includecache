@@ -7,8 +7,6 @@
 #IncludeRegexTransform: 
 
 C:/Users/Dmitry/Documents/GitHub/ailib/main.cpp
-iostream
--
 random
 -
 ctime
@@ -19,6 +17,8 @@ src/Models/Classifiers/NeuralNetwork.cpp
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/NeuralNetwork.cpp
 src/Math/LinAlg/Matrix.h
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/LinAlg/Matrix.h
+src/Math/LinAlg/Matrix.cpp
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/LinAlg/Matrix.cpp
 src/FileSys/CSVReader.h
 C:/Users/Dmitry/Documents/GitHub/ailib/src/FileSys/CSVReader.h
 src/FileSys/CSVReader.cpp
@@ -52,6 +52,10 @@ vector
 CSV.h
 C:/Users/Dmitry/Documents/GitHub/ailib/src/FileSys/CSV.h
 
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/LinAlg/Matrix.cpp
+Matrix.h
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/LinAlg/Matrix.h
+
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/LinAlg/Matrix.h
 
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/LinAlg/Vector.h
@@ -60,6 +64,14 @@ C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/SpecFunctions/ActivationFunction
 ../LinAlg/Matrix.h
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/LinAlg/Matrix.h
 exception
+-
+
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/Utils/MatrixExtentions.cpp
+MatrixExtentions.h
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/Utils/MatrixExtentions.h
+random
+-
+iostream
 -
 
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/Utils/MatrixExtentions.h
@@ -77,8 +89,14 @@ NeuralNetwork.h
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/NeuralNetwork.h
 cmath
 -
+any
+-
+bits/stl_pair.h
+-
 ../../Math/Utils/MatrixExtentions.h
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/Utils/MatrixExtentions.h
+../../Math/Utils/MatrixExtentions.cpp
+C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/Utils/MatrixExtentions.cpp
 ../../Math/SpecFunctions/ActivationFunctions.h
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/SpecFunctions/ActivationFunctions.h
 

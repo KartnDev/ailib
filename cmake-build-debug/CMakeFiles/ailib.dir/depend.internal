@@ -6,9 +6,11 @@ CMakeFiles/ailib.dir/main.cpp.obj
  C:/Users/Dmitry/Documents/GitHub/ailib/src/FileSys/CSV.h
  C:/Users/Dmitry/Documents/GitHub/ailib/src/FileSys/CSVReader.cpp
  C:/Users/Dmitry/Documents/GitHub/ailib/src/FileSys/CSVReader.h
+ C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/LinAlg/Matrix.cpp
  C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/LinAlg/Matrix.h
  C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/LinAlg/Vector.h
  C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/SpecFunctions/ActivationFunctions.h
+ C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/Utils/MatrixExtentions.cpp
  C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/Utils/MatrixExtentions.h
  C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/IClassifier.h
  C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/NeuralNetwork.cpp

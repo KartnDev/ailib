@@ -15,7 +15,7 @@ template<class DType>
 class NeuralNetwork : IClassifier<DType>
 {
 public:
-    explicit NeuralNetwork(const std::vector<int>& topology, int epochs=10, double learnRate=0.001);
+    NeuralNetwork(const std::vector<int>& topology, int epochs=10, double learnRate=0.001);
     void Fit(DType** xData, int* yData, int dataSize, int featureCount) override;
     int* Predict(DType** predictFetchData, int predictSize) const override;
     int Predict(DType* predictVector) const override;
