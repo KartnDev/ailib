@@ -28,8 +28,16 @@ struct Matrix
 
     void MatAdd(const Matrix<DType>& rhsMatrix);
     void MatSub(const Matrix<DType>& rhsMatrix);
+
     void ScalarMultiply(DType scalar);
     void ScalarDivide(DType scalar);
+    void ScalarAdd(DType scalar);
+    void ScalarSub(DType scalar);
+
+    void ScalarMultiply(double scalar);
+    void ScalarDivide(double scalar);
+    void ScalarAdd(double scalar);
+    void ScalarSub(double scalar);
 
     const Matrix<DType>& ZeroOnePower() const;
     const Matrix<DType>& ExpRet() const;
@@ -41,6 +49,13 @@ struct Matrix
     const Matrix<DType>& MatSubRet(const Matrix<DType>& rhsMatrix) const;
     const Matrix<DType>& ScalarMultiplyRet(DType scalar) const;
     const Matrix<DType>& ScalarDivideRet(DType scalar) const;
+    const Matrix<DType>& ScalarAddRet(DType scalar) const;
+    const Matrix<DType>& ScalarSubRet(DType scalar) const;
+
+    const Matrix<DType>& ScalarMultiplyRet(double scalar) const;
+    const Matrix<DType>& ScalarDivideRet(double scalar) const;
+    const Matrix<DType>& ScalarAddRet(double scalar) const;
+    const Matrix<DType>& ScalarSubRet(double scalar) const;
 
     double Determinant() const;
     const DType Max() const;

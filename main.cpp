@@ -13,15 +13,15 @@ int main()
 {
     srand(time(NULL));
 
-    CSVReader<int> reader;
-    CSV<int> csv = reader.ReadCSVFromFile("C:\\Users\\Dmitry\\Documents\\GitHub\\ailib\\resources\\mnist_test.csv");
+    CSVReader<double> reader;
+    CSV<double> csv = reader.ReadCSVFromFile("C:\\Users\\Dmitry\\Documents\\GitHub\\ailib\\resources\\mnist_test.csv");
 
-    Matrix<int> xData(csv.dataSize, csv.featureCount);
+    Matrix<double> xData(csv.dataSize, csv.featureCount);
     xData.matrix = csv.dataMatrix;
 
     std::vector<int> topology = {784, 128, 64, 10};
 
-    NeuralNetwork<int> network(topology, 10, 0.0001);
+    NeuralNetwork<double> network(topology, 10, 0.0001);
 
     //network.FeedForward(xData);
 

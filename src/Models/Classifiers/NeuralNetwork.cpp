@@ -58,11 +58,13 @@ void NeuralNetwork<DType>::Initialization()
     int hiddenLayer2 = this->topology[2];
     int outputLayer = this->topology[3];
 
-    std::unordered_map<std::string, Matrix<int>> parameters;
-    auto& m = RandMatrix<int>(hiddenLayer1, inputLayer);
+    std::unordered_map<std::string, Matrix<DType>*> parameters;
+    Matrix<DType>* w = RandMatrix<DType>(hiddenLayer1, inputLayer);
 
 
+    parameters["W1"] = w;
 
+    w.Mat
     //parameters["W1"] *= sqrt(1 / hiddenLayer1);
 
     //parameters["W2"] = RandMatrix<DType>(hiddenLayer2, hiddenLayer1);

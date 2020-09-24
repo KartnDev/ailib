@@ -8,7 +8,7 @@
 #include "../LinAlg/Matrix.h"
 
 template <class DType>
-Matrix<DType> &RandMatrix(int rows, int cols);
+Matrix<DType>* RandMatrix(int rows, int cols);
 
 
 
