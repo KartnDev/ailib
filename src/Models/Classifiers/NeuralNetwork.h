@@ -23,14 +23,14 @@ public:
     void LoadModel(std::string path) override;
 
     void Initialization();
-    std::unordered_map<std::string, Matrix<DType>>& FeedForward(Matrix<DType>& xTrain);
-    std::unordered_map<std::string, Matrix<DType>> BackPropagation(Vector<DType> yTrain, Vector<DType> output);
+    std::unordered_map<std::string, Matrix<DType>*>& FeedForward(Matrix<DType>* xTrain);
+    std::unordered_map<std::string, Matrix<DType>*> BackPropagation(Vector<DType> yTrain, Vector<DType> output);
     void WeightsTraining();
 
     std::vector<int> topology;
     int epochs;
     double learnRate;
-
+    std::unordered_map<std::string, Matrix<DType>*> parameters;
 };
 
 

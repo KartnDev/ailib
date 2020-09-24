@@ -16,14 +16,15 @@ int main()
     CSVReader<double> reader;
     CSV<double> csv = reader.ReadCSVFromFile("C:\\Users\\Dmitry\\Documents\\GitHub\\ailib\\resources\\mnist_test.csv");
 
-    Matrix<double> xData(csv.dataSize, csv.featureCount);
-    xData.matrix = csv.dataMatrix;
+    Matrix<double>* xData = Matrix<double>::Create(csv.dataSize, csv.featureCount);
+    xData->matrix = csv.dataMatrix;
 
     std::vector<int> topology = {784, 128, 64, 10};
-
     NeuralNetwork<double> network(topology, 10, 0.0001);
 
-    //network.FeedForward(xData);
+    network.FeedForward(xData);
+
+
 
     return 0;
 }

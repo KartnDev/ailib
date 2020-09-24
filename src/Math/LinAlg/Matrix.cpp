@@ -138,16 +138,36 @@ Matrix<DType>::Matrix(int rows, int cols)
     {
         for (int j = 0; j < this->cols; j++)
         {
-            this->matrix.At(i, j) = 0;
+            this->matrix[i * cols + j] = 0;
         }
     }
 
 }
 
 template<class DType>
-const Matrix<DType>& Matrix<DType>::MatMul(const Matrix<DType> &rhsMatrix) const
+Matrix<DType>* Matrix<DType>::MatMul(const Matrix<DType> *rhsMatrix) const
 {
-    return MatrixMul<DType>(*this, rhsMatrix);
+    if(this->cols == rhsMatrix->rows)
+    {
+        Matrix<DType> *mat = Matrix<DType>::Create(this->rows, rhsMatrix->rows);
+
+        for (int i = 0; i < this->rows; i++)
+        {
+            for (int j = 0; j < rhsMatrix->cols; j++)
+            {
+                mat->matrix[i * mat->cols + j] = 0;
+                for (int k = 0; k < this->cols; k++)
+                {
+                    const DType kLeft = this->matrix[i * this->cols + j];
+                    const DType kRight = rhsMatrix->matrix[i * rhsMatrix->cols + j];
+
+                    mat->matrix[i * mat->cols + j] += kLeft * kRight;
+                }
+            }
+        }
+        return mat;
+    }
+    throw std::runtime_error("No matching sizes of matrix");
 }
 
 template<class DType>
@@ -202,13 +222,25 @@ void Matrix<DType>::MatSub(const Matrix<DType> &rhsMatrix)
 template<class DType>
 void Matrix<DType>::ScalarMultiply(DType scalar)
 {
-    *this = MatrixMultiplyScalar<DType>(*this, scalar);
+    for (int i = 0; i < this->rows; i++)
+    {
+        for (int j = 0; j < this->cols; j++)
+        {
+            this->At(i, j) *= scalar;
+        }
+    }
 }
 
 template<class DType>
 void Matrix<DType>::ScalarDivide(DType scalar)
 {
-    *this = MatrixDivideScalar<DType>(*this, scalar);
+    for (int i = 0; i < this->rows; i++)
+    {
+        for (int j = 0; j < this->cols; j++)
+        {
+            this->At(i, j) /= scalar;
+        }
+    }
 }
 
 template<class DType>
@@ -495,116 +527,11 @@ const Matrix<DType> &Matrix<DType>::ScalarSubRet(DType scalar) const
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::ScalarMultiplyRet(double scalar) const
+Matrix<DType> *Matrix<DType>::Create(int rows, int cols)
 {
-    Matrix<DType> mat(this->rows, this->cols);
-
-    for (int i = 0; i < this->rows; i++)
-    {
-        for (int j = 0; j < this->cols; j++)
-        {
-            mat.At(i, j) *= scalar;
-        }
-    }
-    return mat;
+    void *allocated = malloc(sizeof(Matrix<DType>));
+    return new(allocated) Matrix<DType>(rows, cols);
 }
-
-template<class DType>
-const Matrix<DType> &Matrix<DType>::ScalarDivideRet(double scalar) const
-{
-    Matrix<DType> mat(this->rows, this->cols);
-
-    for (int i = 0; i < this->rows; i++)
-    {
-        for (int j = 0; j < this->cols; j++)
-        {
-            mat.At(i, j) /= scalar;
-        }
-    }
-    return mat;
-}
-
-template<class DType>
-const Matrix<DType> &Matrix<DType>::ScalarAddRet(double scalar) const
-{
-    Matrix<DType> mat(this->rows, this->cols);
-
-    for (int i = 0; i < this->rows; i++)
-    {
-        for (int j = 0; j < this->cols; j++)
-        {
-            mat.At(i, j) += scalar;
-        }
-    }
-    return mat;
-}
-
-template<class DType>
-const Matrix<DType> &Matrix<DType>::ScalarSubRet(double scalar) const
-{
-    Matrix<DType> mat(this->rows, this->cols);
-
-    for (int i = 0; i < this->rows; i++)
-    {
-        for (int j = 0; j < this->cols; j++)
-        {
-            mat.At(i, j) += scalar;
-        }
-    }
-    return mat;
-}
-
-template<class DType>
-void Matrix<DType>::ScalarMultiply(double scalar)
-{
-    for (int i = 0; i < this->rows; i++)
-    {
-        for (int j = 0; j < this->cols; j++)
-        {
-            this->matrix.At(i, j) *= scalar;
-        }
-    }
-}
-
-template<class DType>
-void Matrix<DType>::ScalarDivide(double scalar)
-{
-    for (int i = 0; i < this->rows; i++)
-    {
-        for (int j = 0; j < this->cols; j++)
-        {
-            this->matrix.At(i, j) /= scalar;
-        }
-    }
-}
-
-template<class DType>
-void Matrix<DType>::ScalarAdd(double scalar)
-{
-    for (int i = 0; i < this->rows; i++)
-    {
-        for (int j = 0; j < this->cols; j++)
-        {
-            this->matrix.At(i, j) += scalar;
-        }
-    }
-}
-
-template<class DType>
-void Matrix<DType>::ScalarSub(double scalar)
-{
-    for (int i = 0; i < this->rows; i++)
-    {
-        for (int j = 0; j < this->cols; j++)
-        {
-            this->matrix.At(i, j) -= scalar;
-        }
-    }
-}
-
-
-
-
 
 
 

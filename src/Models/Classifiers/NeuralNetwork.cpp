@@ -58,31 +58,27 @@ void NeuralNetwork<DType>::Initialization()
     int hiddenLayer2 = this->topology[2];
     int outputLayer = this->topology[3];
 
-    std::unordered_map<std::string, Matrix<DType>*> parameters;
-    Matrix<DType>* w = RandMatrix<DType>(hiddenLayer1, inputLayer);
 
 
-    parameters["W1"] = w;
+    parameters["W1"] = RandMatrix<DType>(hiddenLayer1, inputLayer);
+    parameters["W1"]->ScalarMultiply(sqrt(1 / hiddenLayer1));
 
-    w.Mat
-    //parameters["W1"] *= sqrt(1 / hiddenLayer1);
+    parameters["W2"] = RandMatrix<DType>(hiddenLayer2, hiddenLayer1);
+    parameters["W2"]->ScalarMultiply(sqrt(1 / hiddenLayer2));
 
-    //parameters["W2"] = RandMatrix<DType>(hiddenLayer2, hiddenLayer1);
-    //parameters["W2"] *= sqrt(1 / hiddenLayer2);
-
-    //parameters["W3"] = RandMatrix<DType>(outputLayer, hiddenLayer2);
-    //parameters["W3"] *= sqrt(1 / outputLayer);
-
+    parameters["W3"] = RandMatrix<DType>(outputLayer, hiddenLayer2);
+    parameters["W3"]->ScalarMultiply(sqrt(1 / outputLayer));
 }
 
-//template<class DType>
-//std::unordered_map<std::string, Matrix<DType>> &NeuralNetwork<DType>::FeedForward(Matrix<DType> &xTrain)
-//{
-//    std::unordered_map<std::string, Matrix<DType>> params;
-//
-//    params["A0"] = xTrain;
-//
-//    params["Z1"] = params["W1"] * params["A0"];
+template<class DType>
+std::unordered_map<std::string, Matrix<DType>*> &NeuralNetwork<DType>::FeedForward(Matrix<DType> *xTrain)
+{
+    std::unordered_map<std::string, Matrix<DType> *> params;
+
+    params["A0"] = xTrain;
+
+
+    params["A1"] = parameters["W1"]->MatMul(params["A0"]);
 //    params["A1"] = Sigmoid<DType>(params["Z1"]);
 //
 //    params["Z2"] = params["W2"] * params["A1"];
@@ -90,10 +86,10 @@ void NeuralNetwork<DType>::Initialization()
 //
 //    params["Z3"] = params["W3"] * params["A2"];
 //    params["A3"] = SoftMax<DType>(params["Z3"]);
-//
-//    return params;
-//}
-//
+
+    return params;
+}
+
 //template<class DType>
 //std::unordered_map<std::string, Matrix<DType>>
 //NeuralNetwork<DType>::BackPropagation(Vector<DType> yTrain, Vector<DType> output)
