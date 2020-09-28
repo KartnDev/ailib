@@ -5,11 +5,12 @@
 #ifndef AILIB_VECTOR_H
 #define AILIB_VECTOR_H
 
+#include "Matrix.h"
+
 template<class DType>
 struct Vector
 {
-    DType * data;
-    int length;
+    Vector<DType>(int size);
 
 };
 

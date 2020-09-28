@@ -90,7 +90,7 @@ template<class DType>
 void CSVReader<DType>::SetLength(std::string &firstLine, CSV<DType> & csv)
 {
     std::vector<std::string> vectorOfNames = SplitString(firstLine, ',');
-    csv.featureCount = vectorOfNames.size();
+    csv.featureCount = vectorOfNames.size() - 1;
 }
 
 template<class DType>
