@@ -61,13 +61,16 @@ void NeuralNetwork<DType>::Initialization()
 
 
     parameters["W1"] = RandMatrix<DType>(hiddenLayer1, inputLayer);
-    parameters["W1"]->ScalarMultiply(sqrt(1 / hiddenLayer1));
+    parameters["W1"]->ScalarMultiply(sqrt(1.0 / hiddenLayer1));
 
     parameters["W2"] = RandMatrix<DType>(hiddenLayer2, hiddenLayer1);
     parameters["W2"]->ScalarMultiply(sqrt(1 / hiddenLayer2));
 
     parameters["W3"] = RandMatrix<DType>(outputLayer, hiddenLayer2);
     parameters["W3"]->ScalarMultiply(sqrt(1 / outputLayer));
+
+
+
 }
 
 template<class DType>
@@ -85,6 +88,8 @@ std::unordered_map<std::string, Matrix<DType>*> NeuralNetwork<DType>::FeedForwar
 
     params["Z1"] = ((Matrix<DType>*)parameters["W1"])->MatMul(params["A0"]);
     params["A1"] = Sigmoid<DType>(params["Z1"]);
+
+
 
     params["Z2"] = parameters["W2"]->MatMul(params["A1"]);
     params["A2"] = Sigmoid<DType>(params["Z2"]);

@@ -155,13 +155,16 @@ Matrix<DType>* Matrix<DType>::MatMul(const Matrix<DType> *rhsMatrix) const
         {
             for (int j = 0; j < rhsMatrix->cols; j++)
             {
+                int fdfd = 0;
                 for (int k = 0; k < this->cols; k++)
                 {
                     const DType kLeft = this->matrix[i * this->cols + j];
                     const DType kRight = rhsMatrix->matrix[i * rhsMatrix->cols + j];
 
-                    mat->At(i, j)+= kLeft * kRight;
+                    mat->At(i, j) += kLeft * kRight;
+                    fdfd = mat->At(i, j);
                 }
+                int g = fdfd;
             }
         }
         return mat;
@@ -574,10 +577,7 @@ Matrix<DType> *Matrix<DType>::SliceRowAsCol(int index) const
 {
     Matrix<DType>* result = Matrix<DType>::Create(cols, 1);
 
-    for (int i = 0; i < this->cols; i++)
-    {
-        result->At(i, 0) = this->At(index, i);
-    }
+
 
     return result;
 }
