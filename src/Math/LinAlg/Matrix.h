@@ -39,17 +39,17 @@ struct Matrix
     void ScalarSub(DType scalar);
 
 
-    Matrix<DType>& ZeroOnePower() const;
-    Matrix<DType>& ExpRet() const;
-    Matrix<DType> &PowerRet(int powerNum) const;
-    Matrix<DType> &NegativeRet() const;
+    Matrix<DType> *NegativeOnePower() const;
+    Matrix<DType> *ExpRet() const;
+    Matrix<DType> *PowerRet(int powerNum) const;
+    Matrix<DType> *NegativeRet() const;
 
-    Matrix<DType>& MatDivRet(const Matrix<DType>& rhsMatrix) const;
+    Matrix<DType>* MatDivRet(const Matrix<DType> *rhsMatrix) const;
     Matrix<DType>& MatAddRet(const Matrix<DType>& rhsMatrix) const;
     Matrix<DType>& MatSubRet(const Matrix<DType>& rhsMatrix) const;
     Matrix<DType>& ScalarMultiplyRet(DType scalar) const;
     Matrix<DType>& ScalarDivideRet(DType scalar) const;
-    Matrix<DType>& ScalarAddRet(DType scalar) const;
+    Matrix<DType>* ScalarAddRet(DType scalar) const;
     Matrix<DType>& ScalarSubRet(DType scalar) const;
 
     double Determinant() const;
@@ -74,7 +74,7 @@ struct Matrix
 
     Matrix<DType>& operator*(DType scalar) const;
     Matrix<DType>& operator/(DType scalar) const;
-    Matrix<DType>& operator+(DType scalar) const;
+    Matrix<DType>* operator+(DType scalar) const;
     Matrix<DType>& operator-(DType scalar) const;
 };
 
