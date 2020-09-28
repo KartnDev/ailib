@@ -2,6 +2,7 @@
 // Created by Dmitry on 12.09.2020.
 //
 
+
 #include "Matrix.h"
 
 template<class DType>
@@ -126,11 +127,16 @@ Matrix<DType>::Matrix(const DType *matrix, const int rows, const int cols)
 }
 
 template<class DType>
+Matrix<DType>::Matrix()
+{
+
+}
+
+template<class DType>
 Matrix<DType>::Matrix(int rows, int cols)
 {
-    auto *alloc = (DType*)malloc(rows * cols * sizeof(DType));
+    this->matrix = Matrix<DType>::Create(rows, cols);
 
-    this->matrix = alloc;
     this->rows = rows;
     this->cols = cols;
 
@@ -149,7 +155,7 @@ Matrix<DType>* Matrix<DType>::MatMul(const Matrix<DType> *rhsMatrix) const
 {
     if(this->cols == rhsMatrix->rows)
     {
-        Matrix<DType> *mat = Matrix<DType>::Create(this->rows, rhsMatrix->rows);
+        Matrix<DType> *mat = Matrix<DType>::Create(this->rows, rhsMatrix->cols);
 
         for (int i = 0; i < this->rows; i++)
         {
@@ -177,28 +183,28 @@ void Matrix<DType>::Transpose()
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::TransposeRet() const
+Matrix<DType> *Matrix<DType>::TransposeRet() const
 {
     if(cols == rows) // TODO optimize this
     {
-        Matrix<DType> mat(rows, cols);
+        Matrix<DType> *mat = Matrix<DType>::Create(rows, cols);
         for(int i = 0; i < rows; i++)
         {
             for (int j = 0; j < cols; j++)
             {
-                mat.At(i, j) = this->At(j, i);
+                mat->At(i, j) = this->At(j, i);
             }
         }
         return mat;
     }
     else
     {
-        Matrix<DType> mat(cols, rows);
+        Matrix<DType> *mat = Matrix<DType>::Create(rows, cols);
         for(int i = 0; i < rows; i++)
         {
             for (int j = 0; j < cols; j++)
             {
-                mat.At(j, i) = this->At(i, j);
+                mat->At(j, i) = this->At(i, j);
             }
         }
         return mat;
@@ -249,42 +255,41 @@ void Matrix<DType>::Inverse()
 
 }
 
-template<class DType>
-const Matrix<DType> &Matrix<DType>::Inverse() const
+template<class DType>Matrix<DType> &Matrix<DType>::Inverse() const
 {
 
 }
 template<class DType>
-const Matrix<DType> &Matrix<DType>::MatDivRet(const Matrix<DType> &rhsMatrix) const
+Matrix<DType> &Matrix<DType>::MatDivRet(const Matrix<DType> &rhsMatrix) const
 {
     return MatrixDiv<DType>(*this, rhsMatrix);
 }
 template<class DType>
-const Matrix<DType> &Matrix<DType>::MatAddRet(const Matrix<DType> &rhsMatrix) const
+Matrix<DType> &Matrix<DType>::MatAddRet(const Matrix<DType> &rhsMatrix) const
 {
     return MatrixAdd<DType>(*this, rhsMatrix);
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::MatSubRet(const Matrix<DType> &rhsMatrix) const
+Matrix<DType> &Matrix<DType>::MatSubRet(const Matrix<DType> &rhsMatrix) const
 {
     return MatrixSub<DType>(*this, rhsMatrix);
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::ScalarMultiplyRet(DType scalar) const
+Matrix<DType> &Matrix<DType>::ScalarMultiplyRet(DType scalar) const
 {
     return MatrixMultiplyScalar<DType>(*this, scalar);
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::ScalarDivideRet(DType scalar) const
+Matrix<DType> &Matrix<DType>::ScalarDivideRet(DType scalar) const
 {
     return MatrixDivideScalar<DType>(*this, scalar);
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::operator+(DType scalar) const
+Matrix<DType> &Matrix<DType>::operator+(DType scalar) const
 {
     Matrix<DType> mat(this->rows, this->cols);
 
@@ -299,7 +304,7 @@ const Matrix<DType> &Matrix<DType>::operator+(DType scalar) const
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::operator-(DType scalar) const
+Matrix<DType> &Matrix<DType>::operator-(DType scalar) const
 {
     Matrix<DType> mat(this->rows, this->cols);
 
@@ -341,19 +346,19 @@ void Matrix<DType>::operator-=(const Matrix<DType> &rhsMatrix)
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::operator+(const Matrix<DType> &rhsMatrix) const
+Matrix<DType> &Matrix<DType>::operator+(const Matrix<DType> &rhsMatrix) const
 {
     return MatrixAdd<DType>(*this, rhsMatrix);
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::operator-(const Matrix<DType> &rhsMatrix) const
+Matrix<DType> &Matrix<DType>::operator-(const Matrix<DType> &rhsMatrix) const
 {
     return MatrixSub<DType>(*this, rhsMatrix);
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::operator*(const Matrix<DType> &rhsMatrix) const
+Matrix<DType> &Matrix<DType>::operator*(const Matrix<DType> &rhsMatrix) const
 {
     return MatrixMul<DType>(*this, rhsMatrix);
 }
@@ -368,6 +373,7 @@ template<class DType>
 Matrix<DType>::~Matrix()
 {
     free(matrix);
+    free(*this);
 }
 
 template<class DType>
@@ -383,40 +389,40 @@ void Matrix<DType>::operator/=(DType scalar)
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::operator*(DType scalar) const
+Matrix<DType> &Matrix<DType>::operator*(DType scalar) const
 {
     return ScalarMultiplyRet(scalar);
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::operator/(DType scalar) const
+Matrix<DType> &Matrix<DType>::operator/(DType scalar) const
 {
     return ScalarDivideRet(scalar);
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::operator/(const Matrix<DType> &rhsMatrix) const
+Matrix<DType> &Matrix<DType>::operator/(const Matrix<DType> &rhsMatrix) const
 {
     return MatrixDiv<DType>(*this, rhsMatrix);
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::PowerRet(int powerNum) const
+Matrix<DType> *Matrix<DType>::PowerRet(int powerNum) const
 {
-    Matrix<DType> mat(this->rows, this->cols);
+    Matrix<DType> *mat = Matrix<DType>::Create(this->rows, this->cols);
 
     for (int i = 0; i < this->rows; i++)
     {
         for (int j = 0; j < this->cols; j++)
         {
-            mat.matrix[i * mat.cols + j] = (DType)pow(mat.matrix[i * mat.cols + j], powerNum);
+            mat->matrix[i * mat->cols + j] = (DType)pow(mat->matrix[i * mat->cols + j], powerNum);
         }
     }
     return mat;
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::ExpRet() const
+Matrix<DType> &Matrix<DType>::ExpRet() const
 {
     Matrix<DType> mat(this->rows, this->cols);
 
@@ -431,7 +437,7 @@ const Matrix<DType> &Matrix<DType>::ExpRet() const
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::NegativeRet() const
+Matrix<DType> &Matrix<DType>::NegativeRet() const
 {
     Matrix<DType> mat(this->rows, this->cols);
 
@@ -446,19 +452,19 @@ const Matrix<DType> &Matrix<DType>::NegativeRet() const
 }
 
 template<class DType>
-const DType Matrix<DType>::Max() const
+DType Matrix<DType>::Max() const
 {
     return (DType)0;
 }
 
 template<class DType>
-const DType Matrix<DType>::Min() const
+DType Matrix<DType>::Min() const
 {
     return (DType)0;
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::ZeroOnePower() const
+Matrix<DType> &Matrix<DType>::ZeroOnePower() const
 {
     Matrix<DType> mat(this->rows, this->cols);
 
@@ -497,7 +503,7 @@ void Matrix<DType>::ScalarSub(DType scalar)
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::ScalarAddRet(DType scalar) const
+Matrix<DType> &Matrix<DType>::ScalarAddRet(DType scalar) const
 {
     Matrix<DType> mat(this->rows, this->cols);
 
@@ -512,7 +518,7 @@ const Matrix<DType> &Matrix<DType>::ScalarAddRet(DType scalar) const
 }
 
 template<class DType>
-const Matrix<DType> &Matrix<DType>::ScalarSubRet(DType scalar) const
+Matrix<DType> &Matrix<DType>::ScalarSubRet(DType scalar) const
 {
     Matrix<DType> mat(this->rows, this->cols);
 
@@ -530,7 +536,41 @@ template<class DType>
 Matrix<DType> *Matrix<DType>::Create(int rows, int cols)
 {
     void *allocated = malloc(sizeof(Matrix<DType>));
-    return new(allocated) Matrix<DType>(rows, cols);
+    auto* res = new(allocated) Matrix<DType>();
+
+    res->matrix = (DType*)malloc(sizeof(DType) * rows * cols);
+
+
+    res->rows = rows;
+    res->cols = cols;
+
+    return res;
+}
+
+template<class DType>
+Matrix<DType> *Matrix<DType>::SliceRow(int index) const
+{
+    Matrix<DType>* result = Matrix<DType>::Create(1, cols);
+
+    for (int i = 0; i < this->cols; i++)
+    {
+        result->At(0, i) = this->At(index, i);
+    }
+
+    return result;
+}
+
+template<class DType>
+Matrix<DType> *Matrix<DType>::SliceRowAsCol(int index) const
+{
+    Matrix<DType>* result = Matrix<DType>::Create(cols, 1);
+
+    for (int i = 0; i < this->cols; i++)
+    {
+        result->At(i, 0) = this->At(index, i);
+    }
+
+    return result;
 }
 
 

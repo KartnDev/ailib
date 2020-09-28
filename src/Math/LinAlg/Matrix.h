@@ -5,13 +5,15 @@
 #ifndef AILIB_MATRIX_H
 #define AILIB_MATRIX_H
 
+#include "Vector.h"
+
 template<class DType>
 struct Matrix
 {
     DType* matrix;
 
     int rows, cols;
-
+    Matrix<DType>();
     Matrix(const DType* matrix, int rows, int cols);
     Matrix(int rows, int cols);
 
@@ -23,10 +25,10 @@ struct Matrix
 
 
     void Transpose();
-    const Matrix<DType>& TransposeRet() const;
+    Matrix<DType>* TransposeRet() const;
 
     void Inverse();
-    const Matrix<DType>& Inverse() const;
+    Matrix<DType>& Inverse() const;
 
     void MatAdd(const Matrix<DType>& rhsMatrix);
     void MatSub(const Matrix<DType>& rhsMatrix);
@@ -37,22 +39,22 @@ struct Matrix
     void ScalarSub(DType scalar);
 
 
-    const Matrix<DType>& ZeroOnePower() const;
-    const Matrix<DType>& ExpRet() const;
-    const Matrix<DType> &PowerRet(int powerNum) const;
-    const Matrix<DType> &NegativeRet() const;
+    Matrix<DType>& ZeroOnePower() const;
+    Matrix<DType>& ExpRet() const;
+    Matrix<DType> &PowerRet(int powerNum) const;
+    Matrix<DType> &NegativeRet() const;
 
-    const Matrix<DType>& MatDivRet(const Matrix<DType>& rhsMatrix) const;
-    const Matrix<DType>& MatAddRet(const Matrix<DType>& rhsMatrix) const;
-    const Matrix<DType>& MatSubRet(const Matrix<DType>& rhsMatrix) const;
-    const Matrix<DType>& ScalarMultiplyRet(DType scalar) const;
-    const Matrix<DType>& ScalarDivideRet(DType scalar) const;
-    const Matrix<DType>& ScalarAddRet(DType scalar) const;
-    const Matrix<DType>& ScalarSubRet(DType scalar) const;
+    Matrix<DType>& MatDivRet(const Matrix<DType>& rhsMatrix) const;
+    Matrix<DType>& MatAddRet(const Matrix<DType>& rhsMatrix) const;
+    Matrix<DType>& MatSubRet(const Matrix<DType>& rhsMatrix) const;
+    Matrix<DType>& ScalarMultiplyRet(DType scalar) const;
+    Matrix<DType>& ScalarDivideRet(DType scalar) const;
+    Matrix<DType>& ScalarAddRet(DType scalar) const;
+    Matrix<DType>& ScalarSubRet(DType scalar) const;
 
     double Determinant() const;
-    const DType Max() const;
-    const DType Min() const;
+    DType Max() const;
+    DType Min() const;
 
     void operator*=(const Matrix<DType>& rhsMatrix);
     void operator*=(DType scalar);
@@ -62,15 +64,18 @@ struct Matrix
 
     DType& At(int i, int j) const;
 
-    const Matrix<DType>& operator+(const Matrix<DType>& rhsMatrix) const;
-    const Matrix<DType>& operator-(const Matrix<DType>& rhsMatrix) const;
-    const Matrix<DType>& operator*(const Matrix<DType>& rhsMatrix) const;
-    const Matrix<DType>& operator/(const Matrix<DType>& rhsMatrix) const;
+    Matrix<DType>* SliceRow(int index) const;
+    Matrix<DType>* SliceRowAsCol(int index) const;
 
-    const Matrix<DType>& operator*(DType scalar) const;
-    const Matrix<DType>& operator/(DType scalar) const;
-    const Matrix<DType>& operator+(DType scalar) const;
-    const Matrix<DType>& operator-(DType scalar) const;
+    Matrix<DType>& operator+(const Matrix<DType>& rhsMatrix) const;
+    Matrix<DType>& operator-(const Matrix<DType>& rhsMatrix) const;
+    Matrix<DType>& operator*(const Matrix<DType>& rhsMatrix) const;
+    Matrix<DType>& operator/(const Matrix<DType>& rhsMatrix) const;
+
+    Matrix<DType>& operator*(DType scalar) const;
+    Matrix<DType>& operator/(DType scalar) const;
+    Matrix<DType>& operator+(DType scalar) const;
+    Matrix<DType>& operator-(DType scalar) const;
 };
 
 
