@@ -24,9 +24,9 @@ int main()
 
     auto res = network.FeedForward(xData->SliceRowAsCol(2));
 
-    for(int i = 0; i < 10; i++)
+    for(int i = 0; i < 128; i++)
     {
-        std::cout << res["A3"]->At(0, i) << std::endl;
+        std::cout << res["Z1"]->At(0, i) << std::endl;
     }
 
     return 0;
