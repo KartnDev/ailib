@@ -22,9 +22,12 @@ int main()
     std::vector<int> topology = {784, 128, 64, 10};
     NeuralNetwork<double> network(topology, 10, 0.0001);
 
-    network.FeedForward(xData);
+    auto res = network.FeedForward(xData->SliceRowAsCol(2));
 
-
+    for(int i = 0; i < 10; i++)
+    {
+        std::cout << res["A3"]->At(0, i) << std::endl;
+    }
 
     return 0;
 }

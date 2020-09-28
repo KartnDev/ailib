@@ -71,21 +71,26 @@ void NeuralNetwork<DType>::Initialization()
 }
 
 template<class DType>
-std::unordered_map<std::string, Matrix<DType>*> &NeuralNetwork<DType>::FeedForward(Matrix<DType> *xTrain)
+std::unordered_map<std::string, Matrix<DType>*> NeuralNetwork<DType>::FeedForward(Matrix<DType> *xTrain)
 {
+    if(xTrain->cols != 1)
+    {
+        throw std::invalid_argument("Bad vector size");
+    }
+
     std::unordered_map<std::string, Matrix<DType> *> params;
 
     params["A0"] = xTrain;
 
 
-    params["A1"] = params["A0"]->MatMul(parameters["W1"]);
-//    params["A1"] = Sigmoid<DType>(params["Z1"]);
-//
-//    params["Z2"] = params["W2"] * params["A1"];
-//    params["A2"] = Sigmoid<DType>(params["Z2"]);
-//
-//    params["Z3"] = params["W3"] * params["A2"];
-//    params["A3"] = SoftMax<DType>(params["Z3"]);
+    params["Z1"] = ((Matrix<DType>*)parameters["W1"])->MatMul(params["A0"]);
+    params["A1"] = Sigmoid<DType>(params["Z1"]);
+
+    params["Z2"] = parameters["W2"]->MatMul(params["A1"]);
+    params["A2"] = Sigmoid<DType>(params["Z2"]);
+
+    params["Z3"] = parameters["W3"]->MatMul(params["A2"]);
+    params["A3"] = SoftMax<DType>(params["Z3"]);
 
     return params;
 }
