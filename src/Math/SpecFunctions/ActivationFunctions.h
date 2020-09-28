@@ -11,27 +11,29 @@
 template<class DType>
 Matrix<DType>* Sigmoid(const Matrix<DType>* x, bool derivative=false)
 {
-    if (derivative)
+    if (!derivative)
     {
-        Matrix<DType> res = x->NegativeRet();
+        Matrix<DType>* res = x->NegativeRet();
 
-        res = res.ExpRet() / (res.ExpRet() + (DType)(1));
+        auto *f = res->ExpRet()->ScalarAddRet(1);
 
-        return res.PowerRet(2);
+        res = res->ExpRet()->MatDivRet(f);
+
+        return res->PowerRet(2);
     }
 
-    return (x->NegativeRet().ExpRet() + 1).ZeroOnePower();
+    return nullptr;
 }
 
 template<class DType>
 Matrix<DType>* SoftMax(const Matrix<DType>* x)
 {
-    Matrix<DType> exps = (x - x->Max()).ExpRet();
+    Matrix<DType>* exps = (x - x->Max()).ExpRet();
     return exps / Sum(exps, 0);
 }
 
 template<class DType>
-DType Sum(const Matrix<DType>& x, int axis=0)
+DType Sum(const Matrix<DType>* x, int axis=0)
 {
     throw std::bad_exception();
 }

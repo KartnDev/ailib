@@ -90,7 +90,7 @@ std::unordered_map<std::string, Matrix<DType>*> NeuralNetwork<DType>::FeedForwar
     params["A2"] = Sigmoid<DType>(params["Z2"]);
 
     params["Z3"] = parameters["W3"]->MatMul(params["A2"]);
-    params["A3"] = SoftMax<DType>(params["Z3"]);
+    //params["A3"] = SoftMax<DType>(params["Z3"]);
 
     return params;
 }
