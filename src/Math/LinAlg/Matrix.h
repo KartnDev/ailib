@@ -46,7 +46,7 @@ struct Matrix
 
     Matrix<DType>* MatDivRet(const Matrix<DType> *rhsMatrix) const;
     Matrix<DType>& MatAddRet(const Matrix<DType>& rhsMatrix) const;
-    Matrix<DType>& MatSubRet(const Matrix<DType>& rhsMatrix) const;
+    Matrix<DType> * MatSubRet(const Matrix<DType> *rhsMatrix) const;
     Matrix<DType>& ScalarMultiplyRet(DType scalar) const;
     Matrix<DType>& ScalarDivideRet(DType scalar) const;
     Matrix<DType>* ScalarAddRet(DType scalar) const;
@@ -68,7 +68,7 @@ struct Matrix
     Matrix<DType>* SliceRowAsCol(int index) const;
 
     Matrix<DType>& operator+(const Matrix<DType>& rhsMatrix) const;
-    Matrix<DType>& operator-(const Matrix<DType>& rhsMatrix) const;
+    Matrix<DType>* operator-(const Matrix<DType>* rhsMatrix) const;
     Matrix<DType>& operator*(const Matrix<DType>& rhsMatrix) const;
     Matrix<DType>& operator/(const Matrix<DType>& rhsMatrix) const;
 

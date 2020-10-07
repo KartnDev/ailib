@@ -6,9 +6,9 @@
 #include "Matrix.h"
 
 template<class DType>
-Matrix<DType>& MatrixMul(const Matrix<DType> &lhsMatrix, const Matrix<DType> &rhsMatrix)
+Matrix<DType> &MatrixMul(const Matrix<DType> &lhsMatrix, const Matrix<DType> &rhsMatrix)
 {
-    if(lhsMatrix.cols == rhsMatrix.rows)
+    if (lhsMatrix.cols == rhsMatrix.rows)
     {
         Matrix<DType> mat(lhsMatrix.rows, rhsMatrix.rows);
 
@@ -32,9 +32,9 @@ Matrix<DType>& MatrixMul(const Matrix<DType> &lhsMatrix, const Matrix<DType> &rh
 }
 
 template<class DType>
-Matrix<DType>& MatrixAdd(const Matrix<DType> &lhsMatrix, const Matrix<DType> &rhsMatrix)
+Matrix<DType> &MatrixAdd(const Matrix<DType> &lhsMatrix, const Matrix<DType> &rhsMatrix)
 {
-    if(lhsMatrix.cols == rhsMatrix.cols && lhsMatrix.rows == rhsMatrix.rows)
+    if (lhsMatrix.cols == rhsMatrix.cols && lhsMatrix.rows == rhsMatrix.rows)
     {
         Matrix<DType> mat(lhsMatrix.rows, rhsMatrix.cols);
 
@@ -51,9 +51,9 @@ Matrix<DType>& MatrixAdd(const Matrix<DType> &lhsMatrix, const Matrix<DType> &rh
 }
 
 template<class DType>
-Matrix<DType>& MatrixSub(const Matrix<DType> &lhsMatrix, const Matrix<DType> &rhsMatrix)
+Matrix<DType> &MatrixSub(const Matrix<DType> &lhsMatrix, const Matrix<DType> &rhsMatrix)
 {
-    if(lhsMatrix.cols == rhsMatrix.cols && lhsMatrix.rows == rhsMatrix.rows)
+    if (lhsMatrix.cols == rhsMatrix.cols && lhsMatrix.rows == rhsMatrix.rows)
     {
         Matrix<DType> mat(lhsMatrix.rows, rhsMatrix.cols);
 
@@ -70,9 +70,9 @@ Matrix<DType>& MatrixSub(const Matrix<DType> &lhsMatrix, const Matrix<DType> &rh
 }
 
 template<class DType>
-Matrix<DType>& MatrixDiv(const Matrix<DType> *lhsMatrix, const Matrix<DType> *rhsMatrix)
+Matrix<DType> &MatrixDiv(const Matrix<DType> *lhsMatrix, const Matrix<DType> *rhsMatrix)
 {
-    if(lhsMatrix->cols == rhsMatrix->cols && lhsMatrix->rows == rhsMatrix->rows)
+    if (lhsMatrix->cols == rhsMatrix->cols && lhsMatrix->rows == rhsMatrix->rows)
     {
         Matrix<DType> *mat = Matrix<DType>::Create(lhsMatrix->rows, lhsMatrix->cols);
 
@@ -89,7 +89,7 @@ Matrix<DType>& MatrixDiv(const Matrix<DType> *lhsMatrix, const Matrix<DType> *rh
 }
 
 template<class DType>
-Matrix<DType>& MatrixMultiplyScalar(const Matrix<DType> &lhsMatrix, DType scalar)
+Matrix<DType> &MatrixMultiplyScalar(const Matrix<DType> &lhsMatrix, DType scalar)
 {
     Matrix<DType> mat(lhsMatrix.rows, lhsMatrix.cols);
 
@@ -104,7 +104,7 @@ Matrix<DType>& MatrixMultiplyScalar(const Matrix<DType> &lhsMatrix, DType scalar
 }
 
 template<class DType>
-Matrix<DType>& MatrixDivideScalar(const Matrix<DType> &lhsMatrix, DType scalar)
+Matrix<DType> &MatrixDivideScalar(const Matrix<DType> &lhsMatrix, DType scalar)
 {
     Matrix<DType> mat(lhsMatrix.rows, lhsMatrix.cols);
 
@@ -129,7 +129,7 @@ Matrix<DType>::Matrix(const DType *matrix, const int rows, const int cols)
 template<class DType>
 Matrix<DType>::Matrix()
 {
-    this->matrix = (DType*)malloc(sizeof(DType) * rows * cols);
+    this->matrix = (DType *) malloc(sizeof(DType) * rows * cols);
 
     for (int i = 0; i < this->rows; i++)
     {
@@ -145,9 +145,9 @@ Matrix<DType>::Matrix()
 
 
 template<class DType>
-Matrix<DType>* Matrix<DType>::MatMul(const Matrix<DType> *rhsMatrix) const
+Matrix<DType> *Matrix<DType>::MatMul(const Matrix<DType> *rhsMatrix) const
 {
-    if(this->cols == rhsMatrix->rows)
+    if (this->cols == rhsMatrix->rows)
     {
         Matrix<DType> *mat = Matrix<DType>::Create(this->rows, rhsMatrix->cols);
 
@@ -182,38 +182,24 @@ void Matrix<DType>::Transpose()
 template<class DType>
 Matrix<DType> *Matrix<DType>::TransposeRet() const
 {
-    if(cols == rows) // TODO optimize this
+    Matrix<DType> *mat = Matrix<DType>::Create(cols, rows);
+    for (int i = 0; i < cols; i++)
     {
-        Matrix<DType> *mat = Matrix<DType>::Create(rows, cols);
-        for(int i = 0; i < rows; i++)
+        for (int j = 0; j < rows; j++)
         {
-            for (int j = 0; j < cols; j++)
-            {
-                mat->At(i, j) = this->At(j, i);
-            }
+            mat->At(i, j) = this->At(j, i);
         }
-        return mat;
     }
-    else
-    {
-        Matrix<DType> *mat = Matrix<DType>::Create(rows, cols);
-        for(int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                mat->At(j, i) = this->At(i, j);
-            }
-        }
-        return mat;
-    }
-}
 
+    return mat;
+
+}
 
 
 template<class DType>
 void Matrix<DType>::MatAdd(const Matrix<DType> &rhsMatrix)
 {
-     *this = MatrixAdd<DType>(*this, rhsMatrix);
+    *this = MatrixAdd<DType>(*this, rhsMatrix);
 }
 
 template<class DType>
@@ -252,12 +238,14 @@ void Matrix<DType>::Inverse()
 
 }
 
-template<class DType>Matrix<DType> &Matrix<DType>::Inverse() const
+template<class DType>
+Matrix<DType> &Matrix<DType>::Inverse() const
 {
 
 }
+
 template<class DType>
-Matrix<DType>* Matrix<DType>::MatDivRet(const Matrix<DType> *rhsMatrix) const
+Matrix<DType> *Matrix<DType>::MatDivRet(const Matrix<DType> *rhsMatrix) const
 {
     Matrix<DType> *mat = Matrix<DType>::Create(this->rows, this->cols);
 
@@ -270,6 +258,7 @@ Matrix<DType>* Matrix<DType>::MatDivRet(const Matrix<DType> *rhsMatrix) const
     }
     return mat;
 }
+
 template<class DType>
 Matrix<DType> &Matrix<DType>::MatAddRet(const Matrix<DType> &rhsMatrix) const
 {
@@ -277,9 +266,22 @@ Matrix<DType> &Matrix<DType>::MatAddRet(const Matrix<DType> &rhsMatrix) const
 }
 
 template<class DType>
-Matrix<DType> &Matrix<DType>::MatSubRet(const Matrix<DType> &rhsMatrix) const
+Matrix<DType> *Matrix<DType>::MatSubRet(const Matrix<DType> *rhsMatrix) const
 {
-    return MatrixSub<DType>(*this, rhsMatrix);
+    if (this->cols == rhsMatrix->cols && this->rows == rhsMatrix->rows)
+    {
+        Matrix<DType> *mat = Matrix<DType>::Create(this->rows, rhsMatrix->cols);
+
+        for (int i = 0; i < this->rows; i++)
+        {
+            for (int j = 0; j < rhsMatrix->cols; j++)
+            {
+                mat->matrix[i * mat->cols + j] = this->At(i, j) - rhsMatrix->At(i, j);
+            }
+        }
+        return mat;
+    }
+    //throw std::runtime_error("MatrixSub took a different sizes of matrix");
 }
 
 template<class DType>
@@ -295,7 +297,7 @@ Matrix<DType> &Matrix<DType>::ScalarDivideRet(DType scalar) const
 }
 
 template<class DType>
-Matrix<DType>* Matrix<DType>::operator+(DType scalar) const
+Matrix<DType> *Matrix<DType>::operator+(DType scalar) const
 {
     Matrix<DType> *mat = Matrix<DType>::Create(this->rows, this->cols);
 
@@ -332,7 +334,6 @@ double Matrix<DType>::Determinant() const
 }
 
 
-
 template<class DType>
 void Matrix<DType>::operator*=(const Matrix<DType> &rhsMatrix)
 {
@@ -358,9 +359,22 @@ Matrix<DType> &Matrix<DType>::operator+(const Matrix<DType> &rhsMatrix) const
 }
 
 template<class DType>
-Matrix<DType> &Matrix<DType>::operator-(const Matrix<DType> &rhsMatrix) const
+Matrix<DType> *Matrix<DType>::operator-(const Matrix<DType> *rhsMatrix) const
 {
-    return MatrixSub<DType>(*this, rhsMatrix);
+    if (this.cols == rhsMatrix.cols && this.rows == rhsMatrix.rows)
+    {
+        Matrix<DType> mat = Matrix<DType>::Create(this.rows, rhsMatrix.cols);
+
+        for (int i = 0; i < this.rows; i++)
+        {
+            for (int j = 0; j < rhsMatrix.cols; j++)
+            {
+                mat.matrix[i * mat.cols + j] = this.At(i, j) - rhsMatrix.At(i, j);
+            }
+        }
+        return mat;
+    }
+    throw std::runtime_error("MatrixSub took a different sizes of matrix");
 }
 
 template<class DType>
@@ -421,14 +435,14 @@ Matrix<DType> *Matrix<DType>::PowerRet(int powerNum) const
     {
         for (int j = 0; j < this->cols; j++)
         {
-            mat->matrix[i * mat->cols + j] = (DType)pow(mat->matrix[i * mat->cols + j], powerNum);
+            mat->matrix[i * mat->cols + j] = (DType) pow(mat->matrix[i * mat->cols + j], powerNum);
         }
     }
     return mat;
 }
 
 template<class DType>
-Matrix<DType>* Matrix<DType>::ExpRet() const
+Matrix<DType> *Matrix<DType>::ExpRet() const
 {
     Matrix<DType> *mat = Matrix<DType>::Create(this->rows, this->cols);
 
@@ -436,7 +450,7 @@ Matrix<DType>* Matrix<DType>::ExpRet() const
     {
         for (int j = 0; j < this->cols; j++)
         {
-            mat->matrix[i * mat->cols + j] = (DType)exp(mat->matrix[i * mat->cols + j]);
+            mat->matrix[i * mat->cols + j] = (DType) exp(mat->matrix[i * mat->cols + j]);
         }
     }
     return mat;
@@ -445,13 +459,13 @@ Matrix<DType>* Matrix<DType>::ExpRet() const
 template<class DType>
 Matrix<DType> *Matrix<DType>::NegativeRet() const
 {
-    Matrix<DType>* mat = Matrix<DType>::Create(this->rows, this->cols);
+    Matrix<DType> *mat = Matrix<DType>::Create(this->rows, this->cols);
 
     for (int i = 0; i < this->rows; i++)
     {
         for (int j = 0; j < this->cols; j++)
         {
-            mat->matrix[i * mat->cols + j] = - mat->matrix[i * mat->cols + j];
+            mat->matrix[i * mat->cols + j] = -mat->matrix[i * mat->cols + j];
         }
     }
     return mat;
@@ -460,25 +474,25 @@ Matrix<DType> *Matrix<DType>::NegativeRet() const
 template<class DType>
 DType Matrix<DType>::Max() const
 {
-    return (DType)0;
+    return (DType) 0;
 }
 
 template<class DType>
 DType Matrix<DType>::Min() const
 {
-    return (DType)0;
+    return (DType) 0;
 }
 
 template<class DType>
 Matrix<DType> *Matrix<DType>::NegativeOnePower() const
 {
-    Matrix<DType>* mat = Matrix<DType>::Create(this->rows, this->cols);
+    Matrix<DType> *mat = Matrix<DType>::Create(this->rows, this->cols);
 
     for (int i = 0; i < this->rows; i++)
     {
         for (int j = 0; j < this->cols; j++)
         {
-            mat->matrix[i * mat->cols + j] = (DType)(1.0 / mat->matrix[i * mat->cols + j]);
+            mat->matrix[i * mat->cols + j] = (DType) (1.0 / mat->matrix[i * mat->cols + j]);
         }
     }
     return mat;
@@ -511,7 +525,7 @@ void Matrix<DType>::ScalarSub(DType scalar)
 template<class DType>
 Matrix<DType> *Matrix<DType>::ScalarAddRet(DType scalar) const
 {
-    Matrix<DType>* mat = Matrix<DType>::Create(this->rows, this->cols);
+    Matrix<DType> *mat = Matrix<DType>::Create(this->rows, this->cols);
 
     for (int i = 0; i < this->rows; i++)
     {
@@ -542,9 +556,9 @@ template<class DType>
 Matrix<DType> *Matrix<DType>::Create(int rows, int cols)
 {
     void *allocated = malloc(sizeof(Matrix<DType>));
-    auto* res = new(allocated) Matrix<DType>();
+    auto *res = new(allocated) Matrix<DType>();
 
-    res->matrix = (DType*)malloc(sizeof(DType) * rows * cols);
+    res->matrix = (DType *) malloc(sizeof(DType) * rows * cols);
 
     for (int i = 0; i < res->rows; i++)
     {
@@ -563,7 +577,7 @@ Matrix<DType> *Matrix<DType>::Create(int rows, int cols)
 template<class DType>
 Matrix<DType> *Matrix<DType>::SliceRow(int index) const
 {
-    Matrix<DType>* result = Matrix<DType>::Create(1, cols);
+    Matrix<DType> *result = Matrix<DType>::Create(1, cols);
 
     for (int i = 0; i < this->cols; i++)
     {
@@ -576,7 +590,7 @@ Matrix<DType> *Matrix<DType>::SliceRow(int index) const
 template<class DType>
 Matrix<DType> *Matrix<DType>::SliceRowAsCol(int index) const
 {
-    Matrix<DType>* result = Matrix<DType>::Create(cols, 1);
+    Matrix<DType> *result = Matrix<DType>::Create(cols, 1);
 
     for (int i = 0; i < this->cols; i++)
     {
