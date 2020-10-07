@@ -41,12 +41,7 @@ int main()
 
     auto res = network.FeedForward(xData->SliceRowAsCol(123));
 
-    Matrix<double>* vectorY = wrapAsVector(123, csv.labelValues);
-
-    network.BackPropagation(vectorY, res);
-
-
-
+    network.WeightsTraining(xData, csv.labelValues, csv.dataSize, csv.featureCount);
 
     return 0;
 }

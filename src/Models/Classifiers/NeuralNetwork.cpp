@@ -151,8 +151,6 @@ void NeuralNetwork<DType>::WeightsTraining(Matrix<DType>* xData, int *yData, int
 {
     auto t0 = std::chrono::high_resolution_clock::now();
 
-    //WeightsTraining(xData, xData, dataSize, featureCount);
-
     for (int epoch = 0; epoch < this->epochs; epoch++)
     {
         for (int i = 0; i < dataSize; i++)
@@ -166,7 +164,8 @@ void NeuralNetwork<DType>::WeightsTraining(Matrix<DType>* xData, int *yData, int
         auto t1 = std::chrono::high_resolution_clock::now();
         std::chrono::duration<float> fs = t1 - t0;
         std::chrono::milliseconds d = std::chrono::duration_cast<std::chrono::milliseconds>(fs);
-        printf('Epoch: %i, Time Spent: %ds, Accuracy: %d', epoch + 1, d.count(), accuracy);
+
+        std::cout << "Epoch " << epoch + 1 << " Time spent: " <<  d.count() << " Accuracy: " << accuracy << std::endl;
     }
 }
 
@@ -184,17 +183,39 @@ void NeuralNetwork<DType>::UpdateNetworkParameters(std::unordered_map<std::strin
 }
 
 template<class DType>
-void NeuralNetwork<DType>::ComputeAccuracy(Matrix<DType> *xData, int *yData, int dataSize, int featureCount)
+int ArgMax(Matrix<DType> * output)
 {
-    predictions = []
+    int maxIndex = 0;
 
-    for x, y in zip(x_val, y_val):
-        output = self.forward_pass(x)
-        pred = np.argmax(output)
-        predictions.append(pred == y)
+    DType maxVal = output->At(0, 0);
 
-    summed = sum(pred for pred in predictions) / 100.0
-    return np.average(summed)
+    for (int i = 0; i < output->rows * output->cols; i++)
+    {
+        if(output->matrix[i] > maxVal)
+        {
+            maxVal = output->matrix[i];
+            maxIndex = i;
+        }
+    }
+    return maxIndex;
+}
+
+
+template<class DType>
+double NeuralNetwork<DType>::ComputeAccuracy(const Matrix<DType> *xData, const int *yData, int dataSize, int featureCount)
+{
+    int rightPredicts = 0;
+
+    for (int i = 0; i < dataSize; i++)
+    {
+        auto output = FeedForward(xData->SliceRowAsCol(i));
+        auto pred = ArgMax(output);
+        if(pred == yData[i])
+        {
+            rightPredicts++;
+        }
+    }
+    return (double)rightPredicts / dataSize;
 }
 
 

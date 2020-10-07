@@ -31,7 +31,7 @@ public:
 
     void WeightsTraining(Matrix<DType>* xData, int* yData, int dataSize, int featureCount);
     void UpdateNetworkParameters(std::unordered_map<std::string, Matrix<DType>*>& changesW);
-    void ComputeAccuracy(Matrix<DType>* xData, int* yData, int dataSize, int featureCount);
+    double ComputeAccuracy(const Matrix<DType> *xData, const int* yData, int dataSize, int featureCount);
 
 
     std::vector<int> topology;
