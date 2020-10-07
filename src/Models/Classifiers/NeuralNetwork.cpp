@@ -67,9 +67,7 @@ void NeuralNetwork<DType>::Initialization()
 
     parameters["W3"] = RandMatrix<DType>(outputLayer, hiddenLayer2);
     parameters["W3"]->ScalarMultiply(sqrt(1.0 / outputLayer));
-
-
-
+    
 }
 
 template<class DType>
@@ -98,32 +96,27 @@ std::unordered_map<std::string, Matrix<DType>*> NeuralNetwork<DType>::FeedForwar
 
 template<class DType>
 std::unordered_map<std::string, Matrix<DType> *>
-NeuralNetwork<DType>::BackPropagation(Matrix<DType>* yTrain,  std::unordered_map<std::string, Matrix<DType> *> params)
+NeuralNetwork<DType>::BackPropagation(Matrix<DType>* yTrain,  std::unordered_map<std::string, Matrix<DType> *>& params)
 {
     std::unordered_map<std::string, Matrix<DType> *> changeW;
 
     Matrix<DType>* error = params["A3"]->MatSubRet(yTrain);
     changeW["W3"] = error->MatMul(params["A3"]->TransposeRet());
 
-    //Matrix<DType>* Z2Derivided = Sigmoid<DType>(params["Z2"], true);
-//    Matrix<DType>* w3trans = parameters["W3"]->TransposeRet();
+    Matrix<DType>* z2Derivative = Sigmoid<DType>(params["Z2"], true);
+    Matrix<DType>* w3Trans = parameters["W3"]->TransposeRet();
+
+    error = w3Trans->MatMul(error);
+    error = error->MatMul(z2Derivative);
+    changeW["W2"] = error->MatMul(params["A2"]);
 
 
-    //error = w3trans->MatMul(error);
-    //error = error->MatMul(Z2Derivided);
-    //changeW["W2"] = error->MatMul(params["A2"]);
+    Matrix<DType>* z1Derivative = Sigmoid<DType>(params["Z1"], true);
+    Matrix<DType>* w2Trans = parameters["W2"]->TransposeRet();
 
-//    for (int i = 0; i < Z2Derivided->cols; i++)
-//    {
-//        for(int j = 0; j < Z2Derivided->rows; j++)
-//        {
-//            std::cout << w3trans->At(i, j) << std::endl;
-//        }
-//    }
-
-
-//    error =  params["W2"].TransposeRet()->MatMul(error)->MatMul(Sigmoid<DType>(params["Z1"], true));
-//    changeW["W1"] = error->MatMul(params["A1"]);
+    error = w2Trans->MatMul(error);
+    error = error->MatMul(z1Derivative);
+    changeW["W1"] = error->MatMul(params["A1"]);
 
     return changeW;
 }

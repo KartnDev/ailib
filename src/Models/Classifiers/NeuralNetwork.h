@@ -27,7 +27,7 @@ public:
 
     std::unordered_map<std::string, Matrix<DType>*> BackPropagation(
             Matrix<DType>* yTrain,
-            std::unordered_map<std::string, Matrix<DType> *> params);
+            std::unordered_map<std::string, Matrix<DType> *>& params);
 
     void WeightsTraining();
 
