@@ -7,33 +7,56 @@
 
 #include "../LinAlg/Matrix.h"
 #include <exception>
+#include <cmath>
 
 template<class DType>
-Matrix<DType>* Sigmoid(const Matrix<DType>* x, bool derivative=false)
+Matrix<DType> *Sigmoid(const Matrix<DType> *x, bool derivative = false)
 {
+    Matrix<DType> *result = Matrix<DType>::Create(x->rows, x->cols);
     if (!derivative)
     {
-        Matrix<DType>* res = x->NegativeRet();
-
-        auto *f = res->ExpRet()->ScalarAddRet(1);
-
-        res = res->ExpRet()->MatDivRet(f);
-
-        return res->PowerRet(2);
+        for (int i = 0; i < x->rows; i++)
+        {
+            for (int j = 0; j < x->cols; j++)
+            {
+                result->At(i, j) = 1.0 / (1 + exp(-x->At(i, j)));
+            }
+        }
     }
 
-    return nullptr;
+    return result;
 }
 
 template<class DType>
-Matrix<DType>* SoftMax(const Matrix<DType>* x)
+Matrix<DType> *SoftMax(const Matrix<DType> *x)
 {
-    Matrix<DType>* exps = (x - x->Max()).ExpRet();
-    return exps / Sum(exps, 0);
+    Matrix<DType> *result = Matrix<DType>::Create(x->rows, x->cols);
+
+    double sum = 0;
+
+    for (int i = 0; i < x->rows; i++)
+    {
+        for (int j = 0; j < x->cols; j++)
+        {
+            sum += exp(x->At(i, j));
+        }
+    }
+
+
+
+    for (int i = 0; i < x->rows; i++)
+    {
+        for (int j = 0; j < x->cols; j++)
+        {
+            result->At(i, j) = exp(x->At(i, j)) / sum;
+        }
+    }
+
+    return result;
 }
 
 template<class DType>
-DType Sum(const Matrix<DType>* x, int axis=0)
+DType Sum(const Matrix<DType> *x, int axis = 0)
 {
     throw std::bad_exception();
 }

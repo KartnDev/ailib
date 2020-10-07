@@ -83,7 +83,9 @@ CSV<DType> CSVReader<DType>::ReadCSVFromFile(std::string path)
     SetFeatureNames(vectorOfLines[0], result);
     SetDataMatrix(vectorOfLines, result);
 
+
     return result;
+
 }
 
 template<class DType>
@@ -119,7 +121,8 @@ void CSVReader<DType>::SetDataMatrix(std::vector<std::string> &dataStingMatrix, 
 
         for (int j = 0; j < csv.featureCount - 1; j++)
         {
-            if(csv.featureCount ==  vectorOfCells.size())
+            auto i3 = vectorOfCells.size() - 1;
+            if(csv.featureCount ==  i3)
             {
                 if (j != this->labelIndex)
                 {
