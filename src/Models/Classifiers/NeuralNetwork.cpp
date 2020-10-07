@@ -5,7 +5,6 @@
 #include "NeuralNetwork.h"
 #include <cmath>
 #include <any>
-#include <bits/stl_pair.h>
 #include "../../Math/Utils/MatrixExtentions.h"
 #include "../../Math/Utils/MatrixExtentions.cpp"
 #include "../../Math/SpecFunctions/ActivationFunctions.h"
@@ -64,10 +63,10 @@ void NeuralNetwork<DType>::Initialization()
     parameters["W1"]->ScalarMultiply(sqrt(1.0 / hiddenLayer1));
 
     parameters["W2"] = RandMatrix<DType>(hiddenLayer2, hiddenLayer1);
-    parameters["W2"]->ScalarMultiply(sqrt(1 / hiddenLayer2));
+    parameters["W2"]->ScalarMultiply(sqrt(1.0 / hiddenLayer2));
 
     parameters["W3"] = RandMatrix<DType>(outputLayer, hiddenLayer2);
-    parameters["W3"]->ScalarMultiply(sqrt(1 / outputLayer));
+    parameters["W3"]->ScalarMultiply(sqrt(1.0 / outputLayer));
 
 
 
@@ -78,48 +77,23 @@ std::unordered_map<std::string, Matrix<DType>*> NeuralNetwork<DType>::FeedForwar
 {
     if(xTrain->cols != 1)
     {
-        throw std::invalid_argument("Bad vector size");
+        //throw std::invalid_argument("Bad vector size");
     }
 
     std::unordered_map<std::string, Matrix<DType> *> params;
 
     params["A0"] = xTrain;
 
-
-    params["Z1"] = ((Matrix<DType>*)parameters["W1"])->MatMul(params["A0"]);
+    params["Z1"] = parameters["W1"]->MatMul(params["A0"]);
     params["A1"] = Sigmoid<DType>(params["Z1"]);
-
-
 
     params["Z2"] = parameters["W2"]->MatMul(params["A1"]);
     params["A2"] = Sigmoid<DType>(params["Z2"]);
 
     params["Z3"] = parameters["W3"]->MatMul(params["A2"]);
-    //params["A3"] = SoftMax<DType>(params["Z3"]);
+    params["A3"] = SoftMax<DType>(params["Z3"]);
 
     return params;
 }
 
-//template<class DType>
-//std::unordered_map<std::string, Matrix<DType>>
-//NeuralNetwork<DType>::BackPropagation(Vector<DType> yTrain, Vector<DType> output)
-//{
-//    std::unordered_map<std::string, Matrix<DType>> params;
-//
-//    std::unordered_map<std::string, Matrix<DType>> changeW;
-//
-//    Matrix<DType> error = output - yTrain;
-//    changeW['W3'] = error * params['A3'];
-//
-//    //error = np.multiply( np.dot(params['W3'].T, error), self.sigmoid(params['Z2'], derivative=True) );
-//    //changeW['W2'] = np.dot(error, params['A2']);
-//
-//    // error = np.multiply( np.dot(params['W2'].T, error), self.sigmoid(params['Z1'], derivative=True) );
-//    // changeW['W1'] = np.dot(error, params['A1']);
-//}
-//
-//template<class DType>
-//void NeuralNetwork<DType>::WeightsTraining()
-//{
-//
-//}
+

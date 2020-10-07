@@ -69,6 +69,8 @@ C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/SpecFunctions/ActivationFunction
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/LinAlg/Matrix.h
 exception
 -
+cmath
+-
 
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/Utils/MatrixExtentions.cpp
 MatrixExtentions.h
@@ -94,8 +96,6 @@ C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/NeuralNetwork.h
 cmath
 -
 any
--
-bits/stl_pair.h
 -
 ../../Math/Utils/MatrixExtentions.h
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/Utils/MatrixExtentions.h
