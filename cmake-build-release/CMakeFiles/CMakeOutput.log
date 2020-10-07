@@ -28,44 +28,44 @@ The CXX compiler identification is Clang, found in "C:/Users/Dmitry/Documents/Gi
 Determining if the C compiler works passed with the following output:
 Change Dir: C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-release/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_68faa\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_68faa.dir\build.make /nologo -L                  CMakeFiles\cmTC_68faa.dir\build
-Building C object CMakeFiles/cmTC_68faa.dir/testCCompiler.c.obj
-	C:\PROGRA~1\LLVM\bin\clang-cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nm48B.tmp
-Linking C executable cmTC_68faa.exe
-	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_68faa.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~1\LLVM\bin\lld-link.exe /nologo @CMakeFiles\cmTC_68faa.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nm4DA.tmp
+Run Build Command(s):nmake /nologo cmTC_9479f\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_9479f.dir\build.make /nologo -L                  CMakeFiles\cmTC_9479f.dir\build
+Building C object CMakeFiles/cmTC_9479f.dir/testCCompiler.c.obj
+	C:\PROGRA~1\LLVM\bin\clang-cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nm280A.tmp
+Linking C executable cmTC_9479f.exe
+	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_9479f.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~1\LLVM\bin\lld-link.exe /nologo @CMakeFiles\cmTC_9479f.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nm284A.tmp
 
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-release/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_95d0d\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_95d0d.dir\build.make /nologo -L                  CMakeFiles\cmTC_95d0d.dir\build
-Building C object CMakeFiles/cmTC_95d0d.dir/CMakeCCompilerABI.c.obj
-	C:\PROGRA~1\LLVM\bin\clang-cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nm6BE.tmp
-Linking C executable cmTC_95d0d.exe
-	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_95d0d.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~1\LLVM\bin\lld-link.exe /nologo @CMakeFiles\cmTC_95d0d.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nm70D.tmp
+Run Build Command(s):nmake /nologo cmTC_a3e08\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_a3e08.dir\build.make /nologo -L                  CMakeFiles\cmTC_a3e08.dir\build
+Building C object CMakeFiles/cmTC_a3e08.dir/CMakeCCompilerABI.c.obj
+	C:\PROGRA~1\LLVM\bin\clang-cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nm2A2F.tmp
+Linking C executable cmTC_a3e08.exe
+	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_a3e08.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~1\LLVM\bin\lld-link.exe /nologo @CMakeFiles\cmTC_a3e08.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nm2A7E.tmp
 
 
 
 Determining if the CXX compiler works passed with the following output:
 Change Dir: C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-release/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_5d0e4\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_5d0e4.dir\build.make /nologo -L                  CMakeFiles\cmTC_5d0e4.dir\build
-Building CXX object CMakeFiles/cmTC_5d0e4.dir/testCXXCompiler.cxx.obj
-	C:\PROGRA~1\LLVM\bin\clang-cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nm8EF.tmp
-Linking CXX executable cmTC_5d0e4.exe
-	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_5d0e4.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~1\LLVM\bin\lld-link.exe /nologo @CMakeFiles\cmTC_5d0e4.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nmA77.tmp
+Run Build Command(s):nmake /nologo cmTC_1764d\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_1764d.dir\build.make /nologo -L                  CMakeFiles\cmTC_1764d.dir\build
+Building CXX object CMakeFiles/cmTC_1764d.dir/testCXXCompiler.cxx.obj
+	C:\PROGRA~1\LLVM\bin\clang-cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nm2C61.tmp
+Linking CXX executable cmTC_1764d.exe
+	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_1764d.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~1\LLVM\bin\lld-link.exe /nologo @CMakeFiles\cmTC_1764d.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nm2CA0.tmp
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-release/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_c9456\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_c9456.dir\build.make /nologo -L                  CMakeFiles\cmTC_c9456.dir\build
-Building CXX object CMakeFiles/cmTC_c9456.dir/CMakeCXXCompilerABI.cpp.obj
-	C:\PROGRA~1\LLVM\bin\clang-cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nmBFD.tmp
-Linking CXX executable cmTC_c9456.exe
-	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_c9456.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~1\LLVM\bin\lld-link.exe /nologo @CMakeFiles\cmTC_c9456.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nmC3C.tmp
+Run Build Command(s):nmake /nologo cmTC_55fa1\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_55fa1.dir\build.make /nologo -L                  CMakeFiles\cmTC_55fa1.dir\build
+Building CXX object CMakeFiles/cmTC_55fa1.dir/CMakeCXXCompilerABI.cpp.obj
+	C:\PROGRA~1\LLVM\bin\clang-cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nm2E77.tmp
+Linking CXX executable cmTC_55fa1.exe
+	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_55fa1.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~1\LLVM\bin\lld-link.exe /nologo @CMakeFiles\cmTC_55fa1.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nm2EE1.tmp
 
 
 
@@ -74,11 +74,11 @@ Linking CXX executable cmTC_c9456.exe
 Detecting CXX [-std:c++14] compiler features compiled with the following output:
 Change Dir: C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-release/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_560aa\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_560aa.dir\build.make /nologo -L                  CMakeFiles\cmTC_560aa.dir\build
-Building CXX object CMakeFiles/cmTC_560aa.dir/feature_tests.cxx.obj
-	C:\PROGRA~1\LLVM\bin\clang-cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nm1285.tmp
-Linking CXX executable cmTC_560aa.exe
-	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_560aa.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~1\LLVM\bin\lld-link.exe /nologo @CMakeFiles\cmTC_560aa.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nm1322.tmp
+Run Build Command(s):nmake /nologo cmTC_91b48\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_91b48.dir\build.make /nologo -L                  CMakeFiles\cmTC_91b48.dir\build
+Building CXX object CMakeFiles/cmTC_91b48.dir/feature_tests.cxx.obj
+	C:\PROGRA~1\LLVM\bin\clang-cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nm3068.tmp
+Linking CXX executable cmTC_91b48.exe
+	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_91b48.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~1\LLVM\bin\lld-link.exe /nologo @CMakeFiles\cmTC_91b48.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nm32FC.tmp
 
 
 
@@ -143,11 +143,11 @@ Linking CXX executable cmTC_560aa.exe
 Detecting CXX [] compiler features compiled with the following output:
 Change Dir: C:/Users/Dmitry/Documents/GitHub/ailib/cmake-build-release/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_a9f51\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_a9f51.dir\build.make /nologo -L                  CMakeFiles\cmTC_a9f51.dir\build
-Building CXX object CMakeFiles/cmTC_a9f51.dir/feature_tests.cxx.obj
-	C:\PROGRA~1\LLVM\bin\clang-cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nm17B5.tmp
-Linking CXX executable cmTC_a9f51.exe
-	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_a9f51.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~1\LLVM\bin\lld-link.exe /nologo @CMakeFiles\cmTC_a9f51.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nm194D.tmp
+Run Build Command(s):nmake /nologo cmTC_dde6b\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_dde6b.dir\build.make /nologo -L                  CMakeFiles\cmTC_dde6b.dir\build
+Building CXX object CMakeFiles/cmTC_dde6b.dir/feature_tests.cxx.obj
+	C:\PROGRA~1\LLVM\bin\clang-cl.exe @C:\Users\Dmitry\AppData\Local\Temp\nm3856.tmp
+Linking CXX executable cmTC_dde6b.exe
+	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_dde6b.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~1\LLVM\bin\lld-link.exe /nologo @CMakeFiles\cmTC_dde6b.dir\objects1.rsp @C:\Users\Dmitry\AppData\Local\Temp\nm3A7C.tmp
 
 
 

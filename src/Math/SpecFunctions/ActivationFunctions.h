@@ -23,6 +23,16 @@ Matrix<DType> *Sigmoid(const Matrix<DType> *x, bool derivative = false)
             }
         }
     }
+    else
+    {
+        for (int i = 0; i < x->rows; i++)
+        {
+            for (int j = 0; j < x->cols; j++)
+            {
+                result->At(i, j) = exp(-x->At(i, j)) / (1 + exp(-x->At(i, j))) / (1 + exp(-x->At(i, j)));
+            }
+        }
+    }
 
     return result;
 }

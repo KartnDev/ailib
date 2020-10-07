@@ -17,7 +17,7 @@ Matrix<DType>* RandMatrix(int rows, int cols)
     {
         for (int j = 0; j < cols; j++)
         {
-            result->At(i, j) = rand() % 10;
+            result->At(i, j) = ((double) rand() / (RAND_MAX)) + 1;
         }
     }
 
