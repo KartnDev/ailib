@@ -10,7 +10,7 @@
 #define LINE std::cout << "===========================================" << std::endl;
 
 
-Matrix<double>* getYValues(int index, int* labelValues)
+Matrix<double>* wrapAsVector(int index, int* labelValues)
 {
     Matrix<double>* result = Matrix<double>::Create(10, 1);
 
@@ -41,7 +41,7 @@ int main()
 
     auto res = network.FeedForward(xData->SliceRowAsCol(123));
 
-    Matrix<double>* vectorY = getYValues(123, csv.labelValues);
+    Matrix<double>* vectorY = wrapAsVector(123, csv.labelValues);
 
     network.BackPropagation(vectorY, res);
 

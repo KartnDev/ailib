@@ -4,8 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ailib.dir/src/Models/Classifiers/KNearestNeighbor.cpp.obj"
   "ailib.exe"
   "ailib.exe.manifest"
-  "ailib.lib"
   "ailib.pdb"
+  "libailib.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

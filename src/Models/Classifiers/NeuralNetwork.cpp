@@ -8,6 +8,8 @@
 #include "../../Math/Utils/MatrixExtentions.h"
 #include "../../Math/Utils/MatrixExtentions.cpp"
 #include "../../Math/SpecFunctions/ActivationFunctions.h"
+#include <ctime>
+#include <chrono>
 
 template<class DType>
 NeuralNetwork<DType>::NeuralNetwork(const std::vector<int>& topology, int epochs, double learnRate)
@@ -22,7 +24,15 @@ NeuralNetwork<DType>::NeuralNetwork(const std::vector<int>& topology, int epochs
 template<class DType>
 void NeuralNetwork<DType>::Fit(DType **xData, int *yData, int dataSize, int featureCount)
 {
+    auto t0 = std::chrono::high_resolution_clock::now();
 
+    //WeightsTraining(xData, xData, dataSize, featureCount);
+
+    auto t1 = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<float> fs = t1 - t0;
+    std::chrono::milliseconds d = std::chrono::duration_cast<std::chrono::milliseconds>(fs);
+    std::cout << fs.count() << "s\n";
+    std::cout << d.count() << "ms\n";
 }
 
 template<class DType>
@@ -67,7 +77,7 @@ void NeuralNetwork<DType>::Initialization()
 
     parameters["W3"] = RandMatrix<DType>(outputLayer, hiddenLayer2);
     parameters["W3"]->ScalarMultiply(sqrt(1.0 / outputLayer));
-    
+
 }
 
 template<class DType>
@@ -120,5 +130,60 @@ NeuralNetwork<DType>::BackPropagation(Matrix<DType>* yTrain,  std::unordered_map
 
     return changeW;
 }
+
+Matrix<double>* WrapAsVector(int index, int* labelValues)
+{
+    Matrix<double>* result = Matrix<double>::Create(10, 1);
+
+    for(int i = 0; i < 10; i++)
+    {
+        result->At(i, 0) = 0;
+    }
+
+    result->At(labelValues[index], 0) = 1;
+
+    return result;
+}
+
+
+template<class DType>
+void NeuralNetwork<DType>::WeightsTraining(Matrix<DType>* xData, int *yData, int dataSize, int featureCount)
+{
+    auto t0 = std::chrono::high_resolution_clock::now();
+
+    //WeightsTraining(xData, xData, dataSize, featureCount);
+
+    for (int epoch = 0; epoch < this->epochs; epoch++)
+    {
+        for (int i = 0; i < dataSize; i++)
+        {
+            auto output = FeedForward(xData->SliceRowAsCol(i));
+            auto changesW = BackPropagation(WrapAsVector(i, yData), output);
+            UpdateNetworkParameters(changesW);
+        }
+        auto accuracy = ComputeAccuracy(xData, yData, dataSize, featureCount);
+
+        auto t1 = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<float> fs = t1 - t0;
+        std::chrono::milliseconds d = std::chrono::duration_cast<std::chrono::milliseconds>(fs);
+        printf('Epoch: %i, Time Spent: %ds, Accuracy: %d', epoch + 1, d.count(), accuracy);
+    }
+}
+
+template<class DType>
+void NeuralNetwork<DType>::UpdateNetworkParameters(std::unordered_map<std::string, Matrix<DType>*>& changesW)
+{
+    for key, value in changesW.items():
+        for w_arr in self.params[key]:
+            w_arr -= self.l_rate * value
+}
+
+template<class DType>
+void NeuralNetwork<DType>::ComputeAccuracy(Matrix<DType> *xData, int *yData, int dataSize, int featureCount)
+{
+
+}
+
+
 
 
