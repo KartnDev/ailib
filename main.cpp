@@ -9,6 +9,22 @@
 
 #define LINE std::cout << "===========================================" << std::endl;
 
+
+Matrix<double>* getYValues(int index, int* labelValues)
+{
+    Matrix<double>* result = Matrix<double>::Create(10, 1);
+
+    for(int i = 0; i < 10; i++)
+    {
+        result->At(i, 0) = 0;
+    }
+
+    result->At(labelValues[index], 0) = 1;
+
+    return result;
+}
+
+
 int main()
 {
     srand(time(NULL));
@@ -16,15 +32,20 @@ int main()
     CSVReader<double> reader;
     CSV<double> csv = reader.ReadCSVFromFile("C:\\Users\\Dmitry\\Documents\\GitHub\\ailib\\resources\\mnist_test.csv");
 
-    Matrix<double>* xData = Matrix<double>::Create(csv.dataSize, csv.featureCount);
+    Matrix<double> *xData = Matrix<double>::Create(csv.dataSize, csv.featureCount);
     xData->matrix = csv.dataMatrix;
-
 
 
     std::vector<int> topology = {784, 128, 64, 10};
     NeuralNetwork<double> network(topology, 10, 0.0001);
 
     auto res = network.FeedForward(xData->SliceRowAsCol(123));
+
+    Matrix<double>* vectorY = getYValues(123, csv.labelValues);
+
+    network.BackPropagation(vectorY, res);
+
+
 
 
     return 0;

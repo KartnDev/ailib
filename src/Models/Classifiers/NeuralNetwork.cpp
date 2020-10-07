@@ -96,4 +96,36 @@ std::unordered_map<std::string, Matrix<DType>*> NeuralNetwork<DType>::FeedForwar
     return params;
 }
 
+template<class DType>
+std::unordered_map<std::string, Matrix<DType> *>
+NeuralNetwork<DType>::BackPropagation(Matrix<DType>* yTrain,  std::unordered_map<std::string, Matrix<DType> *> params)
+{
+    std::unordered_map<std::string, Matrix<DType> *> changeW;
+
+    Matrix<DType>* error = params["A3"]->MatSubRet(yTrain);
+    changeW["W3"] = error->MatMul(params["A3"]->TransposeRet());
+
+    //Matrix<DType>* Z2Derivided = Sigmoid<DType>(params["Z2"], true);
+//    Matrix<DType>* w3trans = parameters["W3"]->TransposeRet();
+
+
+    //error = w3trans->MatMul(error);
+    //error = error->MatMul(Z2Derivided);
+    //changeW["W2"] = error->MatMul(params["A2"]);
+
+//    for (int i = 0; i < Z2Derivided->cols; i++)
+//    {
+//        for(int j = 0; j < Z2Derivided->rows; j++)
+//        {
+//            std::cout << w3trans->At(i, j) << std::endl;
+//        }
+//    }
+
+
+//    error =  params["W2"].TransposeRet()->MatMul(error)->MatMul(Sigmoid<DType>(params["Z1"], true));
+//    changeW["W1"] = error->MatMul(params["A1"]);
+
+    return changeW;
+}
+
 
