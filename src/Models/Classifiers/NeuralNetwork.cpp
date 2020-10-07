@@ -173,15 +173,28 @@ void NeuralNetwork<DType>::WeightsTraining(Matrix<DType>* xData, int *yData, int
 template<class DType>
 void NeuralNetwork<DType>::UpdateNetworkParameters(std::unordered_map<std::string, Matrix<DType>*>& changesW)
 {
-    for key, value in changesW.items():
-        for w_arr in self.params[key]:
-            w_arr -= self.l_rate * value
+    for (std::pair<std::string, Matrix<DType>*> wCoef : changesW)
+    {
+        for (Matrix<DType>* arr : this->parameters[wCoef.first])
+        {
+            arr -= this->learnRate * wCoef.second;
+        }
+    }
+
 }
 
 template<class DType>
 void NeuralNetwork<DType>::ComputeAccuracy(Matrix<DType> *xData, int *yData, int dataSize, int featureCount)
 {
+    predictions = []
 
+    for x, y in zip(x_val, y_val):
+        output = self.forward_pass(x)
+        pred = np.argmax(output)
+        predictions.append(pred == y)
+
+    summed = sum(pred for pred in predictions) / 100.0
+    return np.average(summed)
 }
 
 
