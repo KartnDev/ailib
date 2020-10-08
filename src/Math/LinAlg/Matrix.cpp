@@ -203,9 +203,15 @@ void Matrix<DType>::MatAdd(const Matrix<DType> &rhsMatrix)
 }
 
 template<class DType>
-void Matrix<DType>::MatSub(const Matrix<DType> &rhsMatrix)
+void Matrix<DType>::MatSub(const Matrix<DType> *rhsMatrix)
 {
-    *this = MatrixSub<DType>(*this, rhsMatrix);
+    for (int i = 0; i < this->rows; i++)
+    {
+        for (int j = 0; j < this->cols; j++)
+        {
+            this->At(i, j) -= rhsMatrix->At(i, j);
+        }
+    }
 }
 
 template<class DType>
@@ -285,9 +291,18 @@ Matrix<DType> *Matrix<DType>::MatSubRet(const Matrix<DType> *rhsMatrix) const
 }
 
 template<class DType>
-Matrix<DType> &Matrix<DType>::ScalarMultiplyRet(DType scalar) const
+Matrix<DType> *Matrix<DType>::ScalarMultiplyRet(DType scalar) const
 {
-    return MatrixMultiplyScalar<DType>(*this, scalar);
+    Matrix<DType>* mat = Matrix<DType>::Create(this->rows, this->cols);
+
+    for (int i = 0; i < this->rows; i++)
+    {
+        for (int j = 0; j < this->cols; j++)
+        {
+            mat->At(i, j)*= scalar;
+        }
+    }
+    return mat;
 }
 
 template<class DType>
@@ -347,9 +362,19 @@ void Matrix<DType>::operator+=(const Matrix<DType> &rhsMatrix)
 }
 
 template<class DType>
-void Matrix<DType>::operator-=(const Matrix<DType> &rhsMatrix)
+void Matrix<DType>::operator-=(const Matrix<DType> *rhsMatrix)
 {
-    this->MatSub(rhsMatrix);
+    if (this->cols == rhsMatrix->cols && this->rows == rhsMatrix->rows)
+    {
+        for (int i = 0; i < this->rows; i++)
+        {
+            for (int j = 0; j < rhsMatrix->cols; j++)
+            {
+                this->At(i, j) -= rhsMatrix->At(i, j);
+            }
+        }
+    }
+    //throw std::runtime_error("MatrixSub took a different sizes of matrix");
 }
 
 template<class DType>
@@ -361,20 +386,20 @@ Matrix<DType> &Matrix<DType>::operator+(const Matrix<DType> &rhsMatrix) const
 template<class DType>
 Matrix<DType> *Matrix<DType>::operator-(const Matrix<DType> *rhsMatrix) const
 {
-    if (this.cols == rhsMatrix.cols && this.rows == rhsMatrix.rows)
+    if (this->cols == rhsMatrix->cols && this->rows == rhsMatrix->rows)
     {
-        Matrix<DType> mat = Matrix<DType>::Create(this.rows, rhsMatrix.cols);
+        Matrix<DType> mat = Matrix<DType>::Create(this->rows, rhsMatrix->cols);
 
-        for (int i = 0; i < this.rows; i++)
+        for (int i = 0; i < this->rows; i++)
         {
-            for (int j = 0; j < rhsMatrix.cols; j++)
+            for (int j = 0; j < rhsMatrix->cols; j++)
             {
-                mat.matrix[i * mat.cols + j] = this.At(i, j) - rhsMatrix.At(i, j);
+                mat.matrix[i * mat.cols + j] = this->At(i, j) - rhsMatrix->At(i, j);
             }
         }
         return mat;
     }
-    throw std::runtime_error("MatrixSub took a different sizes of matrix");
+    //throw std::runtime_error("MatrixSub took a different sizes of matrix");
 }
 
 template<class DType>
@@ -600,6 +625,7 @@ Matrix<DType> *Matrix<DType>::SliceRowAsCol(int index) const
 
     return result;
 }
+
 
 
 

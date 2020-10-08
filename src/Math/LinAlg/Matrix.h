@@ -31,7 +31,7 @@ struct Matrix
     Matrix<DType>& Inverse() const;
 
     void MatAdd(const Matrix<DType>& rhsMatrix);
-    void MatSub(const Matrix<DType>& rhsMatrix);
+    void MatSub(const Matrix<DType> *rhsMatrix);
 
     void ScalarMultiply(DType scalar);
     void ScalarDivide(DType scalar);
@@ -47,7 +47,7 @@ struct Matrix
     Matrix<DType>* MatDivRet(const Matrix<DType> *rhsMatrix) const;
     Matrix<DType>& MatAddRet(const Matrix<DType>& rhsMatrix) const;
     Matrix<DType> * MatSubRet(const Matrix<DType> *rhsMatrix) const;
-    Matrix<DType>& ScalarMultiplyRet(DType scalar) const;
+    Matrix<DType>* ScalarMultiplyRet(DType scalar) const;
     Matrix<DType>& ScalarDivideRet(DType scalar) const;
     Matrix<DType>* ScalarAddRet(DType scalar) const;
     Matrix<DType>& ScalarSubRet(DType scalar) const;
@@ -60,7 +60,7 @@ struct Matrix
     void operator*=(DType scalar);
     void operator/=(DType scalar);
     void operator+=(const Matrix<DType>& rhsMatrix);
-    void operator-=(const Matrix<DType>& rhsMatrix);
+    void operator-=(const Matrix<DType>* rhsMatrix);
 
     DType& At(int i, int j) const;
 

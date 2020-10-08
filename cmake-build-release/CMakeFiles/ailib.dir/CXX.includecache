@@ -72,14 +72,6 @@ exception
 cmath
 -
 
-C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/Utils/DistanceMethods.cpp
-DistanceMethods.h
-C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/Utils/DistanceMethods.h
-cmath
--
-
-C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/Utils/DistanceMethods.h
-
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/Utils/MatrixExtentions.cpp
 MatrixExtentions.h
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/Utils/MatrixExtentions.h
@@ -96,30 +88,6 @@ C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/IClassifier.h
 map
 -
 string
--
-
-C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/IMetrix.h
-map
--
-string
--
-
-C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/KNearestNeighbor.cpp
-KNearestNeighbor.h
-C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/KNearestNeighbor.h
-../../Math/Utils/DistanceMethods.h
-C:/Users/Dmitry/Documents/GitHub/ailib/src/Math/Utils/DistanceMethods.h
-set
--
-vector
--
-
-C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/KNearestNeighbor.h
-IClassifier.h
-C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/IClassifier.h
-IMetrix.h
-C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/IMetrix.h
-vector
 -
 
 C:/Users/Dmitry/Documents/GitHub/ailib/src/Models/Classifiers/NeuralNetwork.cpp
