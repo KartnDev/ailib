@@ -155,17 +155,17 @@ void NeuralNetwork<DType>::WeightsTraining(Matrix<DType>* xData, int *yData, int
     {
         for (int i = 0; i < dataSize; i++)
         {
-            auto output = FeedForward(xData->SliceRowAsCol(i));
-            auto changesW = BackPropagation(WrapAsVector(i, yData), output);
-            UpdateNetworkParameters(changesW);
+           auto output = FeedForward(xData->SliceRowAsCol(i));
+           auto changesW = BackPropagation(WrapAsVector(i, yData), output);
+           //UpdateNetworkParameters(changesW);
         }
-        auto accuracy = ComputeAccuracy(xData, yData, dataSize, featureCount);
-
-        auto t1 = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<float> fs = t1 - t0;
-        std::chrono::milliseconds d = std::chrono::duration_cast<std::chrono::milliseconds>(fs);
-
-        std::cout << "Epoch " << epoch + 1 << " Time spent: " <<  d.count() << " Accuracy: " << accuracy << std::endl;
+//        auto accuracy = ComputeAccuracy(xData, yData, dataSize, featureCount);
+//
+//        auto t1 = std::chrono::high_resolution_clock::now();
+//        std::chrono::duration<float> fs = t1 - t0;
+//        std::chrono::milliseconds d = std::chrono::duration_cast<std::chrono::milliseconds>(fs);
+//
+//        std::cout << "Epoch " << epoch + 1 << " Time spent: " <<  d.count() << " Accuracy: " << accuracy << std::endl;
     }
 }
 
@@ -174,16 +174,15 @@ void NeuralNetwork<DType>::UpdateNetworkParameters(std::unordered_map<std::strin
 {
     for (std::pair<std::string, Matrix<DType>*> wCoef : changesW)
     {
-        for (Matrix<DType>* arr : this->parameters[wCoef.first])
-        {
-            arr -= this->learnRate * wCoef.second;
-        }
+        Matrix<DType>* mat = changesW[wCoef.first]->ScalarMultiplyRet(this->learnRate);
+
+        this->parameters[wCoef.first]->MatSub(mat);
     }
 
 }
 
 template<class DType>
-int ArgMax(Matrix<DType> * output)
+int ArgMax(const Matrix<DType> * output)
 {
     int maxIndex = 0;
 
@@ -208,8 +207,8 @@ double NeuralNetwork<DType>::ComputeAccuracy(const Matrix<DType> *xData, const i
 
     for (int i = 0; i < dataSize; i++)
     {
-        auto output = FeedForward(xData->SliceRowAsCol(i));
-        auto pred = ArgMax(output);
+        Matrix<DType> * output = FeedForward(xData->SliceRowAsCol(i))["A3"];
+        int pred = ArgMax<DType>(output);
         if(pred == yData[i])
         {
             rightPredicts++;
