@@ -114,10 +114,11 @@ NeuralNetwork<DType>::BackPropagation(Matrix<DType>* yTrain,  std::unordered_map
     changeW["W3"] = error->MatMul(params["A3"]->TransposeRet());
 
     Matrix<DType>* z2Derivative = Sigmoid<DType>(params["Z2"], true);
+    auto z2DerivativeTranspose = z2Derivative->TransposeRet();
     Matrix<DType>* w3Trans = parameters["W3"]->TransposeRet();
 
     error = w3Trans->MatMul(error);
-    error = error->TransposeRet()->MatMul(z2Derivative);
+    error = error->MatMul(z2Derivative);
     auto transA2 = params["A2"]->TransposeRet();
     changeW["W2"] = error->MatMul(transA2);
 

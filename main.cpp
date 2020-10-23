@@ -28,12 +28,7 @@ Matrix<double>* wrapAsVector(int index, int* labelValues)
 
 int main()
 {
-    int id;
-#pragma omp parallel private(id)
-    {
-        id = omp_get_thread_num();
-        printf("%d: Hello World!\n", id);
-    }
+
 
     srand(time(NULL));
 
