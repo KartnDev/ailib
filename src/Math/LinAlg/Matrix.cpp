@@ -2,7 +2,7 @@
 // Created by Dmitry on 12.09.2020.
 //
 
-
+#include <omp.h>
 #include "Matrix.h"
 
 template<class DType>
@@ -150,9 +150,10 @@ Matrix<DType> *Matrix<DType>::MatMul(const Matrix<DType> *rhsMatrix) const
     if (this->cols == rhsMatrix->rows)
     {
         Matrix<DType> *mat = Matrix<DType>::Create(this->rows, rhsMatrix->cols);
-
+#pragma omp parallel for
         for (int i = 0; i < this->rows; i++)
         {
+#pragma omp parallel for
             for (int j = 0; j < rhsMatrix->cols; j++)
             {
                 DType fulSum = 0;

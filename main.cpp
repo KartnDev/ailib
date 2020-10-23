@@ -6,6 +6,7 @@
 #include "src/Math/LinAlg/Matrix.cpp"
 #include "src/FileSys/CSVReader.h"
 #include "src/FileSys/CSVReader.cpp"
+#include <omp.h>
 
 #define LINE std::cout << "===========================================" << std::endl;
 
@@ -27,6 +28,13 @@ Matrix<double>* wrapAsVector(int index, int* labelValues)
 
 int main()
 {
+    int id;
+#pragma omp parallel private(id)
+    {
+        id = omp_get_thread_num();
+        printf("%d: Hello World!\n", id);
+    }
+
     srand(time(NULL));
 
     CSVReader<double> reader;

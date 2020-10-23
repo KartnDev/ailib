@@ -6,8 +6,7 @@ include_directories("src/Models/Classifiers/KNearestNeighbor.cpp")
 
 set(CMAKE_CXX_STANDARD 20)
 
-set(GCC_COVERAGE_COMPILE_FLAGS "-fpermissive -fexceptions")
-
+set(GCC_COVERAGE_COMPILE_FLAGS "-fpermissive -fexceptions -fopenmp")
 
 add_executable(ailib
         main.cpp

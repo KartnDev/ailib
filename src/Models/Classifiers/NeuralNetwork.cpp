@@ -92,13 +92,13 @@ std::unordered_map<std::string, Matrix<DType>*> NeuralNetwork<DType>::FeedForwar
 
     params["A0"] = xTrain;
 
-    params["Z1"] = parameters["W1"]->MatMul(params["A0"]);
+    params["Z1"] = reinterpret_cast<Matrix<DType>*>(parameters["W1"])->MatMul(params["A0"]);
     params["A1"] = Sigmoid<DType>(params["Z1"]);
 
-    params["Z2"] = parameters["W2"]->MatMul(params["A1"]);
+    params["Z2"] = reinterpret_cast<Matrix<DType>*>(parameters["W2"])->MatMul(params["A1"]);
     params["A2"] = Sigmoid<DType>(params["Z2"]);
 
-    params["Z3"] = parameters["W3"]->MatMul(params["A2"]);
+    params["Z3"] = reinterpret_cast<Matrix<DType>*>(parameters["W3"])->MatMul(params["A2"]);
     params["A3"] = SoftMax<DType>(params["Z3"]);
 
     return params;
@@ -117,16 +117,18 @@ NeuralNetwork<DType>::BackPropagation(Matrix<DType>* yTrain,  std::unordered_map
     Matrix<DType>* w3Trans = parameters["W3"]->TransposeRet();
 
     error = w3Trans->MatMul(error);
-    error = error->MatMul(z2Derivative);
-    changeW["W2"] = error->MatMul(params["A2"]);
+    error = error->TransposeRet()->MatMul(z2Derivative);
+    auto transA2 = params["A2"]->TransposeRet();
+    changeW["W2"] = error->MatMul(transA2);
 
 
     Matrix<DType>* z1Derivative = Sigmoid<DType>(params["Z1"], true);
     Matrix<DType>* w2Trans = parameters["W2"]->TransposeRet();
 
     error = w2Trans->MatMul(error);
-    error = error->MatMul(z1Derivative);
-    changeW["W1"] = error->MatMul(params["A1"]);
+    error = error->TransposeRet()->MatMul(z1Derivative);
+    auto transA1 = params["A1"]->TransposeRet();
+    changeW["W1"] = error->MatMul(transA1);
 
     return changeW;
 }
