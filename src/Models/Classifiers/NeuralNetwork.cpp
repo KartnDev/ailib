@@ -110,26 +110,9 @@ NeuralNetwork<DType>::BackPropagation(Matrix<DType>* yTrain,  std::unordered_map
 {
     std::unordered_map<std::string, Matrix<DType> *> changeW;
 
-    Matrix<DType>* error = params["A3"]->MatSubRet(yTrain);
-    changeW["W3"] = error->MatMul(params["A3"]->TransposeRet());
-
-    Matrix<DType>* z2Derivative = Sigmoid<DType>(params["Z2"], true);
-    auto z2DerivativeTranspose = z2Derivative->TransposeRet();
-    Matrix<DType>* w3Trans = parameters["W3"]->TransposeRet();
-
-    error = w3Trans->MatMul(error);
-    error = error->MatMul(z2Derivative);
-    auto transA2 = params["A2"]->TransposeRet();
-    changeW["W2"] = error->MatMul(transA2);
 
 
-    Matrix<DType>* z1Derivative = Sigmoid<DType>(params["Z1"], true);
-    Matrix<DType>* w2Trans = parameters["W2"]->TransposeRet();
-
-    error = w2Trans->MatMul(error);
-    error = error->TransposeRet()->MatMul(z1Derivative);
-    auto transA1 = params["A1"]->TransposeRet();
-    changeW["W1"] = error->MatMul(transA1);
+    error = 2 * (output - y_train) / output.shape[0] * self.softmax(params['Z3'], derivative=True)
 
     return changeW;
 }
