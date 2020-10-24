@@ -8,6 +8,7 @@
 #include "../LinAlg/Matrix.h"
 #include <exception>
 #include <cmath>
+#include <algorithm>
 
 template<class DType>
 Matrix<DType> *Sigmoid(const Matrix<DType> *x, bool derivative = false)
@@ -38,37 +39,51 @@ Matrix<DType> *Sigmoid(const Matrix<DType> *x, bool derivative = false)
 }
 
 template<class DType>
-Matrix<DType> *SoftMax(const Matrix<DType> *x)
+Matrix<DType> *SoftMax(const Matrix<DType> *x, bool derivative = false)
 {
     Matrix<DType> *result = Matrix<DType>::Create(x->rows, x->cols);
 
-    double sum = 0;
+    const int size = x->cols * x->rows;
+    DType max = max_element(x->matrix, x->matrix + size);
 
     for (int i = 0; i < x->rows; i++)
     {
         for (int j = 0; j < x->cols; j++)
         {
-            sum += exp(x->At(i, j));
+            result->At(i, j) = exp(x->At(i, j) - max);
         }
     }
 
-
-
+    DType sum = 0;
     for (int i = 0; i < x->rows; i++)
     {
         for (int j = 0; j < x->cols; j++)
         {
-            result->At(i, j) = exp(x->At(i, j)) / sum;
+            sum += result->At(i, j);
         }
     }
+    for (int i = 0; i < x->rows; i++)
+    {
+        for (int j = 0; j < x->cols; j++)
+        {
+            result->At(i, j) /= sum;
+        }
+    }
+
+    if(derivative)
+    {
+        for (int i = 0; i < x->rows; i++)
+        {
+            for (int j = 0; j < x->cols; j++)
+            {
+                result->At(i, j)  *= 1 /
+            }
+        }
+    }
+    // TODO REFACTOR IT
+
 
     return result;
-}
-
-template<class DType>
-DType Sum(const Matrix<DType> *x, int axis = 0)
-{
-    throw std::bad_exception();
 }
 
 
